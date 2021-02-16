@@ -2,17 +2,31 @@ import winsound
 from tkinter import *
 from tkinter import messagebox, ttk
 import tkinter as tk
+from Gadgets.bcolors import bcolors
+from Scripts.B1_sendTrackMail import send_track_mail
 from main import main
 
-# Need starter() because gui can't implement attributes (numOrder, numOfPacks)
-def starter():
+# Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
+
+global browser, finalOrderLink, buyer_name, butikTrackNumber
+def main_starter():
+    global browser, finalOrderLink, buyer_name, butikTrackNumber
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
-    main(numOrder=orderLinkField.get(),
-         numOfPacks=packNum.get())
+    browser, finalOrderLink, \
+    buyer_name, butikTrackNumber = main(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+
+    print("Packs field reset to 0")
+    packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
+    print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
+
+def send_mail_Starter():
+    send_track_mail(browser, finalOrderLink,
+                    buyer_name, butikTrackNumber)
+    print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent.{bcolors.Normal}")
 
 # region הגדרות טקינטר
 root = tk.Tk()  # המסך הראשי
@@ -31,7 +45,7 @@ canvas.pack()
 linkButtonSaver = tk.Frame(root, bg="#23964e")  # כפתור שמירת קישור ותחילת עבודה
 linkButtonSaver.place(relx=0.035, rely=0.32, height=30, width=60, )
 linkButton = ttk.Button(linkButtonSaver, text="המשך", style="W.TButton",
-                        command=starter).pack()
+                        command=main_starter).pack()
 # endregion כפתור המשך לתחילת פעולה
 
 # region כפתור מייל מעקב
@@ -40,7 +54,7 @@ packButtonSaver.place(relx=0.43, rely=0.55, height=60)
 packButton = ttk.Button(packButtonSaver,
                 text="שלח מייל מעקב \n !ומכתב תודה ▶⦿◀", #◍ ✪ ⊛
                 style="W.TButton",
-                command=print("sendTrackNumber")).pack()
+                command=send_mail_Starter).pack()
 # endregion כפתור מייל מעקב
 
 # region שדה מס' הזמנה

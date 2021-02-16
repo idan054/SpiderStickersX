@@ -16,10 +16,12 @@ from Scripts.A7_embedDetails import embed_details
 from Scripts.A8_createDelivery import create_delivery, goToSticker
 from selenium.webdriver.common.keys import Keys
 
+global browser
 
 def main(numOrder, numOfPacks):
+    global browser
     ## 0 setup browser & Gui
-    print(f"{bcolors.Yellow}{bcolors.BOLD} Start {bcolors.Normal}")
+    print(f"{bcolors.Yellow}{bcolors.BOLD}Start{bcolors.Normal}")
     def setup_browser():
         # option = webdriver.ChromeOptions()
         # option.binary_location = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
@@ -70,7 +72,6 @@ def main(numOrder, numOfPacks):
     # (and stop running if delivery not needed)
     deliveryMethod = browser.find_element_by_id("order_shipping_line_items").text
     deliveryNeeded = deliveryMethod_checker(deliveryMethod=deliveryMethod)
-    print(f"deliveryNeeded  = {deliveryNeeded}")
     if not deliveryNeeded: # When deliveryNeeded = False
         browser.quit()  # סוגר את הכרום
         return
@@ -111,6 +112,8 @@ def main(numOrder, numOfPacks):
     sleep(0.27)
     winsound.Beep(1400, 150)
     winsound.Beep(1400, 150)
+
+    return browser, finalOrderLink, buyer_name, butikTrackNumber # Needs to send the tracking mail
 
 # if __name__ == '__main__':
 #     main()

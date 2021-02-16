@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Gadgets/bcolors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gadgets/setup_order_link.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A1_loginWordpress.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A2_goToTab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A3_deliveryMethod.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A4_quantityChecker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A5_defineDetails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A6_loginButik24.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A7_embedDetails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/A8_createDelivery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
+    <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works.">
+      <change afterPath="$PROJECT_DIR$/Scripts/B1_sendTrackMail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +123,28 @@
       <option name="presentableId" value="Default" />
       <updated>1613476140369</updated>
     </task>
+    <task id="LOCAL‎00001" summary="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works.">
+      <created>1613494561773</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1613494561773</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works." />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works." />
   </component>
 </project>
