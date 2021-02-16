@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V1.1 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works. &#10;&quot;Send tracking mail&quot; button just works.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/A7_embedDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A7_embedDetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V1.2 Wordpress - Butik 24&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +129,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1613496848236</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary="V1.2 Wordpress - Butik 24&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+      <created>1613499904438</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1613499904438</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +152,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works." />
     <MESSAGE value="V1.1 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works. &#10;&quot;Send tracking mail&quot; button just works." />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.1 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works. &#10;&quot;Send tracking mail&quot; button just works." />
+    <MESSAGE value="V1.2 Wordpress - Butik 24&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.2 Wordpress - Butik 24&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
   </component>
 </project>
