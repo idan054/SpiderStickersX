@@ -59,10 +59,10 @@ def main(numOrder, numOfPacks):
     loginWordpress(browser=browser)
 
     ## 2 Go to order page
-    # orderNum = orderLinkField.get()
-    # orderNum = "27695" # איסוף עצמי
-    # orderNum = "25560" # Eyal Biton הזמנה עבור
-    # orderNum = "27692" # כולל הערות + כמות גבוהה
+    # numOrder = orderLinkField.get()
+    # numOrder = "27695" # איסוף עצמי
+    # numOrder = "25560" # Eyal Biton הזמנה עבור
+    # numOrder = "27692" # כולל הערות + כמות גבוהה
     finalOrderLink = f"https://www.spider3d.co.il/wp-admin/post.php?post={numOrder}&action=edit"
     goToTab(tabURL=finalOrderLink, browser=browser)
     print(finalOrderLink)
