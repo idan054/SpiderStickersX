@@ -1,4 +1,1 @@
-try:
-    print(x)
-except:
-    print("X not found")
+import goToTab_pkg
