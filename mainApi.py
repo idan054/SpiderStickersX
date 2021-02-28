@@ -1,7 +1,10 @@
 import winsound
 from time import sleep
+from tkinter import messagebox
+
 from selenium import webdriver
 from Gadgets.bcolors import bcolors
+from Gadgets.woocomarceAPI import woocomarce_api
 from Scripts.A2_goToTab import goToTab
 from pynput.keyboard import Key, Controller
 from Scripts.A6_loginButik24 import loginButik24
@@ -17,8 +20,8 @@ keyboard = Controller()
 
 global browser
 
-## main based selenium wordpress woocomarce
-def main(numOrder, numOfPacks):
+## main based wordpress woocomarce API
+def main_api(numOrder, numOfPacks):
     global browser
     ## A0 setup browser & Gui
     print(f"{bcolors.Yellow}{bcolors.BOLD}Start{bcolors.Normal}")
@@ -53,39 +56,52 @@ def main(numOrder, numOfPacks):
         # chrome_ver = radioVar.get()  # 86/87/88
         # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\chromedriver{chrome_ver}.exe")
         return _browser
-    browser = setup_browser()
 
-    ## A1 Login Wordpress
-    loginWordpress(browser=browser)
+    ## Get details from API (V2.0 Update)
+    first_name, last_name, address_1, street_num, street, city, email, phone, \
+    high_quantity, deliveryNeeded, customer_note = woocomarce_api(numOrder=numOrder)
 
-    ## A2 Go to order page
-    # numOrder = orderLinkField.get()
-    # numOrder = "27695" # איסוף עצמי
-    # numOrder = "25560" # Eyal Biton הזמנה עבור
-    # numOrder = "27692" # כולל הערות + כמות גבוהה
-    # numOrder = "27846"
     finalOrderLink = f"https://www.spider3d.co.il/wp-admin/post.php?post={numOrder}&action=edit"
-    goToTab(tabURL=finalOrderLink, browser=browser)
     print(finalOrderLink)
     print("Please Wait!")
 
     ## A3 Check delivery method
     # (and stop running if delivery not needed)
-    deliveryMethod = browser.find_element_by_id("order_shipping_line_items").text
-    deliveryNeeded = deliveryMethod_checker(deliveryMethod=deliveryMethod)
     if not deliveryNeeded: # When deliveryNeeded = False
-        browser.quit()  # סוגר את הכרום
-        return
-    print(f"deliveryNeeded  = {deliveryNeeded}")
+        print(f"{bcolors.Yellow}{bcolors.BOLD}"
+              f' STOP! - עוצר. "איסוף עצמי" נמצא '
+              f"{bcolors.Normal}")
+        # messagebox.showinfo("איסוף עצמי", "¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי")
+        value = messagebox.askyesno(
+            "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
+                                                          ?ליצור משלוח בכל זאת""",
+            default='no')
+        print(value)
+        if not value: # default is False - לא ליצור משלוח
+            browser.quit()  # סוגר את הכרום
+            return
+    print(f"deliveryNeeded = {deliveryNeeded}")
 
     ## A4 Check Quantity of items in order
-    # (and alert if quantity > 1)
-    quantityChecker(browser=browser)
+    if high_quantity:
+        print(f"{bcolors.Yellow}{bcolors.BOLD}"
+              f"יש כפילות"
+              f"{bcolors.Normal}")
+        messagebox.showinfo("מוצר כפול", "╰(*°▽°*)╯  בהזמנה זו יש מוצרים בכמות גבוהה")
+    print(f"high_quantity = {high_quantity}")
 
     ## A5 Get buyer & address details + CHECK FOR BUYER NOTES
-    buyer_city, buyer_street ,buyer_street_number,\
-        buyer_name, clean_address ,buyer_phone, buyer_email,\
-        buyer_notes = define_address_details(browser=browser)
+    # rework API Values to the traditional (from v1.0)
+    buyer_city = city,
+    buyer_street = street,
+    buyer_street_number = street_num,
+    buyer_name = f"{first_name} {last_name}",
+    clean_address = address_1,
+    buyer_phone = phone,
+    buyer_email = email,
+    buyer_notes = customer_note,
+
+    browser = setup_browser()
 
     ## A6 Login Butik 24
     loginButik24(browser=browser)

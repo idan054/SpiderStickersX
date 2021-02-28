@@ -7,6 +7,7 @@ from Scripts.B1_sendTrackMail import send_track_mail
 from main import main
 
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
+from mainApi import main_api
 
 global browser, finalOrderLink, buyer_name, butikTrackNumber
 def main_starter():
@@ -16,7 +17,8 @@ def main_starter():
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
     browser, finalOrderLink, \
-    buyer_name, butikTrackNumber = main(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+    buyer_name, butikTrackNumber = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+    # buyer_name, butikTrackNumber = main(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
 
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
