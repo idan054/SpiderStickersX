@@ -1,20 +1,19 @@
 import winsound
 from time import sleep
-from tkinter import *
-from tkinter import messagebox, ttk
-import tkinter as tk
-import keyboard
 from selenium import webdriver
 from Gadgets.bcolors import bcolors
-from Scripts.A1_loginWordpress import loginWordpress
 from Scripts.A2_goToTab import goToTab
-from Scripts.A3_deliveryMethod import deliveryMethod_checker
-from Scripts.A4_quantityChecker import quantityChecker
-from Scripts.A5_defineDetails import define_address_details
+from pynput.keyboard import Key, Controller
 from Scripts.A6_loginButik24 import loginButik24
 from Scripts.A7_embedDetails import embed_details
-from Scripts.A8_createDelivery import create_delivery, goToSticker
-from selenium.webdriver.common.keys import Keys
+from Scripts.A8_CreateSticker import create_sticker
+from Scripts.A1_loginWordpress import loginWordpress
+from Scripts.A4_quantityChecker import quantityChecker
+from Scripts.A5_defineDetails import define_address_details
+from Scripts.A3_deliveryMethod import deliveryMethod_checker
+from Gadgets.createDeliveryV1_3 import create_deliveryV1_3
+
+keyboard = Controller()
 
 global browser
 
@@ -100,9 +99,8 @@ def main(numOrder, numOfPacks):
 
     ## 8 Create delivery and redirect to sticker Tab
     # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
-    # (and get butikTrackNumber for tracking mail)
-    butikTrackNumber = create_delivery(browser=browser)
-    goToSticker(browser=browser)
+    butikTrackNumber = create_sticker(browser=browser)
+
 
     winsound.Beep(2000, 150)
     winsound.Beep(1500, 150)
@@ -113,6 +111,9 @@ def main(numOrder, numOfPacks):
     sleep(0.27)
     winsound.Beep(1400, 150)
     winsound.Beep(1400, 150)
+    # Press and release space
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
 
     return browser, finalOrderLink, buyer_name, butikTrackNumber # Needs to send the tracking mail
 

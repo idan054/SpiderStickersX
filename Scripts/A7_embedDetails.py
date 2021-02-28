@@ -3,6 +3,7 @@
 # packNum = packNum.get()
 from time import sleep
 
+from Gadgets.bcolors import bcolors
 
 global clean_address_String
 def embed_details(browser, buyer_city, buyer_street
@@ -12,15 +13,20 @@ def embed_details(browser, buyer_city, buyer_street
     # Embed pre-set Spider3D details
 
     global clean_address_String
-    while True: # infinite until break
+    whileIndex = 0
+    while whileIndex < 3: # infinite until break
         try:
-            origin_location = browser.find_element_by_xpath("//*[@id=\"new_task\"]/div[1]/div[6]/div[1]/span/span[1]/span")
+            sleep(1.5)  # (Error fix) Must have to make sure page is up
+            origin_location = browser.find_element_by_xpath('//*[@id="new_task"]/div[1]/div[6]/div[1]/span/span[1]/span')
+            # origin_location = browser.find_element_by_class('select2-selection select2-selection--single')
             origin_location.click()
             havakuk_origin = browser.find_element_by_xpath("//*[@id=\"select2-task_source_location-results\"]/li")
             havakuk_origin.click()
+            print(f"{bcolors.Green}Success {whileIndex}...{bcolors.Normal}")
             break
         except: # When error...
-            print("except...")
+            print(f"{bcolors.Red}except {whileIndex}...{bcolors.Normal}")
+            whileIndex += 1
             sleep(1.5)  # (Error fix) Must have to make sure page is up
 
     try:

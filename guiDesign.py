@@ -18,9 +18,9 @@ def main_starter():
     browser, finalOrderLink, \
     buyer_name, butikTrackNumber = main(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
 
-    print("Packs field reset to 0")
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
+    print("Packs field reset to 1")
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def send_mail_Starter():

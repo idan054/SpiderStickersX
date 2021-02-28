@@ -11,9 +11,11 @@ def send_track_mail(browser, finalOrderLink,
     winsound.Beep(2000, 110)
     winsound.Beep(1000, 100)
     goToTab(browser=browser, tabURL=finalOrderLink)
+
+    butikTrackNumber = str(butikTrackNumber)
     print(finalOrderLink)
     print(butikTrackNumber)
-    print("Please Wait!")
+    print("\nPlease Wait!")
 
     mailValue = """
         היי """ + buyer_name + """, 

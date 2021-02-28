@@ -6,8 +6,9 @@ def goToTab(tabURL, browser):
     browser.switch_to.window(browser.window_handles[0])  # עובר לטאב פעיל כדי למנוע שגיאה במקרה שהטאב הפעיל נסגר
     print("Successfully redirect active available tab")
 
-    print(browser.current_window_handle)
-    print(browser.current_url)  # הדפס את קישור הדף
+    # print(browser.current_window_handle)
+    # print(browser.current_url)  # הדפס את קישור הדף
+    print(browser.title)  # הדפס את קישור הדף
 
     # בודק אם הטאב קיים ופתוח כרגע
     def TabURLChecker():  # בודק האם הטאב המבוקש פתוח
@@ -25,7 +26,7 @@ def goToTab(tabURL, browser):
                 # browser.refresh()
                 break  # אם דף משלוח חדש פתוח, עצור בו
             else:
-                print(tabURL + " != " + browser.current_url)
+                print(tabURL + " != " + browser.title)
 
     TabURLChecker()
 
@@ -34,6 +35,6 @@ def goToTab(tabURL, browser):
         print("Butik 24 Not Found, try OPEN Butik24 Tab")
         browser.execute_script(f'''window.open("{tabURL}","_blank");''')
         TabURLChecker()
-        print(browser.current_url)  # הדפס את קישור הדף
+        print(browser.title)  # הדפס את קישור הדף
         # browser.execute_script(window.open(tabURL))
         # pass
