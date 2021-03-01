@@ -4,9 +4,9 @@ from tkinter import messagebox, ttk
 import tkinter as tk
 from Gadgets.bcolors import bcolors
 from Scripts.B1_sendTrackMail import send_track_mail
-from main import main
 
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
+from Scripts.B1_sendTrackMail_Api import send_track_mail_api
 from mainApi import main_api
 
 global browser, finalOrderLink, buyer_name, butikTrackNumber
@@ -26,8 +26,9 @@ def main_starter():
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def send_mail_Starter():
-    send_track_mail(browser, finalOrderLink,
-                    buyer_name, butikTrackNumber)
+    # send_track_mail(browser, finalOrderLink, buyer_name, butikTrackNumber)
+    ## Send track mail and change status to complete from API
+    send_track_mail_api(browser, orderLinkField.get(), buyer_name, butikTrackNumber)
     print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent.{bcolors.Normal}")
 
 # region הגדרות טקינטר

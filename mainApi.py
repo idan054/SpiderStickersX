@@ -4,17 +4,12 @@ from tkinter import messagebox
 
 from selenium import webdriver
 from Gadgets.bcolors import bcolors
-from Gadgets.woocomarceAPI import woocomarce_api
-from Scripts.A2_goToTab import goToTab
+from Scripts.A1_woocomarceGetAPI import woocomarce_api
+from Gadgets.goToTab import goToTab
 from pynput.keyboard import Key, Controller
-from Scripts.A6_loginButik24 import loginButik24
-from Scripts.A7_embedDetails import embed_details
-from Scripts.A8_CreateSticker import create_sticker
-from Scripts.A1_loginWordpress import loginWordpress
-from Scripts.A4_quantityChecker import quantityChecker
-from Scripts.A5_defineDetails import define_address_details
-from Scripts.A3_deliveryMethod import deliveryMethod_checker
-from Gadgets.createDeliveryV1_3 import create_deliveryV1_3
+from Scripts.A2_loginButik24 import loginButik24
+from Scripts.A3_embedDetails import embed_details
+from Scripts.A4_CreateSticker import create_sticker
 
 keyboard = Controller()
 
@@ -65,7 +60,7 @@ def main_api(numOrder, numOfPacks):
     print(finalOrderLink)
     print("Please Wait!")
 
-    ## A3 Check delivery method
+    ## Check delivery method
     # (and stop running if delivery not needed)
     if not deliveryNeeded: # When deliveryNeeded = False
         print(f"{bcolors.Yellow}{bcolors.BOLD}"
@@ -82,7 +77,7 @@ def main_api(numOrder, numOfPacks):
             return
     print(f"deliveryNeeded = {deliveryNeeded}")
 
-    ## A4 Check Quantity of items in order
+    ## Check Quantity of items in order
     if high_quantity:
         print(f"{bcolors.Yellow}{bcolors.BOLD}"
               f"יש כפילות"
@@ -90,7 +85,7 @@ def main_api(numOrder, numOfPacks):
         messagebox.showinfo("מוצר כפול", "╰(*°▽°*)╯  בהזמנה זו יש מוצרים בכמות גבוהה")
     print(f"high_quantity = {high_quantity}")
 
-    ## A5 Get buyer & address details + CHECK FOR BUYER NOTES
+    ## rework buyer & address details + CHECK FOR BUYER NOTES
     # rework API Values to the traditional (from v1.0)
     buyer_city = city,
     buyer_street = street,
@@ -103,18 +98,18 @@ def main_api(numOrder, numOfPacks):
 
     browser = setup_browser()
 
-    ## A6 Login Butik 24
+    ## A2 Login Butik 24
     loginButik24(browser=browser)
     goToTab(browser=browser, tabURL="https://members.lionwheel.com/tasks/new?locale=he")
 
-    ## A7 Embed buyer details on order page
+    ## A3 Embed buyer details on order page
     # packNum = packNum.get()
     embed_details(browser, buyer_city, buyer_street
                   , buyer_street_number, buyer_name,
                   clean_address, buyer_phone, buyer_email,
                   buyer_notes, numOrder, numOfPacks)
 
-    ## A8 Create delivery and redirect to sticker Tab
+    ## A4 Create delivery and redirect to sticker Tab
     # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
     butikTrackNumber = create_sticker(browser=browser)
 

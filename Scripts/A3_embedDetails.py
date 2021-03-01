@@ -13,21 +13,60 @@ def embed_details(browser, buyer_city, buyer_street
     # Embed pre-set Spider3D details
 
     global clean_address_String
-    whileIndex = 0
-    while whileIndex < 3: # infinite until break
-        try:
-            sleep(1.5)  # (Error fix) Must have to make sure page is up
-            origin_location = browser.find_element_by_xpath('//*[@id="new_task"]/div[1]/div[6]/div[1]/span/span[1]/span')
-            # origin_location = browser.find_element_by_class('select2-selection select2-selection--single')
-            origin_location.click()
-            havakuk_origin = browser.find_element_by_xpath("//*[@id=\"select2-task_source_location-results\"]/li")
-            havakuk_origin.click()
-            print(f"{bcolors.Green}Success {whileIndex}...{bcolors.Normal}")
-            break
-        except: # When error...
-            print(f"{bcolors.Red}except {whileIndex}...{bcolors.Normal}")
-            whileIndex += 1
-            sleep(1.5)  # (Error fix) Must have to make sure page is up
+    # whileIndex = 0
+    # while whileIndex < 3: # infinite until break
+    #     try:
+    #         sleep(0.5)
+    #         origin_location = browser.find_element_by_xpath('//*[@id="new_task"]/div[1]/div[6]/div[1]/span/span[1]/span')
+    #         # origin_location = browser.find_element_by_class('select2-selection select2-selection--single')
+    #         origin_location.click()
+    #         sleep(0.5)
+    #         havakuk_origin = browser.browser.find_element_by_link_text("ספיידר תלת מימד")
+    #         havakuk_origin.click()
+    #         print(f"{bcolors.Green}Success {whileIndex}...{bcolors.Normal}")
+    #         break
+    #     except: # When error...
+    #         print(f"{bcolors.Red}except {whileIndex}...{bcolors.Normal}")
+    #         whileIndex += 1
+
+
+    def embed_spider_details():
+        s = browser.find_element_by_xpath('//*[@id="task_source_name"]')
+        s.send_keys("ספיידר תלת מימד")
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="source-city-other-button"]')
+        s.click()
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="task_source_city_other"]')
+        s.send_keys("גדרה")
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="source-street-other-button"]')
+        s.click()
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="task_source_street_other"]')
+        s.send_keys("חבקוק")
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="task_source_number"]')
+        s.send_keys("114")
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="task_source_notes"]')
+        s.send_keys("אייל - 058-5551234")
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="task_source_phone"]')
+        s.send_keys("0522509900")
+
+        sleep(0.2)
+        s = browser.find_element_by_xpath('//*[@id="task_source_email"]')
+        s.send_keys("info@spider3d.co.il")
+    embed_spider_details()
+
 
     try:
         clean_address_String = ' '.join([str(x) for x in clean_address])

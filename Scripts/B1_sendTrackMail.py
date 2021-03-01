@@ -3,7 +3,7 @@ from time import sleep
 
 from selenium.webdriver.common.keys import Keys
 
-from Scripts.A2_goToTab import goToTab
+from Gadgets.goToTab import goToTab
 
 
 def send_track_mail(browser, finalOrderLink,

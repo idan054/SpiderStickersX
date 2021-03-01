@@ -1,4 +1,4 @@
-from Scripts.A2_goToTab import goToTab
+from Gadgets.goToTab import goToTab
 
 
 def create_sticker(browser):
