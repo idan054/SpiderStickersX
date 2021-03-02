@@ -111,16 +111,27 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
                 break
 
             ## break while loop
-            sleep(1.5)
+            sleep(1)
             if whileIndex > 7:
                 print(f"{bcolors.Red}Already checked many times.{bcolors.Normal}")
                 print("sms_status is ", sms_status)
-                messagebox.showwarning("מצב סמס", f"  ಥ_ಥ שימו לב, מצב ההזמנה \n          {sms_status} שזוהה הוא ")
+
+                messagebox_text = f"""{sms_status} שימו לב, מצב הודעת הסמס שזוהה הוא
+                         www.callr.com ניתן לקבל מידע נוסף באתר
+                Idan05423 :סיסמא  |   spider3d_1 :שם משתמש """
+
+                messagebox.showerror("שגיאה בשליחת סמס", messagebox_text)
                 json_printer(sms_details)
                 break
     check_sms()
-    sleep(0.12)
+
+    # sleep(0.12)
+    winsound.Beep(2000, 150)
+    winsound.Beep(1500, 150)
     browser.quit()  # סוגר את הכרום
+    winsound.Beep(1500, 150)
+    winsound.Beep(2000, 150)
+
 
 ## Example
 # complete_and_notifications(numOrder=22560, buyer_name="עומרי", butikTrackNumber="1117365",

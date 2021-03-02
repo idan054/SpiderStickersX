@@ -36,11 +36,7 @@ def send_mail_Starter():
         browser=browser,
         numOrder=orderLinkField.get(), buyer_name=buyer_name, butikTrackNumber=butikTrackNumber,
         buyer_phone=buyer_phone, butikBarCode=butikBarCode)
-    print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent\nOrder status changed to complete.{bcolors.Normal}")
-    winsound.Beep(2000, 150)
-    winsound.Beep(1500, 150)
-    winsound.Beep(1500, 150)
-    winsound.Beep(2000, 150)
+    print(f"{bcolors.Yellow}{bcolors.BOLD}Track SMS & Mail sent\nOrder status changed to complete.{bcolors.Normal}")
 
     # except:
     #     messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
