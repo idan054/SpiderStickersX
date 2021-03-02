@@ -1,4 +1,5 @@
 import winsound
+from threading import Thread
 from time import sleep
 from tkinter import messagebox
 
@@ -37,9 +38,12 @@ def main_api(numOrder, numOfPacks):
         # options.add_argument(f"user-data-dir=C:\\Users\\{user_field.get()}\\AppData\\Local\\Google\\Chrome\\User Data")
         # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe", options=options)
 
+        options = webdriver.ChromeOptions()
+        options.add_argument("--window-size=550,1080")
         args = ["hide_console", ]
         _browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe",
-                                   service_args=args)
+                                    service_args=args,
+                                    options=options)
 
         # browser = webdriver.Chrome(options=options)
         ChromeVer = _browser.capabilities['browserVersion']

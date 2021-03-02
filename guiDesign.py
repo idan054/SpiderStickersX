@@ -26,7 +26,7 @@ def main_starter():
     print("Packs field reset to 1")
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
-def send_mail_Starter():
+def part_b_starter():
     # try:
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
 
@@ -67,9 +67,9 @@ linkButton = ttk.Button(linkButtonSaver, text="המשך", style="W.TButton",
 packButtonSaver = tk.Frame(root, bg="#23964e", padx=20)  # כפתור עדכון כמות חבילות
 packButtonSaver.place(relx=0.43, rely=0.55, height=60)
 packButton = ttk.Button(packButtonSaver,
-                text="שלח התראות מעקב \n !ומכתב תודה ▶⦿◀", #◍ ✪ ⊛
-                style="W.TButton",
-                command=send_mail_Starter).pack()
+                        text="שלח התראות מעקב \n !ומכתב תודה ▶⦿◀",  #◍ ✪ ⊛
+                        style="W.TButton",
+                        command=part_b_starter).pack()
 # endregion כפתור מייל מעקב
 
 # region שדה מס' הזמנה

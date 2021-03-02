@@ -89,8 +89,8 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     messagebox.showinfo("נשלח בהצלחה", "(●'◡'●)  מייל נשלח בהצלחה ללקוח \n        סטטוס ההזמנה שונה להושלם")
 
     def check_sms():
+        sleep(2)
         ## Make sure sms is RECEIVED
-
         global api, sms_hash
         whileIndex = 0
         sms_details = api.call('sms.get', sms_hash)
@@ -111,14 +111,20 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
                 break
 
             ## break while loop
-            sleep(1)
-            if whileIndex > 7:
+            sleep(2)
+            if whileIndex > 10:
                 print(f"{bcolors.Red}Already checked many times.{bcolors.Normal}")
                 print("sms_status is ", sms_status)
 
-                messagebox_text = f"""{sms_status} שימו לב, מצב הודעת הסמס שזוהה הוא
-                         www.callr.com ניתן לקבל מידע נוסף באתר
-                Idan05423 :סיסמא  |   spider3d_1 :שם משתמש """
+                messagebox_text = f"""
+                    !אך אל חשש{f" .{sms_status} "}שימו לב, מצב הודעת הסמס שזוהה הוא
+                 .כמעט וודאי שההודעת הסמס נשלחה, והלקוח קיבל גם מייל מעקב
+
+                                                 ניתן לעקוב אחר סטטוס הסמס באקסל שניתן 
+                                            www.app.callr.com/logs/sms להשיג בכתובת
+                                        Idan05423 :סיסמא  |   spider3d_1 :שם משתמש
+                                                          {sms_hash} :יש לשמור את שם הסמס 
+                """
 
                 messagebox.showerror("שגיאה בשליחת סמס", messagebox_text)
                 json_printer(sms_details)

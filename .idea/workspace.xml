@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V2.23 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.23)&#10;* .exe update&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
-      <change afterPath="$PROJECT_DIR$/exeMaker.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV2.2B.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/guiDesignV2.23.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exeMaker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiDesignV2.2B.exe" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesignV2.23.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guiDesignV2.23.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiDesignV2.23.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +60,7 @@
       <recent name="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Scripts" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tests">
+  <component name="RunManager" selected="Python.guiDesign">
     <configuration name="B1_complete_and_notifications (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SpiderStickersX" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +124,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sendSms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mainApi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SpiderStickersX" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -122,11 +132,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Gadgets\sendSms.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mainApi.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -179,8 +189,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tests" />
         <item itemvalue="Python.guiDesign" />
+        <item itemvalue="Python.tests" />
+        <item itemvalue="Python.mainApi" />
         <item itemvalue="Python.B1_complete_and_notifications (1)" />
         <item itemvalue="Python.smsCallr" />
       </list>
@@ -285,7 +296,13 @@
       <option name="presentableId" value="LOCAL‎00015" />
       <updated>1614719771439</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎00016" summary="V2.23 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.23)&#10;* .exe update&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+      <created>1614720016458</created>
+      <option name="number" value="LOCAL‎00016" />
+      <option name="presentableId" value="LOCAL‎00016" />
+      <updated>1614720016458</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
