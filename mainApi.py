@@ -4,19 +4,22 @@ from tkinter import messagebox
 
 from selenium import webdriver
 from Gadgets.bcolors import bcolors
-from Scripts.A1_woocomarceGetAPI import woocomarce_api
+from Scripts.A1_wooGetAPI import woocomarce_api
 from Gadgets.goToTab import goToTab
-from pynput.keyboard import Key, Controller
 from Scripts.A2_loginButik24 import loginButik24
 from Scripts.A3_embedDetails import embed_details
-from Scripts.A4_CreateSticker import create_sticker
+from Scripts.A4_createSticker import create_sticker
 
+from pynput.keyboard import Key, Controller
 keyboard = Controller()
 
 global browser
 
 ## main based wordpress woocomarce API
 def main_api(numOrder, numOfPacks):
+    if numOrder == "":
+        numOrder = 28020 # Some default
+
     global browser
     ## A0 setup browser & Gui
     print(f"{bcolors.Yellow}{bcolors.BOLD}Start{bcolors.Normal}")
@@ -53,8 +56,10 @@ def main_api(numOrder, numOfPacks):
         return _browser
 
     ## Get details from API (V2.0 Update)
-    first_name, last_name, address_1, street_num, street, city, email, phone, \
-    high_quantity, deliveryNeeded, customer_note = woocomarce_api(numOrder=numOrder)
+    first_name, last_name, address_1, street_num, street, city, \
+    email, phone, high_quantity, deliveryNeeded, customer_note = woocomarce_api(numOrder=numOrder)
+
+    print("woocomarce_api Done")
 
     finalOrderLink = f"https://www.spider3d.co.il/wp-admin/post.php?post={numOrder}&action=edit"
     print(finalOrderLink)
@@ -85,16 +90,20 @@ def main_api(numOrder, numOfPacks):
         messagebox.showinfo("מוצר כפול", "╰(*°▽°*)╯  בהזמנה זו יש מוצרים בכמות גבוהה")
     print(f"high_quantity = {high_quantity}")
 
+    ## Check customer note
+    if customer_note != "":
+        messagebox.showinfo("הערה מהלקוח", "ಠ_ಠ שים לב להערה של הלקוח")
+
     ## rework buyer & address details + CHECK FOR BUYER NOTES
     # rework API Values to the traditional (from v1.0)
-    buyer_city = city,
-    buyer_street = street,
-    buyer_street_number = street_num,
-    buyer_name = f"{first_name} {last_name}",
-    clean_address = address_1,
-    buyer_phone = phone,
-    buyer_email = email,
-    buyer_notes = customer_note,
+    buyer_city = city
+    buyer_street = street
+    buyer_street_number = street_num
+    buyer_name = f"{first_name} {last_name}"
+    clean_address = address_1
+    buyer_phone = phone
+    buyer_email = email
+    buyer_notes = customer_note
 
     browser = setup_browser()
 
@@ -111,7 +120,7 @@ def main_api(numOrder, numOfPacks):
 
     ## A4 Create delivery and redirect to sticker Tab
     # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
-    butikTrackNumber = create_sticker(browser=browser)
+    butikTrackNumber, butikBarCode = create_sticker(browser=browser)
 
 
     winsound.Beep(2000, 150)
@@ -124,10 +133,10 @@ def main_api(numOrder, numOfPacks):
     winsound.Beep(1400, 150)
     winsound.Beep(1400, 150)
     # Press and release space
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    # keyboard.press(Key.enter)
+    # keyboard.release(Key.enter)
 
-    return browser, finalOrderLink, buyer_name, butikTrackNumber # Needs to send the tracking mail
+    return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
 
 # if __name__ == '__main__':
 #     main()

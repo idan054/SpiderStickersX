@@ -1,7 +1,7 @@
 from time import sleep
 
 
-
+## A2 Login butik from selenium
 def loginButik24(browser):
     browser.switch_to.window(browser.window_handles[0])  # עובר לטאב פעיל כדי למנוע שגיאה במקרה שהטאב הפעיל נסגר
     browser.get("https://members.lionwheel.com/?locale=he") #התחברות

@@ -1,24 +1,25 @@
 import winsound
-from tkinter import *
-from tkinter import messagebox, ttk
 import tkinter as tk
+from tkinter import *
+
+from Gadgets.sendSms import send_sms
+from mainApi import main_api
 from Gadgets.bcolors import bcolors
-from Scripts.B1_sendTrackMail import send_track_mail
+from tkinter import messagebox, ttk
+from Scripts.B1_complete_and_notifications import complete_and_notifications
+
 
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
-from Scripts.B1_sendTrackMail_Api import send_track_mail_api
-from mainApi import main_api
-
-global browser, finalOrderLink, buyer_name, butikTrackNumber
+global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
 def main_starter():
-    global browser, finalOrderLink, buyer_name, butikTrackNumber
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
     browser, finalOrderLink, \
-    buyer_name, butikTrackNumber = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
-    # buyer_name, butikTrackNumber = main(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+    buyer_name, butikTrackNumber, butikBarCode, buyer_phone =\
+        main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
 
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
@@ -26,15 +27,37 @@ def main_starter():
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def send_mail_Starter():
-    # send_track_mail(browser, finalOrderLink, buyer_name, butikTrackNumber)
-    ## Send track mail and change status to complete from API
-    send_track_mail_api(browser, orderLinkField.get(), buyer_name, butikTrackNumber)
-    print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent.{bcolors.Normal}")
+    try:
+        global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+
+        ## Send track mail & change status to complete
+        complete_and_notifications(orderLinkField.get(), buyer_name, butikTrackNumber)
+        print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent\nOrder status changed to complete.{bcolors.Normal}")
+
+        ## Send confirmation & tracking link on SMS
+        # Cost 0.078$ = 0.26₪, Until 70 characters
+        # input("READY?")
+        print(butikBarCode)
+        print(str(buyer_phone))
+        send_sms(butikBarCode=butikBarCode, buyer_phone=str(buyer_phone))
+        messagebox.showinfo("נשלח בהצלחה", "(●'◡'●)  מייל נשלח בהצלחה ללקוח \n        סטטוס ההזמנה שונה להושלם")
+
+        ## Finish
+        browser.quit()  # סוגר את הכרום
+        winsound.Beep(2000, 150)
+        winsound.Beep(1500, 150)
+        winsound.Beep(1500, 150)
+        winsound.Beep(2000, 150)
+
+    except:
+        messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
+
+## Design
 
 # region הגדרות טקינטר
 root = tk.Tk()  # המסך הראשי
 root.configure(background="#23964e")
-root.title("Spider3D Stickers")
+root.title("Spider Stickers 2")
 ttk.Style(root).configure('myStyle.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
 ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", foreground = 'black')
 # root.iconbitmap(r'C:\Users\idanb\Documents\MEGAsync\App4Sale\Spider3D\BlackLogoRoundedPNG.ico', )#לא בטוח למה צריך את הr
@@ -55,7 +78,7 @@ linkButton = ttk.Button(linkButtonSaver, text="המשך", style="W.TButton",
 packButtonSaver = tk.Frame(root, bg="#23964e", padx=20)  # כפתור עדכון כמות חבילות
 packButtonSaver.place(relx=0.43, rely=0.55, height=60)
 packButton = ttk.Button(packButtonSaver,
-                text="שלח מייל מעקב \n !ומכתב תודה ▶⦿◀", #◍ ✪ ⊛
+                text="שלח התראות מעקב \n !ומכתב תודה ▶⦿◀", #◍ ✪ ⊛
                 style="W.TButton",
                 command=send_mail_Starter).pack()
 # endregion כפתור מייל מעקב
@@ -65,7 +88,7 @@ entry_link_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט לקישור
 entry_link_Frame.place(relx=0.25, rely=0.32, height=30, width=184, )
 orderLinkField = ttk.Entry(entry_link_Frame, font=("rubik", 14 ), width=30, justify="center")
 orderLinkField.pack()
-# orderLinkField.insert(0, "25644")
+# orderLinkField.insert(0, "28020")
 # endregion שדה מס' הזמנה
 # איסוף עצמי "27695"
 # "25560" # Eyal Biton הזמנה עבור
@@ -106,9 +129,14 @@ R3.pack( anchor = W)
 # endregion
 
 # region כותרת "הכנס מס' הזמנה"
+## Official green V1. #23964e
 alertBottomFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
 alertBottomFrame.place(relx=0.45, rely=0.07, height=30, width=200, )
 alertLabel = Label(alertBottomFrame, text="הכנס מס' הזמנה", font=("rubik", 12, "bold"), bg="#23964e", fg="white").pack()
+
+subTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )
+subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.26₪", font=("rubik", 9), bg="#23964e", fg="white").pack()
 # endregion "כותרת "הכנס מס' הזמנה
 
 root.mainloop()

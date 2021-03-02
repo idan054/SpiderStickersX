@@ -3,32 +3,14 @@
 # packNum = packNum.get()
 from time import sleep
 
+ ## A3 Embed details to Butik 24 based selenium
 from Gadgets.bcolors import bcolors
 
-global clean_address_String
+
 def embed_details(browser, buyer_city, buyer_street
                   ,buyer_street_number, buyer_name,
                   clean_address ,buyer_phone, buyer_email,
                   buyer_notes, orderNum, packNum):
-    # Embed pre-set Spider3D details
-
-    global clean_address_String
-    # whileIndex = 0
-    # while whileIndex < 3: # infinite until break
-    #     try:
-    #         sleep(0.5)
-    #         origin_location = browser.find_element_by_xpath('//*[@id="new_task"]/div[1]/div[6]/div[1]/span/span[1]/span')
-    #         # origin_location = browser.find_element_by_class('select2-selection select2-selection--single')
-    #         origin_location.click()
-    #         sleep(0.5)
-    #         havakuk_origin = browser.browser.find_element_by_link_text("ספיידר תלת מימד")
-    #         havakuk_origin.click()
-    #         print(f"{bcolors.Green}Success {whileIndex}...{bcolors.Normal}")
-    #         break
-    #     except: # When error...
-    #         print(f"{bcolors.Red}except {whileIndex}...{bcolors.Normal}")
-    #         whileIndex += 1
-
 
     def embed_spider_details():
         s = browser.find_element_by_xpath('//*[@id="task_source_name"]')
@@ -65,12 +47,29 @@ def embed_details(browser, buyer_city, buyer_street
         sleep(0.2)
         s = browser.find_element_by_xpath('//*[@id="task_source_email"]')
         s.send_keys("info@spider3d.co.il")
-    embed_spider_details()
-
+    ## embed_spider_details
+    whileIndex = 0
+    while whileIndex < 3: # infinite until break
+        try:
+            sleep(1.5)  # (Error fix) Must have to make sure page is up
+            origin_location = browser.find_element_by_xpath('//*[@id="new_task"]/div[1]/div[6]/div[1]/span/span[1]/span')
+            # origin_location = browser.find_element_by_class('select2-selection select2-selection--single')
+            origin_location.click()
+            havakuk_origin = browser.find_element_by_xpath("//*[@id=\"select2-task_source_location-results\"]/li")
+            havakuk_origin.click()
+            print(f"{bcolors.Green}Success adding spider details automatically{whileIndex}...{bcolors.Normal}")
+            break
+        except: # When error...
+            print(f"{bcolors.Red}except. adding spider details manually {whileIndex}...{bcolors.Normal}")
+            embed_spider_details()
+            whileIndex += 1
+            sleep(1.5)  # (Error fix) Must have to make sure page is up
 
     try:
-        clean_address_String = ' '.join([str(x) for x in clean_address])
-        print(clean_address_String)
+        print("Try adding Note!")
+        print("clean_address:")
+        print(clean_address)
+
         destinationNotes = browser.find_element_by_id("task_destination_notes")
         # destinationNotes.send_keys(clean_address_String + f". מס' הזמנה: #{orderNum} " + "\n" + buyer_notes)
         destinationNotes.send_keys(f". מס' הזמנה: #{orderNum} " + "\n" + buyer_notes)
@@ -100,14 +99,15 @@ def embed_details(browser, buyer_city, buyer_street
     try:
         streetField = browser.find_element_by_name("task[destination_street_other]")
         # streetField.send_keys(buyer_street)
-        streetField.send_keys(clean_address_String)
+        streetField.send_keys(clean_address)
     except:
         print("Error while add street")
         pass
 
     try:
         streetNumField = browser.find_element_by_id("task_destination_number")
-        streetNumField.send_keys(buyer_street_number)
+        # No needed because full clean_address
+        # streetNumField.send_keys(buyer_street_number)
     except:
         print("Error while add street Number")
         pass
