@@ -1,2 +1,0 @@
-Run this code to make an .exe
-pyinstaller --noconfirm --onefile --windowed  "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/guiDesign.py"
