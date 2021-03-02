@@ -1,0 +1,2 @@
+To make .exe run on terminal:
+pyinstaller --noconfirm --onefile --windowed  "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/guiDesign.py"
