@@ -27,30 +27,23 @@ def main_starter():
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def send_mail_Starter():
-    try:
-        global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+    # try:
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
 
-        ## Send track mail & change status to complete
-        complete_and_notifications(orderLinkField.get(), buyer_name, butikTrackNumber)
-        print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent\nOrder status changed to complete.{bcolors.Normal}")
+    ## Send track mail & change status to complete
+    ## Send SMS confirmation & tracking link on SMS
+    complete_and_notifications(
+        browser=browser,
+        numOrder=orderLinkField.get(), buyer_name=buyer_name, butikTrackNumber=butikTrackNumber,
+        buyer_phone=buyer_phone, butikBarCode=butikBarCode)
+    print(f"{bcolors.Yellow}{bcolors.BOLD}Track mail sent\nOrder status changed to complete.{bcolors.Normal}")
+    winsound.Beep(2000, 150)
+    winsound.Beep(1500, 150)
+    winsound.Beep(1500, 150)
+    winsound.Beep(2000, 150)
 
-        ## Send confirmation & tracking link on SMS
-        # Cost 0.078$ = 0.26₪, Until 70 characters
-        # input("READY?")
-        print(butikBarCode)
-        print(str(buyer_phone))
-        send_sms(butikBarCode=butikBarCode, buyer_phone=str(buyer_phone))
-        messagebox.showinfo("נשלח בהצלחה", "(●'◡'●)  מייל נשלח בהצלחה ללקוח \n        סטטוס ההזמנה שונה להושלם")
-
-        ## Finish
-        browser.quit()  # סוגר את הכרום
-        winsound.Beep(2000, 150)
-        winsound.Beep(1500, 150)
-        winsound.Beep(1500, 150)
-        winsound.Beep(2000, 150)
-
-    except:
-        messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
+    # except:
+    #     messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
 
 ## Design
 

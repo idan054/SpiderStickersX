@@ -1,7 +1,7 @@
 import winsound
 from time import sleep
 from tkinter import messagebox
-
+from threading import Thread
 from callr import callr
 from selenium.webdriver.common.keys import Keys
 import requests
@@ -13,7 +13,7 @@ from Gadgets.bitlyShorter import bitly_shorter
 from Gadgets.jsonPrinter import json_printer
 
 global api, sms_hash
-def complete_and_notifications(numOrder, buyer_name, butikTrackNumber,
+def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
                                buyer_phone, butikBarCode):
 
     winsound.Beep(2000, 110)
@@ -65,7 +65,8 @@ def complete_and_notifications(numOrder, buyer_name, butikTrackNumber,
 
         ## Send the SMS
         api = callr.Api("spider3d_1", "Idan05423")
-        # result = api.call("system.get_timestamp")
+        result = api.call("system.get_timestamp")
+        print("result is ", result)
 
         # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ )
         text = (
@@ -74,7 +75,7 @@ def complete_and_notifications(numOrder, buyer_name, butikTrackNumber,
                 f'למעקב:\n {bit_link}')
 
         _buyer_phone = f"+972{buyer_phone[1:]}"
-        # print(_buyer_phone)
+        print(_buyer_phone)
         # print(type(_buyer_phone))
 
         # input("R u sure u want pay 0.26₪ to send SMS ?")
@@ -82,7 +83,8 @@ def complete_and_notifications(numOrder, buyer_name, butikTrackNumber,
         sms_hash = api.call('sms.send', 'SMS', _buyer_phone, text, None)
         # sms_hash = "0LWLNVLH"
         print("sms_hash is ", sms_hash)
-    send_sms()
+    ## Run in background!
+    Thread(target=send_sms).start()
 
     messagebox.showinfo("נשלח בהצלחה", "(●'◡'●)  מייל נשלח בהצלחה ללקוח \n        סטטוס ההזמנה שונה להושלם")
 
@@ -90,7 +92,6 @@ def complete_and_notifications(numOrder, buyer_name, butikTrackNumber,
         ## Make sure sms is RECEIVED
 
         global api, sms_hash
-        sleep(1)
         whileIndex = 0
         sms_details = api.call('sms.get', sms_hash)
         # json_printer(sms_details)
@@ -117,10 +118,16 @@ def complete_and_notifications(numOrder, buyer_name, butikTrackNumber,
                 messagebox.showwarning("מצב סמס", f"  ಥ_ಥ שימו לב, מצב ההזמנה \n          {sms_status} שזוהה הוא ")
                 json_printer(sms_details)
                 break
-
-
+    check_sms()
+    sleep(0.12)
+    browser.quit()  # סוגר את הכרום
 
 ## Example
+# complete_and_notifications(numOrder=22560, buyer_name="עומרי", butikTrackNumber="1117365",
+#                                buyer_phone="0584770076", butikBarCode="NZW7T3WW4U")
+
+
+
 # Disable browser before use
 # send_track_mail_api(numOrder=28009,
 #                     buyer_name="Example",
