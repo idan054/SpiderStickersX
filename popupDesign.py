@@ -1,30 +1,24 @@
 import winsound
+from time import sleep
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox, ttk
 
-# creates a Tk() object
-from Scripts.A1_wooGetAPI import woocomarce_api
+theGrey = "#f0f0f0" # Windows default grey
 
 master = Tk()
-# master.configure(background="blue")
 
-# sets the geometry of main  
-# root window 
-master.geometry("200x200")
-
-theGrey = "#f0f0f0" # Windows default grey
-def openNewWindow():
+def openNewWindow(root):
+    print("Opening new window...")
     # Toplevel object which will
     # be treated as a new window
-    newWindow = Toplevel(master)
+
+    newWindow = Toplevel(root)
+    # newWindow = Tk()
     newWindow.configure(background="white")
-    newWindow.title("New Window")
-    newWindow.focus_force()
     newWindow.geometry("200x160")
-
-    # sets the geometry of toplevel
-
+    newWindow.title("א.ע")
+    newWindow.focus_force()
     ttk.Style(newWindow).configure('myStyle.TRadiobutton',
                                 foreground='black',
                                 background="white",
@@ -105,35 +99,6 @@ def openNewWindow():
                      value=3,
                      command=change_selection,
                      style="myStyle.TRadiobutton").pack(anchor=W) #.state(['selected'])
+openNewWindow(master)
 
-def msg():
-    first_name, last_name, address_1, street_num, street, city, \
-    email, phone, high_quantity, deliveryNeeded, customer_note = woocomarce_api(numOrder=27695)
-
-    if not deliveryNeeded:
-        value = messagebox.askyesno(
-            "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
-                                                          ?ליצור משלוח בכל זאת""",
-            default='no')
-        print(value)
-        ## When delivery no needed.
-        if not value:  # default is False - לא ליצור משלוח
-            openNewWindow()
-            # browser.quit()  # סוגר את הכרום
-
-# function to open a new window  
-# on a button click
-hex_c = "fbfbfb"
-ttk.Style(master).configure('myStyle.TRadiobutton',
-                            foreground='black',
-                            font = ("rubik", 9, "bold"))
-
-# a button widget which will open a  
-# new window on button click 
-btn = ttk.Button(master,
-             text="Click to open a new window",
-             command=msg)
-btn.pack(pady=10)
-
-# mainloop, runs infinitely 
-mainloop() 
+mainloop()

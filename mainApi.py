@@ -1,8 +1,7 @@
 import winsound
 from threading import Thread
 from time import sleep
-from tkinter import messagebox
-
+from tkinter import messagebox, mainloop
 from selenium import webdriver
 from Gadgets.bcolors import bcolors
 from Scripts.A1_wooGetAPI import woocomarce_api
@@ -10,8 +9,12 @@ from Gadgets.goToTab import goToTab
 from Scripts.A2_loginButik24 import loginButik24
 from Scripts.A3_embedDetails import embed_details
 from Scripts.A4_createSticker import create_sticker
-
 from pynput.keyboard import Key, Controller
+from time import sleep
+import tkinter as tk
+from tkinter import *
+from tkinter import messagebox, ttk
+
 keyboard = Controller()
 
 global browser
@@ -59,6 +62,8 @@ def main_api(numOrder, numOfPacks):
         # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\chromedriver{chrome_ver}.exe")
         return _browser
 
+    print("woocomarce_api Start")
+
     ## Get details from API (V2.0 Update)
     first_name, last_name, address_1, street_num, street, city, \
     email, phone, high_quantity, deliveryNeeded, customer_note = woocomarce_api(numOrder=numOrder)
@@ -76,14 +81,18 @@ def main_api(numOrder, numOfPacks):
               f' STOP! - עוצר. "איסוף עצמי" נמצא '
               f"{bcolors.Normal}")
         # messagebox.showinfo("איסוף עצמי", "¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי")
+        # from popupDesign import openNewWindow
+        # openNewWindow(root)
         value = messagebox.askyesno(
             "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
                                                           ?ליצור משלוח בכל זאת""",
             default='no')
         print(value)
+        ## When delivery no needed.
         if not value: # default is False - לא ליצור משלוח
-            browser.quit()  # סוגר את הכרום
-            return
+            print("Fast return...")
+            return "pickup"
+            # return "browser", "finalOrderLink", "buyer_name", "butikTrackNumber", "butikBarCode", "buyer_phone"
     print(f"deliveryNeeded = {deliveryNeeded}")
 
     ## Check Quantity of items in order

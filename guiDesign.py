@@ -13,13 +13,29 @@ from Scripts.B1_complete_and_notifications import complete_and_notifications
 global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
 def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+
+    # sys.stdout = open("SpiderLog.txt", "w")
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
-    browser, finalOrderLink, \
-    buyer_name, butikTrackNumber, butikBarCode, buyer_phone =\
-        main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+    try:
+        # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
+        api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+        print(api_output)
+        if api_output == "pickup":
+            openNewWindow()
+        else: # When no pickup...
+            browser, finalOrderLink, buyer_name, butikTrackNumber,\
+            butikBarCode, buyer_phone = api_output
+            print(f"buyer_name is {buyer_name} from api_output (main_api def)")
+    except ValueError as e:
+        e = str(e)
+        print(f"{bcolors.Red}e:{bcolors.Normal}")
+        print("ValueError:")
+        print(e)
+        # sys.stdout.close()  # Close log
+        messagebox.showerror("שגיאה", e)
 
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
@@ -42,12 +58,12 @@ def part_b_starter():
     #     messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
 
 ## Design
-
 # region הגדרות טקינטר
 root = tk.Tk()  # המסך הראשי
 root.configure(background="#23964e")
-root.title("Spider Stickers 2")
+root.title("Spider3D Stickers")
 ttk.Style(root).configure('myStyle.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
+ttk.Style(root).configure('pickupPopup.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
 ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", foreground = 'black')
 # root.iconbitmap(r'C:\Users\idanb\Documents\MEGAsync\App4Sale\Spider3D\BlackLogoRoundedPNG.ico', )#לא בטוח למה צריך את הr
 # root.iconbitmap('.icon\\BlackLogoRoundedPNG.ico')#לא בטוח למה צריך את הr
@@ -55,6 +71,99 @@ ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", f
 canvas = tk.Canvas(root, height=150, width=300, bg="#23964e", highlightbackground="#23964e")
 canvas.pack()
 # endregion הגדרות טקינטר
+
+theGrey = "#f0f0f0" # Windows default grey
+def openNewWindow():
+    # Toplevel object which will
+    # be treated as a new window
+    newWindow = Toplevel(root)
+    newWindow.configure(background="white")
+    newWindow.title("New Window")
+    newWindow.focus_force()
+    newWindow.geometry("200x160")
+
+    # sets the geometry of toplevel
+
+    ttk.Style(newWindow).configure('pickupPopup.TRadiobutton',
+                                foreground='black',
+                                background="white",
+                                font=("rubik", 10))
+
+    # sets the geometry of toplevel
+
+    # A Label widget to show in toplevel
+    radioButtonFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
+    radioButtonFrame.place(relx=0.27, rely=0.32, height=500, width=200)
+
+    titleFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
+    titleFrame.place(relx=0.0, rely=0.03, height=40, width=200, )
+    title_label = Label(titleFrame,
+                text="בחר לוקר למסירת \nאיסוף עצמי",
+                font=("rubik", 12, "bold"),
+                bg="white",
+                fg="black")
+    title_label.pack(pady=0)
+
+    buttonSMSFrame = tk.Frame(newWindow, bg=theGrey)  # טקסט המלצה לווידוא פרטים
+    buttonSMSFrame.place(relx=0, rely=0.77, height=45, width=200)
+    ttk.Button(buttonSMSFrame,
+               text="שלח סמס מעקב",
+               command=openNewWindow).pack(pady=5)
+
+    # region כפתורי רדיו
+    def change_selection():
+        global hex_c
+        selection = "You selected the option " + str(radioVar.get())
+        print(selection)
+        color_title = ""
+        hex_c = "bdbdbd"
+        if radioVar.get() == 1:
+            hex_c = "23964e" # Green
+            color_title = "לוקר ירוק"
+        if radioVar.get() == 2:
+            hex_c = "2d81be" # Blue
+            color_title = "לוקר כחול"
+        if radioVar.get() == 3:
+            hex_c = "db8400" # Orange
+            color_title = "לוקר כתום"
+
+        ## Change backgrounds & frames
+        # radioButtonFrame.configure(background=f"#{hex_c}")
+        # titleFrame.configure(background=f"#{hex_c}")
+        # newWindow.configure(background=f"#{hex_c}") # Green
+        # ttk.Style(master).configure('pickupPopup.TRadiobutton', background=f"#{hex_c}", foreground='white', font=("rubik", 9, "bold"))
+        # title_label.config(background=f"#{hex_c}", foreground="white")
+
+        ## Change title color_title only
+        title_label.config(background="white",
+                           foreground=f"#{hex_c}",
+                           text=color_title,
+                           font = ("rubik", 14, "bold"),
+                           )
+        titleFrame.place(relx=-0.02, rely=0.07, height=40, width=200)
+
+    radioVar = IntVar()
+    ttk.Radiobutton(radioButtonFrame,
+                     text="לוקר ירוק",
+                     variable=radioVar,
+                     value=1,
+                     command=change_selection,
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
+    # ----
+    ttk.Radiobutton(radioButtonFrame,
+                     text="לוקר כחול",
+                     variable=radioVar,
+                     value=2,
+                     command=change_selection,
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
+
+    # ----
+    ttk.Radiobutton(radioButtonFrame,
+                     text="לוקר כתום",
+                     variable=radioVar,
+                     value=3,
+                     command=change_selection,
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
 
 # region כפתור "המשך" לתחילת פעולה
 linkButtonSaver = tk.Frame(root, bg="#23964e")  # כפתור שמירת קישור ותחילת עבודה
@@ -93,10 +202,10 @@ packNum.insert(0, "1")
 
 # region כפתורי רדיו
 def change_selection():
-   selection = "You selected the option " + str(radioVar.get())
+   selection = "You selected the option " + str(chrome_radioVar.get())
    Label(root).config(text = selection)
-   print(radioVar.get())
-   chrome_ver = radioVar.get()
+   print(chrome_radioVar.get())
+   chrome_ver = chrome_radioVar.get()
    print("Chrome_ver is " + str(chrome_ver))
 # ----
 RadioFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
@@ -104,16 +213,16 @@ RadioFrame.place(relx=0.03, rely=0.56, height=100, width=100, )
 # style = Style(root)
 # style.configure("TRadiobutton", background = "light green",
 #                 foreground = "red", font = ("arial", 10, "bold"))
-radioVar = IntVar()
-R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=radioVar, value="86", command=change_selection, style="myStyle.TRadiobutton")
+chrome_radioVar = IntVar()
+R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=chrome_radioVar, value="86", command=change_selection, style="myStyle.TRadiobutton")
 # ----
 R1.pack( anchor = W )
 # ----
-R2 = ttk.Radiobutton(RadioFrame, text="Chrome 87", variable=radioVar, value="87", command=change_selection, style="myStyle.TRadiobutton")
+R2 = ttk.Radiobutton(RadioFrame, text="Chrome 87", variable=chrome_radioVar, value="87", command=change_selection, style="myStyle.TRadiobutton")
 R2.pack( anchor = W )
 R2.state(['selected'])
 # ----
-R3 = ttk.Radiobutton(RadioFrame, text="Chrome 88", variable=radioVar, value="88", command=change_selection, style="myStyle.TRadiobutton")
+R3 = ttk.Radiobutton(RadioFrame, text="Chrome 88", variable=chrome_radioVar, value="88", command=change_selection, style="myStyle.TRadiobutton")
 R3.pack( anchor = W)
 # endregion
 
