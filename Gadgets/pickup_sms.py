@@ -1,7 +1,7 @@
 import winsound
 
-from Gadgets.examples.smsCaller.check_sms import check_sms
-from Gadgets.examples.smsCaller.sendSms import send_sms
+from Gadgets.examples.smsCaller.callr_check_sms import callr_check_sms
+from Gadgets.examples.smsCaller.callr_sendSms import callr_send_sms
 
 
 def pickup_sms(buyer_phone, message_type):
@@ -20,9 +20,9 @@ def pickup_sms(buyer_phone, message_type):
     # bit.ly/3bRe1uU
     #     """)
 
-    sms_hash = send_sms(message_value=message_type,
-                        buyer_phone=buyer_phone)
-    check_sms(sms_hash)
+    sms_hash = callr_send_sms(message_value=message_type,
+                              buyer_phone=buyer_phone)
+    callr_check_sms(sms_hash)
 
     # sleep(0.12)
     winsound.Beep(2000, 150)

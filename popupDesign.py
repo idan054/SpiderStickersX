@@ -1,7 +1,7 @@
 import tkinter as tk
 from time import sleep
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 #
 # from Gadgets.pickup_sms import pickup_sms
 #
@@ -10,10 +10,10 @@ from Gadgets.multi_usage.textMeSMS import txtMe_sms
 theGrey = "#f0f0f0" # Windows default grey
 
 ## Not in use.
-global hex_c, radioVar_selection, radioVar
+global hex_c, radioVar_selection, radioVar, color_title
 
 def locker_popupDesign(root, buyer_phone):
-    global hex_c, radioVar_selection, radioVar
+    global hex_c, radioVar_selection, radioVar, color_title
 
     # Toplevel object which will
     # be treated as a new window
@@ -48,7 +48,7 @@ def locker_popupDesign(root, buyer_phone):
     # region כפתורי רדיו
 
     def change_selection():
-        global hex_c, radioVar_selection, radioVar
+        global hex_c, radioVar_selection, radioVar, color_title
         radioVar_selection = int(radioVar.get())
         print(radioVar_selection)
         color_title = ""
@@ -126,8 +126,9 @@ def locker_popupDesign(root, buyer_phone):
                                text="נא לבחור אופציה",
                                font=("rubik", 14, "bold"))
         txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone)
+        messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
         sleep(0.15)
-        # lockerPopup.destroy()
+        lockerPopup.destroy()
 
     buttonSMSFrame = tk.Frame(lockerPopup, bg=theGrey)  # טקסט המלצה לווידוא פרטים
     buttonSMSFrame.place(relx=0, rely=0.77, height=50, width=200)

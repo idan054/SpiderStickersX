@@ -21,24 +21,28 @@ def main_starter():
     winsound.Beep(1000, 100)
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
+    # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
     try:
-        # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
         api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
-        print("api_output is ",api_output)
-        # if api_output == "pickup":
-        if api_output[0] == "0": # return phone only
-            locker_popupDesign(root=root, buyer_phone=api_output)
-        else: # When no pickup...
-            browser, finalOrderLink, buyer_name, butikTrackNumber,\
-            butikBarCode, buyer_phone = api_output
-            print(f"buyer_name is {buyer_name} from api_output (main_api def)")
-    except ValueError as e:
-        e = str(e)
-        print(f"{bcolors.Red}e:{bcolors.Normal}")
-        print("ValueError:")
-        print(e)
-        # sys.stdout.close()  # Close log
-        messagebox.showerror("שגיאה", e)
+    except:
+        messagebox.showerror("שגיאה", "חלה שגיאה בהפעלת התוכנה")
+        api_output = "FAILED"
+        # e = str(e)
+        # print("ValueError:")
+        # print(f"{bcolors.Red}e:{bcolors.Normal}")
+        # print(e)
+
+    print("api_output is ",api_output)
+    # if api_output == "pickup":
+    if api_output[0] == "0": # return phone only
+        locker_popupDesign(root=root, buyer_phone=api_output)
+        main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
+
+    else: # When no pickup...
+        browser, finalOrderLink, buyer_name, butikTrackNumber,\
+        butikBarCode, buyer_phone = api_output
+        print(f"buyer_name is {buyer_name} from api_output (main_api def)")
+
 
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
@@ -46,8 +50,11 @@ def main_starter():
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def part_b_starter():
-    # try:
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+    try:
+        print("orderLinkField.get() is ", orderLinkField.get())
+    except:
+        messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
 
     ## Send track mail & change status to complete
     ## Send SMS confirmation & tracking link on SMS
@@ -57,19 +64,22 @@ def part_b_starter():
         buyer_phone=buyer_phone, butikBarCode=butikBarCode)
     print(f"{bcolors.Yellow}{bcolors.BOLD}Track SMS & Mail sent\nOrder status changed to complete.{bcolors.Normal}")
 
-    # except:
-    #     messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
+    # orderLinkField.configure(foreground="#a5a5a5")
+    # main_label.config(text=f"הזמנה #25550 הושלמה                     ")
+    main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
+
 
 ## Design
 # region הגדרות טקינטר
 root = tk.Tk()  # המסך הראשי
+# root.configure(background="#800000") # Recommended red
 root.configure(background="#23964e")
 root.title("Spider3D Stickers")
 ttk.Style(root).configure('myStyle.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
 ttk.Style(root).configure('pickupPopup.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
 ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", foreground = 'black')
 # root.iconbitmap(r'C:\Users\idanb\Documents\MEGAsync\App4Sale\Spider3D\BlackLogoRoundedPNG.ico', )#לא בטוח למה צריך את הr
-# root.iconbitmap('.icon\\BlackLogoRoundedPNG.ico')#לא בטוח למה צריך את הr
+root.iconbitmap(r'StickerApp.ico')#לא בטוח למה צריך את הr
 
 canvas = tk.Canvas(root, height=150, width=300, bg="#23964e", highlightbackground="#23964e")
 canvas.pack()
@@ -96,7 +106,6 @@ entry_link_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט לקישור
 entry_link_Frame.place(relx=0.25, rely=0.32, height=30, width=184, )
 orderLinkField = ttk.Entry(entry_link_Frame, font=("rubik", 14 ), width=30, justify="center")
 orderLinkField.pack()
-# orderLinkField.insert(0, "28020")
 # endregion שדה מס' הזמנה
 # איסוף עצמי "27695"
 # "25560" # Eyal Biton הזמנה עבור
@@ -138,13 +147,14 @@ R3.pack( anchor = W)
 
 # region כותרת "הכנס מס' הזמנה"
 ## Official green V1. #23964e
-alertBottomFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-alertBottomFrame.place(relx=0.45, rely=0.07, height=30, width=200, )
-alertLabel = Label(alertBottomFrame, text="הכנס מס' הזמנה", font=("rubik", 12, "bold"), bg="#23964e", fg="white").pack()
+main_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
+main_label = Label(main_label_frame, text="הכנס מס' הזמנה", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
+main_label.pack()
 
 subTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
 subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )
-subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.26₪", font=("rubik", 9), bg="#23964e", fg="white").pack()
+subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.06₪", font=("rubik", 9), bg="#23964e", fg="white").pack()
 # endregion "כותרת "הכנס מס' הזמנה
 
 root.mainloop()

@@ -50,12 +50,8 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
         requests.put(url=order_url, headers=headers, data=data).json()
     wooApi_mail_complete()
 
-    # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ )
-    delivery_message = (f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
-מס' מעקב {butikTrackNumber}
-טל' 035109114""")
-
-    txtMe_sms(message=delivery_message, phone=buyer_phone)
+    # message_type means delivery
+    txtMe_sms(message_type=5, phone=buyer_phone, butikTrackNumber=butikTrackNumber)
 
     messagebox.showinfo("המשימה הושלמה",
                         "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
@@ -63,7 +59,8 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     # sleep(0.12)
     winsound.Beep(2000, 150)
     winsound.Beep(1500, 150)
-    browser.quit()  # סוגר את הכרום
+    try: browser.quit()  # סוגר את הכרום
+    except: print("Failed to browser.quit() - PASS")
     winsound.Beep(1500, 150)
     winsound.Beep(2000, 150)
 

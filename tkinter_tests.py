@@ -21,7 +21,7 @@ def openNewWindow():
     newWindow = Toplevel(master)
     newWindow.focus_force()
     newWindow.configure(background="white")
-    newWindow.title("א.ע")
+    newWindow.title("איסוף עצמי")
     newWindow.geometry("200x200")
 
     # sets the geometry of toplevel
@@ -121,23 +121,23 @@ def openNewWindow():
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
     # endregion כפתורי רדיו
 
-    # green_code_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
-    # green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
-    # green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
-    # green_code_field.pack()
-    # green_code_field.insert(0, "1478")
-    #
-    # blue_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
-    # blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
-    # blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
-    # blue_code_field.pack()
-    # blue_code_field.insert(0, "2580")
-    #
-    # orange_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
-    # orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
-    # blue_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
-    # blue_code_field.pack()
-    # blue_code_field.insert(0, "2356")
+    green_code_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
+    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
+    green_code_field.pack()
+    green_code_field.insert(0, "1478")
+
+    blue_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
+    blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
+    blue_code_field.pack()
+    blue_code_field.insert(0, "2580")
+
+    orange_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
+    blue_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
+    blue_code_field.pack()
+    blue_code_field.insert(0, "2356")
 
 def msg():
     first_name, last_name, address_1, street_num, street, city, \

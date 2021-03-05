@@ -4,7 +4,7 @@ import callr
 # Send confirmation & tracking link on SMS
 
 
-def send_sms(message_value, buyer_phone):
+def callr_send_sms(message_value, buyer_phone):
     # Short track link
     # Not in use...
     # bit_link = bitly_shorter(

@@ -1,9 +1,4 @@
 from tkinter import messagebox
 
-if 1==1:
-    if 1==1:
-        if 1==1:
-            value = messagebox.askyesno(
-                "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
-                                                  ?להודיע ללקוח לאסוף בסמס""",
-                default='no')
+color_title = "לוקר ירוק"
+messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")

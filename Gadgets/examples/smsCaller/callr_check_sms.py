@@ -7,7 +7,7 @@ from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.multi_usage.jsonPrinter import json_printer
 
 
-def check_sms(sms_hash):
+def callr_check_sms(sms_hash):
     ## Make sure sms is RECEIVED
     whileIndex = 0
     print("check_sms: sms_hash 2 is ", sms_hash)
