@@ -79,9 +79,8 @@ def main_api(numOrder, numOfPacks):
         # from popupDesign import openNewWindow
         # openNewWindow(root)
         value = messagebox.askyesno(
-            "איסוף עצמי", """.אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
-                           .לחץ כן כדי להודיע ללקוח לאסוף
-             ¯\_(ツ)_/¯ לחץ לא ליצירת משלוח בכל זאת """,
+            "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
+                                              ?להודיע ללקוח לאסוף בסמס""",
             default='yes')
         print(value)
         ## When delivery no needed.
@@ -90,6 +89,11 @@ def main_api(numOrder, numOfPacks):
             return phone
             # return "pickup"
             # return "browser", "finalOrderLink", "buyer_name", "butikTrackNumber", "butikBarCode", "buyer_phone"
+        else:
+            delivery_confirm =   messagebox.askyesno("יצירת משלוח", "?ליצור משלוח בכל זאת")
+            if not delivery_confirm:
+                return
+
     print(f"deliveryNeeded = {deliveryNeeded}")
 
     ## Check Quantity of items in order

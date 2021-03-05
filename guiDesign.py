@@ -1,18 +1,18 @@
-import winsound
 import tkinter as tk
+import winsound
 from tkinter import *
-
-from Gadgets.pickup_sms import pickup_sms
-from mainApi import main_api
-from Gadgets.multi_usage.bcolors import bcolors
 from tkinter import messagebox, ttk
+
+from Gadgets.multi_usage.bcolors import bcolors
+from Gadgets.pickup_sms import pickup_sms
 from Scripts.B1_complete_and_notifications import complete_and_notifications
-
-
+from mainApi import main_api
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
-from tests import a
+from popupDesign import locker_popupDesign
 
 global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+
+global hex_c, radioVar_selection
 def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 
@@ -26,8 +26,8 @@ def main_starter():
         api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
         print("api_output is ",api_output)
         # if api_output == "pickup":
-        if api_output[0] == "0":
-            openNewWindow()
+        if api_output[0] == "0": # return phone only
+            locker_popupDesign(root=root, buyer_phone=api_output)
         else: # When no pickup...
             browser, finalOrderLink, buyer_name, butikTrackNumber,\
             butikBarCode, buyer_phone = api_output
@@ -60,11 +60,6 @@ def part_b_starter():
     # except:
     #     messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
 
-def pickup_sms_starter():
-    print(api_output, f"from pickup_sms_starter...")
-    pickup_sms(buyer_phone=api_output,
-               message_type=radioVar_selection)
-
 ## Design
 # region הגדרות טקינטר
 root = tk.Tk()  # המסך הראשי
@@ -79,113 +74,6 @@ ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", f
 canvas = tk.Canvas(root, height=150, width=300, bg="#23964e", highlightbackground="#23964e")
 canvas.pack()
 # endregion הגדרות טקינטר
-
-theGrey = "#f0f0f0" # Windows default grey
-global hex_c, radioVar_selection
-def openNewWindow():
-
-    # Toplevel object which will
-    # be treated as a new window
-    newWindow = Toplevel(root)
-    newWindow.focus_force()
-    newWindow.configure(background="white")
-    newWindow.title("א.ע")
-    newWindow.geometry("200x200")
-
-    # sets the geometry of toplevel
-
-    ttk.Style(newWindow).configure('pickupPopup.TRadiobutton',
-                                foreground='black',
-                                background="white",
-                                font=("rubik", 10))
-
-    # sets the geometry of toplevel
-
-    # A Label widget to show in toplevel
-    radioButtonFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
-    radioButtonFrame.place(relx=0.27, rely=0.28, height=500, width=200)
-
-    titleFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
-    titleFrame.place(relx=0.0, rely=0.03, height=40, width=200, )
-    title_label = Label(titleFrame,
-                text="בחר לוקר למסירת \nאיסוף עצמי",
-                font=("rubik", 12, "bold"),
-                bg="white",
-                fg="black")
-    title_label.pack(pady=0)
-
-    buttonSMSFrame = tk.Frame(newWindow, bg=theGrey)  # טקסט המלצה לווידוא פרטים
-    buttonSMSFrame.place(relx=0, rely=0.77, height=50, width=200)
-    ttk.Button(buttonSMSFrame,
-               text="שלח סמס מעקב",
-               command=pickup_sms_starter).pack(pady=11)
-
-    # region כפתורי רדיו
-
-    def change_selection():
-        global hex_c, radioVar_selection
-        radioVar_selection = int(radioVar.get())
-        print(radioVar_selection)
-        color_title = ""
-        hex_c = "bdbdbd"
-        if radioVar.get() == 1:
-            hex_c = "23964e" # Green
-            color_title = "לוקר ירוק"
-        if radioVar.get() == 2:
-            hex_c = "2d81be" # Blue
-            color_title = "לוקר כחול"
-        if radioVar.get() == 3:
-            hex_c = "db8400" # Orange
-            color_title = "לוקר כתום"
-        if radioVar.get() == 4:
-            hex_c = "333333"  # Orange
-            color_title = "תיאום טלפוני"
-
-        ## Change backgrounds & frames
-        # radioButtonFrame.configure(background=f"#{hex_c}")
-        # titleFrame.configure(background=f"#{hex_c}")
-        # newWindow.configure(background=f"#{hex_c}") # Green
-        # ttk.Style(master).configure('pickupPopup.TRadiobutton', background=f"#{hex_c}", foreground='white', font=("rubik", 9, "bold"))
-        # title_label.config(background=f"#{hex_c}", foreground="white")
-
-        ## Change title color_title only
-        title_label.config(background="white",
-                           foreground=f"#{hex_c}",
-                           text=color_title,
-                           font = ("rubik", 14, "bold"),
-                           )
-        titleFrame.place(relx=-0.02, rely=0.07, height=40, width=200)
-
-    radioVar = IntVar()
-    ttk.Radiobutton(radioButtonFrame,
-                     text="     לוקר ירוק",
-                     variable=radioVar,
-                     value=1,
-                     command=change_selection,
-                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
-    # ----
-    ttk.Radiobutton(radioButtonFrame,
-                     text="    לוקר כחול",
-                     variable=radioVar,
-                     value=2,
-                     command=change_selection,
-                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
-
-    # ----
-    ttk.Radiobutton(radioButtonFrame,
-                     text="   לוקר כתום",
-                     variable=radioVar,
-                     value=3,
-                     command=change_selection,
-                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
-
-    ttk.Radiobutton(radioButtonFrame,
-                     text="תיאום טלפוני",
-                     variable=radioVar,
-                     value=4,
-                     command=change_selection,
-                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
-    # endregion כפתורי רדיו
 
 # region כפתור "המשך" לתחילת פעולה
 linkButtonSaver = tk.Frame(root, bg="#23964e")  # כפתור שמירת קישור ותחילת עבודה

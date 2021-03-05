@@ -15,17 +15,18 @@ master.geometry("200x200")
 
 theGrey = "#f0f0f0" # Windows default grey
 def openNewWindow():
+
     # Toplevel object which will
     # be treated as a new window
     newWindow = Toplevel(master)
-    newWindow.configure(background="white")
-    newWindow.title("New Window")
     newWindow.focus_force()
-    newWindow.geometry("200x160")
+    newWindow.configure(background="white")
+    newWindow.title("א.ע")
+    newWindow.geometry("200x200")
 
     # sets the geometry of toplevel
 
-    ttk.Style(newWindow).configure('myStyle.TRadiobutton',
+    ttk.Style(newWindow).configure('pickupPopup.TRadiobutton',
                                 foreground='black',
                                 background="white",
                                 font=("rubik", 10))
@@ -34,7 +35,7 @@ def openNewWindow():
 
     # A Label widget to show in toplevel
     radioButtonFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
-    radioButtonFrame.place(relx=0.27, rely=0.32, height=500, width=200)
+    radioButtonFrame.place(relx=0.26, rely=0.28, height=500, width=200)
 
     titleFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
     titleFrame.place(relx=0.0, rely=0.03, height=40, width=200, )
@@ -45,17 +46,20 @@ def openNewWindow():
                 fg="black")
     title_label.pack(pady=0)
 
+    # pickup_sms_with_args = pickup_sms(buyer_phone="0584770076", message_type=2)
+
     buttonSMSFrame = tk.Frame(newWindow, bg=theGrey)  # טקסט המלצה לווידוא פרטים
-    buttonSMSFrame.place(relx=0, rely=0.77, height=45, width=200)
+    buttonSMSFrame.place(relx=0, rely=0.77, height=50, width=200)
     ttk.Button(buttonSMSFrame,
                text="שלח סמס מעקב",
-               command=openNewWindow).pack(pady=5)
+               command=openNewWindow).pack(pady=11)
 
     # region כפתורי רדיו
+
     def change_selection():
-        global hex_c
-        selection = "You selected the option " + str(radioVar.get())
-        print(selection)
+        global hex_c, radioVar_selection
+        radioVar_selection = int(radioVar.get())
+        print(radioVar_selection)
         color_title = ""
         hex_c = "bdbdbd"
         if radioVar.get() == 1:
@@ -67,12 +71,15 @@ def openNewWindow():
         if radioVar.get() == 3:
             hex_c = "db8400" # Orange
             color_title = "לוקר כתום"
+        if radioVar.get() == 4:
+            hex_c = "333333"  # Orange
+            color_title = "תיאום טלפוני"
 
         ## Change backgrounds & frames
         # radioButtonFrame.configure(background=f"#{hex_c}")
         # titleFrame.configure(background=f"#{hex_c}")
         # newWindow.configure(background=f"#{hex_c}") # Green
-        # ttk.Style(master).configure('myStyle.TRadiobutton', background=f"#{hex_c}", foreground='white', font=("rubik", 9, "bold"))
+        # ttk.Style(master).configure('pickupPopup.TRadiobutton', background=f"#{hex_c}", foreground='white', font=("rubik", 9, "bold"))
         # title_label.config(background=f"#{hex_c}", foreground="white")
 
         ## Change title color_title only
@@ -85,26 +92,52 @@ def openNewWindow():
 
     radioVar = IntVar()
     ttk.Radiobutton(radioButtonFrame,
-                     text="לוקר ירוק",
+                     text="      לוקר ירוק",
                      variable=radioVar,
                      value=1,
                      command=change_selection,
-                     style="myStyle.TRadiobutton").pack(anchor=W) #.state(['selected'])
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
     # ----
     ttk.Radiobutton(radioButtonFrame,
-                     text="לוקר כחול",
+                     text="     לוקר כחול",
                      variable=radioVar,
                      value=2,
                      command=change_selection,
-                     style="myStyle.TRadiobutton").pack(anchor=W) #.state(['selected'])
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
 
     # ----
     ttk.Radiobutton(radioButtonFrame,
-                     text="לוקר כתום",
+                     text="    לוקר כתום",
                      variable=radioVar,
                      value=3,
                      command=change_selection,
-                     style="myStyle.TRadiobutton").pack(anchor=W) #.state(['selected'])
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
+                     text="תיאום טלפוני",
+                     variable=radioVar,
+                     value=4,
+                     command=change_selection,
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
+    # endregion כפתורי רדיו
+
+    # green_code_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    # green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
+    # green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
+    # green_code_field.pack()
+    # green_code_field.insert(0, "1478")
+    #
+    # blue_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    # blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
+    # blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
+    # blue_code_field.pack()
+    # blue_code_field.insert(0, "2580")
+    #
+    # orange_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    # orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
+    # blue_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
+    # blue_code_field.pack()
+    # blue_code_field.insert(0, "2356")
 
 def msg():
     first_name, last_name, address_1, street_num, street, city, \
@@ -132,7 +165,7 @@ ttk.Style(master).configure('myStyle.TRadiobutton',
 # new window on button click 
 btn = ttk.Button(master,
              text="Click to open a new window",
-             command=msg)
+             command=openNewWindow)
 btn.pack(pady=10)
 
 # mainloop, runs infinitely 

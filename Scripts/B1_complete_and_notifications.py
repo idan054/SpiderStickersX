@@ -1,11 +1,13 @@
 import winsound
 from tkinter import messagebox
+
 import requests
 from requests.structures import CaseInsensitiveDict
-from Gadgets.examples.smsCaller.check_sms import check_sms
-from Gadgets.examples.smsCaller.sendSms import send_sms
 
 ## Send mail & change order to succeed
+from Gadgets.multi_usage.textMeSMS import txtMe_sms
+
+
 def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
                                buyer_phone, butikBarCode):
 
@@ -53,17 +55,10 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
 מס' מעקב {butikTrackNumber}
 טל' 035109114""")
 
-    ## Run in background!
-    from multiprocessing.pool import ThreadPool
-    pool = ThreadPool(processes=1)
+    txtMe_sms(message=delivery_message, phone=buyer_phone)
 
-    async_result = pool.apply_async(send_sms, (delivery_message,buyer_phone,))  # tuple of args for foo
-
-    messagebox.showinfo("נשלח בהצלחה", "(●'◡'●)  מייל נשלח בהצלחה ללקוח \n        סטטוס ההזמנה שונה להושלם")
-
-    ## ממתין עד שה Thread יסיים (יחזיר return) להמשך פעולה
-    sms_hash = async_result.get()
-    check_sms(sms_hash)
+    messagebox.showinfo("המשימה הושלמה",
+                        "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
 
     # sleep(0.12)
     winsound.Beep(2000, 150)

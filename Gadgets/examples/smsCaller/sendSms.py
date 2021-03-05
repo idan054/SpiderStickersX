@@ -27,3 +27,19 @@ def send_sms(message_value, buyer_phone):
     # _sms_hash = "0LWLNVLH"
     print("_sms_hash is ", _sms_hash)
     return _sms_hash
+
+pickup_msg_123 = """איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+החבילה זמינה 24/7 בלוקר הירוק 🟢
+קוד: *️⃣ 1478 ומפתח 🔑🗝
+בברכה, צוות ספיידר 3D"""
+
+# send_sms(pickup_msg_123, "0584770076")
+
+# 174 cha
+communicate_msg_4 = """איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+*עקב גודל החבילה יש לתאם טלפונית
+0522509900
+ניתן להגיע עד השעה 17:00 (14:00 בשישי)
+בברכה, צוות ספיידר 3D"""

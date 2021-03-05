@@ -1,10 +1,40 @@
 import xml.etree.ElementTree as ET
 import requests
-
 from Gadgets.multi_usage.bcolors import bcolors
 
+global locker_color, locker_code, final_msg
+def txtMe_sms(message_type, phone):
+    global locker_color, locker_code, final_msg
+    print("message_type = ", message_type)
 
-def txtMe_sms(message, phone):
+    # locker_color = "הירוק 🟢"
+    # locker_color = "הכחול 🔵"
+    # locker_color = "הכתום 🟠"
+
+    if message_type == 1 :
+        locker_color = "הירוק 🟢"
+        locker_code =  "1478"
+    if message_type == 2 :
+        locker_color = "הכחול 🔵"
+        locker_code =  "2580"
+    if message_type == 3 :
+        locker_color = "הכתום 🟠"
+        locker_code =  "2356"
+
+    if message_type == 4:
+        final_msg = """איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+*עקב גודל החבילה יש לתאם טלפונית
+0522509900
+ניתן להגיע עד השעה 17:00 (14:00 בשישי)
+בברכה, צוות ספיידר 3D"""
+    if message_type < 4 :
+        final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+החבילה זמינה 24/7 בלוקר {locker_color}
+קוד: *️⃣ {locker_code} ומפתח 🔑
+בברכה, צוות ספיידר 3D"""
+
     url = "https://my.textme.co.il/api"
 
     payload = f"""
@@ -18,7 +48,7 @@ def txtMe_sms(message, phone):
     <destinations>
     <phone>{phone}</phone>
     </destinations>
-    <message>{message}</message>
+    <message>{final_msg}</message>
     </sms>
     """
     # print(payload)
@@ -35,6 +65,21 @@ def txtMe_sms(message, phone):
 
 # response_content = """b'<?xml version="1.0" encoding="utf-8"?>\n<sms><status>0</status><message>SMS will be sent</message><shipment_id>890578760</shipment_id></sms>\n'"""
 
+
+# pickup_msg_123 = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+# ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+# החבילה זמינה 24/7 בלוקר {locker_color}
+# קוד: *️⃣ 1478 ומפתח 🔑
+# בברכה, צוות ספיידר 3D"""
+#
+# # 174 cha
+# communicate_msg_4 = """איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+# ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+# *עקב גודל החבילה יש לתאם טלפונית
+# 0522509900
+# ניתן להגיע עד השעה 17:00 (14:00 בשישי)
+# בברכה, צוות ספיידר 3D"""
+
 ## Example
-# txtMe_sms(message="עוד דוגמא", phone="0584770076")
+# txtMe_sms(message_type=2, phone="0584770076")
 
