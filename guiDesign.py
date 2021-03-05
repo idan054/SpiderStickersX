@@ -2,17 +2,19 @@ import winsound
 import tkinter as tk
 from tkinter import *
 
-from Gadgets.sendSms import send_sms
+from Gadgets.pickup_sms import pickup_sms
 from mainApi import main_api
-from Gadgets.bcolors import bcolors
+from Gadgets.multi_usage.bcolors import bcolors
 from tkinter import messagebox, ttk
 from Scripts.B1_complete_and_notifications import complete_and_notifications
 
 
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
-global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+from tests import a
+
+global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 def main_starter():
-    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 
     # sys.stdout = open("SpiderLog.txt", "w")
     winsound.Beep(2000, 300)
@@ -22,8 +24,9 @@ def main_starter():
     try:
         # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
         api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
-        print(api_output)
-        if api_output == "pickup":
+        print("api_output is ",api_output)
+        # if api_output == "pickup":
+        if api_output[0] == "0":
             openNewWindow()
         else: # When no pickup...
             browser, finalOrderLink, buyer_name, butikTrackNumber,\
@@ -44,7 +47,7 @@ def main_starter():
 
 def part_b_starter():
     # try:
-    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 
     ## Send track mail & change status to complete
     ## Send SMS confirmation & tracking link on SMS
@@ -56,6 +59,11 @@ def part_b_starter():
 
     # except:
     #     messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
+
+def pickup_sms_starter():
+    print(api_output, f"from pickup_sms_starter...")
+    pickup_sms(buyer_phone=api_output,
+               message_type=radioVar_selection)
 
 ## Design
 # region הגדרות טקינטר
@@ -73,14 +81,16 @@ canvas.pack()
 # endregion הגדרות טקינטר
 
 theGrey = "#f0f0f0" # Windows default grey
+global hex_c, radioVar_selection
 def openNewWindow():
+
     # Toplevel object which will
     # be treated as a new window
     newWindow = Toplevel(root)
-    newWindow.configure(background="white")
-    newWindow.title("New Window")
     newWindow.focus_force()
-    newWindow.geometry("200x160")
+    newWindow.configure(background="white")
+    newWindow.title("א.ע")
+    newWindow.geometry("200x200")
 
     # sets the geometry of toplevel
 
@@ -93,7 +103,7 @@ def openNewWindow():
 
     # A Label widget to show in toplevel
     radioButtonFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
-    radioButtonFrame.place(relx=0.27, rely=0.32, height=500, width=200)
+    radioButtonFrame.place(relx=0.27, rely=0.28, height=500, width=200)
 
     titleFrame = tk.Frame(newWindow, bg="white")  # טקסט המלצה לווידוא פרטים
     titleFrame.place(relx=0.0, rely=0.03, height=40, width=200, )
@@ -105,16 +115,17 @@ def openNewWindow():
     title_label.pack(pady=0)
 
     buttonSMSFrame = tk.Frame(newWindow, bg=theGrey)  # טקסט המלצה לווידוא פרטים
-    buttonSMSFrame.place(relx=0, rely=0.77, height=45, width=200)
+    buttonSMSFrame.place(relx=0, rely=0.77, height=50, width=200)
     ttk.Button(buttonSMSFrame,
                text="שלח סמס מעקב",
-               command=openNewWindow).pack(pady=5)
+               command=pickup_sms_starter).pack(pady=11)
 
     # region כפתורי רדיו
+
     def change_selection():
-        global hex_c
-        selection = "You selected the option " + str(radioVar.get())
-        print(selection)
+        global hex_c, radioVar_selection
+        radioVar_selection = int(radioVar.get())
+        print(radioVar_selection)
         color_title = ""
         hex_c = "bdbdbd"
         if radioVar.get() == 1:
@@ -126,6 +137,9 @@ def openNewWindow():
         if radioVar.get() == 3:
             hex_c = "db8400" # Orange
             color_title = "לוקר כתום"
+        if radioVar.get() == 4:
+            hex_c = "333333"  # Orange
+            color_title = "תיאום טלפוני"
 
         ## Change backgrounds & frames
         # radioButtonFrame.configure(background=f"#{hex_c}")
@@ -144,14 +158,14 @@ def openNewWindow():
 
     radioVar = IntVar()
     ttk.Radiobutton(radioButtonFrame,
-                     text="לוקר ירוק",
+                     text="     לוקר ירוק",
                      variable=radioVar,
                      value=1,
                      command=change_selection,
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
     # ----
     ttk.Radiobutton(radioButtonFrame,
-                     text="לוקר כחול",
+                     text="    לוקר כחול",
                      variable=radioVar,
                      value=2,
                      command=change_selection,
@@ -159,11 +173,19 @@ def openNewWindow():
 
     # ----
     ttk.Radiobutton(radioButtonFrame,
-                     text="לוקר כתום",
+                     text="   לוקר כתום",
                      variable=radioVar,
                      value=3,
                      command=change_selection,
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
+                     text="תיאום טלפוני",
+                     variable=radioVar,
+                     value=4,
+                     command=change_selection,
+                     style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
+    # endregion כפתורי רדיו
 
 # region כפתור "המשך" לתחילת פעולה
 linkButtonSaver = tk.Frame(root, bg="#23964e")  # כפתור שמירת קישור ותחילת עבודה
@@ -201,7 +223,7 @@ packNum.insert(0, "1")
 # endregion
 
 # region כפתורי רדיו
-def change_selection():
+def change_chrome_selection():
    selection = "You selected the option " + str(chrome_radioVar.get())
    Label(root).config(text = selection)
    print(chrome_radioVar.get())
@@ -214,15 +236,15 @@ RadioFrame.place(relx=0.03, rely=0.56, height=100, width=100, )
 # style.configure("TRadiobutton", background = "light green",
 #                 foreground = "red", font = ("arial", 10, "bold"))
 chrome_radioVar = IntVar()
-R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=chrome_radioVar, value="86", command=change_selection, style="myStyle.TRadiobutton")
+R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=chrome_radioVar, value="86", command=change_chrome_selection, style="myStyle.TRadiobutton")
 # ----
 R1.pack( anchor = W )
 # ----
-R2 = ttk.Radiobutton(RadioFrame, text="Chrome 87", variable=chrome_radioVar, value="87", command=change_selection, style="myStyle.TRadiobutton")
+R2 = ttk.Radiobutton(RadioFrame, text="Chrome 87", variable=chrome_radioVar, value="87", command=change_chrome_selection, style="myStyle.TRadiobutton")
 R2.pack( anchor = W )
 R2.state(['selected'])
 # ----
-R3 = ttk.Radiobutton(RadioFrame, text="Chrome 88", variable=chrome_radioVar, value="88", command=change_selection, style="myStyle.TRadiobutton")
+R3 = ttk.Radiobutton(RadioFrame, text="Chrome 88", variable=chrome_radioVar, value="88", command=change_chrome_selection, style="myStyle.TRadiobutton")
 R3.pack( anchor = W)
 # endregion
 

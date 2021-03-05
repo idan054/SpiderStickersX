@@ -1,4 +1,4 @@
-import callr, os, sys
+import callr
 
 ## Sms service from callr
 

@@ -1,6 +1,7 @@
 import json
+
 # Todo לבדוק ולעדכן בהתאם, מה קורה אם יש (') בתיאור המקורי של הפוסט
-from Gadgets.bcolors import bcolors
+from Gadgets.multi_usage.bcolors import bcolors
 
 
 def json_printer(the_dict):

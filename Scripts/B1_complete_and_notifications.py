@@ -1,16 +1,9 @@
 import winsound
-from time import sleep
 from tkinter import messagebox
-from threading import Thread
-from callr import callr
-from selenium.webdriver.common.keys import Keys
 import requests
 from requests.structures import CaseInsensitiveDict
-from Gadgets.bcolors import bcolors
-from Gadgets.bitlyShorter import bitly_shorter
-from Gadgets.check_sms import check_sms
-from Gadgets.jsonPrinter import json_printer
-from Gadgets.sendSms import send_sms
+from Gadgets.examples.smsCaller.check_sms import check_sms
+from Gadgets.examples.smsCaller.sendSms import send_sms
 
 ## Send mail & change order to succeed
 def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,

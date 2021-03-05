@@ -1,11 +1,7 @@
-from time import sleep
-from tkinter import messagebox
+import callr
 
-from Gadgets.bcolors import bcolors
-from Gadgets.bitlyShorter import bitly_shorter
-import callr, os, sys
+
 # Send confirmation & tracking link on SMS
-from Gadgets.jsonPrinter import json_printer
 
 
 def send_sms(message_value, buyer_phone):

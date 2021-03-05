@@ -4,7 +4,7 @@
 from time import sleep
 
  ## A3 Embed details to Butik 24 based selenium
-from Gadgets.bcolors import bcolors
+from Gadgets.multi_usage.bcolors import bcolors
 
 
 def embed_details(browser, buyer_city, buyer_street

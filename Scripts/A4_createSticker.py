@@ -1,4 +1,4 @@
-from Gadgets.goToTab import goToTab
+from Gadgets.multi_usage.goToTab import goToTab
 
 # 1 Click the final create button
 # 2 Get butikTrackNumber, butikBarCode

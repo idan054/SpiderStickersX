@@ -1,5 +1,5 @@
 import requests
-from Gadgets.jsonPrinter import json_printer
+
 
 def bitly_shorter(link, with_http=True):
     headers = {

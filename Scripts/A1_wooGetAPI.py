@@ -1,6 +1,6 @@
 import requests
 from requests.structures import CaseInsensitiveDict
-from Gadgets.bcolors import bcolors
+
 
 ## A1 Get order details from Woo API
 

@@ -1,19 +1,14 @@
 import winsound
-from threading import Thread
-from time import sleep
-from tkinter import messagebox, mainloop
 from selenium import webdriver
-from Gadgets.bcolors import bcolors
+from Gadgets.multi_usage.bcolors import bcolors
 from Scripts.A1_wooGetAPI import woocomarce_api
-from Gadgets.goToTab import goToTab
+from Gadgets.multi_usage.goToTab import goToTab
 from Scripts.A2_loginButik24 import loginButik24
 from Scripts.A3_embedDetails import embed_details
 from Scripts.A4_createSticker import create_sticker
-from pynput.keyboard import Key, Controller
+from pynput.keyboard import Controller
 from time import sleep
-import tkinter as tk
-from tkinter import *
-from tkinter import messagebox, ttk
+from tkinter import messagebox
 
 keyboard = Controller()
 
@@ -84,14 +79,16 @@ def main_api(numOrder, numOfPacks):
         # from popupDesign import openNewWindow
         # openNewWindow(root)
         value = messagebox.askyesno(
-            "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
-                                                          ?ליצור משלוח בכל זאת""",
-            default='no')
+            "איסוף עצמי", """.אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
+                           .לחץ כן כדי להודיע ללקוח לאסוף
+             ¯\_(ツ)_/¯ לחץ לא ליצירת משלוח בכל זאת """,
+            default='yes')
         print(value)
         ## When delivery no needed.
-        if not value: # default is False - לא ליצור משלוח
+        if value: # default is False - לא ליצור משלוח
             print("Fast return...")
-            return "pickup"
+            return phone
+            # return "pickup"
             # return "browser", "finalOrderLink", "buyer_name", "butikTrackNumber", "butikBarCode", "buyer_phone"
     print(f"deliveryNeeded = {deliveryNeeded}")
 
