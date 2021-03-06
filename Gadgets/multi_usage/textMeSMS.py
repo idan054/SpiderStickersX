@@ -10,6 +10,7 @@ def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no 
     # locker_color = "הירוק 🟢"
     # locker_color = "הכחול 🔵"
     # locker_color = "הכתום 🟠"
+
     # message_type = 0 # no selection
 
     if message_type == 1 : # locker

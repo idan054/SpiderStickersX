@@ -91,4 +91,4 @@ def woocomarce_api(numOrder):
            email, phone, high_quantity, deliveryNeeded, customer_note
 
 # woocomarce_api(numOrder=27975)
-woocomarce_api(numOrder=25560)
+# woocomarce_api(numOrder=25560)

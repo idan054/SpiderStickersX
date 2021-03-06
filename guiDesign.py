@@ -1,5 +1,6 @@
 import tkinter as tk
 import winsound
+from time import sleep
 from tkinter import *
 from tkinter import messagebox, ttk
 
@@ -15,10 +16,11 @@ global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buye
 global hex_c, radioVar_selection
 def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
-
-    # sys.stdout = open("SpiderLog.txt", "w")
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
+    # mailButton['state'] = DISABLED
+    # mailButton['state'] = NORMAL
+    # sys.stdout = open("SpiderLog.txt", "w")
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
     # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
@@ -36,17 +38,20 @@ def main_starter():
     # if api_output == "pickup":
     if api_output[0] == "0": # return phone only
         locker_popupDesign(root=root, buyer_phone=api_output)
-        main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
 
     else: # When no pickup...
         browser, finalOrderLink, buyer_name, butikTrackNumber,\
         butikBarCode, buyer_phone = api_output
-        print(f"buyer_name is {buyer_name} from api_output (main_api def)")
 
+        main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
+        main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
 
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
     print("Packs field reset to 1")
+
+    if api_output[0] != "0":               # After delivery
+        mailButton['state'] = NORMAL
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def part_b_starter():
@@ -66,6 +71,8 @@ def part_b_starter():
 
     # orderLinkField.configure(foreground="#a5a5a5")
     # main_label.config(text=f"הזמנה #25550 הושלמה                     ")
+    mailButton['state'] = DISABLED
+    main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
     main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
 
 
@@ -95,10 +102,14 @@ linkButton = ttk.Button(linkButtonSaver, text="המשך", style="W.TButton",
 # region כפתור מייל מעקב
 packButtonSaver = tk.Frame(root, bg="#23964e", padx=20)  # כפתור עדכון כמות חבילות
 packButtonSaver.place(relx=0.43, rely=0.55, height=60)
-packButton = ttk.Button(packButtonSaver,
+mailButton = ttk.Button(packButtonSaver,
                         text="שלח התראות מעקב \n !ומכתב תודה ▶⦿◀",  #◍ ✪ ⊛
                         style="W.TButton",
-                        command=part_b_starter).pack()
+                        state=DISABLED,
+                        command=part_b_starter)
+mailButton.pack()
+# mailButton.configure(state=DISABLED)
+# mailButton.config(state=DISABLED)
 # endregion כפתור מייל מעקב
 
 # region שדה מס' הזמנה

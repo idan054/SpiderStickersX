@@ -35,6 +35,7 @@ global hex_c, radioVar_selection, radioVar, color_title
 theGrey = "#f0f0f0" # Windows default grey
 def locker_popupDesign(root, buyer_phone):
     global hex_c, radioVar_selection, radioVar, color_title
+    radioVar_selection = 99  # איפוס לפני בחירה
 
     locker_code_list = get_config()
 
@@ -76,22 +77,24 @@ def locker_popupDesign(root, buyer_phone):
         print(radioVar_selection)
         color_title = ""
         hex_c = "bdbdbd"
-        if radioVar.get() == 1:
+        # 0 = יש לבחור
+        if radioVar_selection == 1:
             hex_c = "23964e" # Green
             color_title = "לוקר ירוק"
             radioVar_selection = int(radioVar.get())
-        if radioVar.get() == 2:
+        if radioVar_selection == 2:
             hex_c = "2d81be" # Blue
             color_title = "לוקר כחול"
             radioVar_selection = int(radioVar.get())
-        if radioVar.get() == 3:
+        if radioVar_selection == 3:
             hex_c = "db8400" # Orange
             color_title = "לוקר כתום"
             radioVar_selection = int(radioVar.get())
-        if radioVar.get() == 4:
+        if radioVar_selection == 4:
             hex_c = "333333"  # Orange
             color_title = "תיאום טלפוני"
             radioVar_selection = int(radioVar.get())
+            # 5 = משלוח
 
         ## Change backgrounds & frames
         # radioButtonFrame.configure(background=f"#{hex_c}")
@@ -142,9 +145,8 @@ def locker_popupDesign(root, buyer_phone):
     def txtMe_sms_starter():
         global hex_c, radioVar_selection
         # מוודא שנבחר צבע לוקר
-        try:
-            print(f"radioVar_selection is {radioVar_selection} (from txtMe_sms_starter)")
-        except:
+
+        if radioVar_selection > 5:
             title_label.config(background="white",
                                foreground="#333333",
                                text="נא לבחור צבע לוקר",
@@ -157,7 +159,7 @@ def locker_popupDesign(root, buyer_phone):
                                foreground="#333333",
                                text="נא לעדכן קוד לוקרים",
                                font=("rubik", 14, "bold"))
-            return
+            # return
 
         # מגדיר לקונפיג קודי לוקרים
         new_config = open("config.txt", "w")
@@ -167,10 +169,11 @@ def locker_popupDesign(root, buyer_phone):
         new_config.write("\n")
         new_config.write(f"לוקר כתום: {orange_code_field.get()}")
 
-        txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone)
-        messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
-        sleep(0.15)
-        lockerPopup.destroy()
+        if radioVar_selection < 10:
+            txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone)
+            messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
+            sleep(0.15)
+            lockerPopup.destroy()
 
     buttonSMSFrame = tk.Frame(lockerPopup, bg=theGrey)  # טקסט המלצה לווידוא פרטים
     buttonSMSFrame.place(relx=0, rely=0.77, height=50, width=200)
