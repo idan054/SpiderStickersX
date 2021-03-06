@@ -79,7 +79,7 @@ ttk.Style(root).configure('myStyle.TRadiobutton', background="#23964e", foregrou
 ttk.Style(root).configure('pickupPopup.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
 ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", foreground = 'black')
 # root.iconbitmap(r'C:\Users\idanb\Documents\MEGAsync\App4Sale\Spider3D\BlackLogoRoundedPNG.ico', )#לא בטוח למה צריך את הr
-root.iconbitmap(r'StickerApp.ico')#לא בטוח למה צריך את הr
+root.iconbitmap(r'Assets/StickerApp.ico')#לא בטוח למה צריך את הr
 
 canvas = tk.Canvas(root, height=150, width=300, bg="#23964e", highlightbackground="#23964e")
 canvas.pack()

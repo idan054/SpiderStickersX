@@ -4,36 +4,39 @@ from tkinter import *
 from tkinter import ttk, messagebox
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
-## Run with imports (config)
-try:
-    config = open("config.txt", "r")
-except:
-    config = open("config.txt", "w")
-    config.write("לוקר ירוק: 0000")
-    config.write("\n")
-    config.write("לוקר כחול: 0000")
-    config.write("\n")
-    config.write("לוקר כתום: 0000")
-    config = open("config.txt", "r")
+## get updated config
+def get_config():
+    try:
+        config = open("config.txt", "r")
+    except:
+        config = open("config.txt", "w")
+        config.write("לוקר ירוק: 0000")
+        config.write("\n")
+        config.write("לוקר כחול: 0000")
+        config.write("\n")
+        config.write("לוקר כתום: 0000")
+        config = open("config.txt", "r")
 
-read_config = config.read()
-# print(type(read_config))
+    read_config = config.read()
+    # print(type(read_config))
 
-config_list = read_config.splitlines()
-# print(config_list)
+    config_list = read_config.splitlines()
+    # print(config_list)
 
-locker_code_list = []
-for item in config_list:
-    digit_item = ''.join(filter(str.isdigit, item))
-    print(digit_item)
-    locker_code_list.append(digit_item)
-print(locker_code_list)
-
+    _locker_code_list = []
+    for item in config_list:
+        digit_item = ''.join(filter(str.isdigit, item))
+        # print(digit_item)
+        _locker_code_list.append(digit_item)
+    print(_locker_code_list)
+    return _locker_code_list
 
 global hex_c, radioVar_selection, radioVar, color_title
 theGrey = "#f0f0f0" # Windows default grey
 def locker_popupDesign(root, buyer_phone):
     global hex_c, radioVar_selection, radioVar, color_title
+
+    locker_code_list = get_config()
 
     # Toplevel object which will
     # be treated as a new window
@@ -196,6 +199,6 @@ def locker_popupDesign(root, buyer_phone):
     orange_code_field.insert(0, locker_code_list[2]) #Orange 2356
 
 ## Example
-master = Tk()
-locker_popupDesign(master, "0584770076")
-mainloop()
+# master = Tk()
+# locker_popupDesign(master, "0584770076")
+# mainloop()
