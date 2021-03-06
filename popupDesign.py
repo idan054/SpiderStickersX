@@ -2,16 +2,36 @@ import tkinter as tk
 from time import sleep
 from tkinter import *
 from tkinter import ttk, messagebox
-#
-# from Gadgets.pickup_sms import pickup_sms
-#
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
-theGrey = "#f0f0f0" # Windows default grey
+## Run with imports (config)
+try:
+    config = open("config.txt", "r")
+except:
+    config = open("config.txt", "w")
+    config.write("לוקר ירוק: 0000")
+    config.write("\n")
+    config.write("לוקר כחול: 0000")
+    config.write("\n")
+    config.write("לוקר כתום: 0000")
+    config = open("config.txt", "r")
 
-## Not in use.
+read_config = config.read()
+# print(type(read_config))
+
+config_list = read_config.splitlines()
+# print(config_list)
+
+locker_code_list = []
+for item in config_list:
+    digit_item = ''.join(filter(str.isdigit, item))
+    print(digit_item)
+    locker_code_list.append(digit_item)
+print(locker_code_list)
+
+
 global hex_c, radioVar_selection, radioVar, color_title
-
+theGrey = "#f0f0f0" # Windows default grey
 def locker_popupDesign(root, buyer_phone):
     global hex_c, radioVar_selection, radioVar, color_title
 
@@ -34,7 +54,7 @@ def locker_popupDesign(root, buyer_phone):
 
     # A Label widget to show in toplevel
     radioButtonFrame = tk.Frame(lockerPopup, bg="white")  # טקסט המלצה לווידוא פרטים
-    radioButtonFrame.place(relx=0.26, rely=0.28, height=500, width=200)
+    radioButtonFrame.place(relx=0.43, rely=0.28, height=500, width=200)
 
     titleFrame = tk.Frame(lockerPopup, bg="white")  # טקסט המלצה לווידוא פרטים
     titleFrame.place(relx=0.0, rely=0.03, height=40, width=200, )
@@ -118,13 +138,32 @@ def locker_popupDesign(root, buyer_phone):
 
     def txtMe_sms_starter():
         global hex_c, radioVar_selection
+        # מוודא שנבחר צבע לוקר
         try:
             print(f"radioVar_selection is {radioVar_selection} (from txtMe_sms_starter)")
         except:
             title_label.config(background="white",
                                foreground="#333333",
-                               text="נא לבחור אופציה",
+                               text="נא לבחור צבע לוקר",
                                font=("rubik", 14, "bold"))
+
+        # מוודא שהוכנסו קודי לוקרים
+        if green_code_field.get() == "0000" or blue_code_field.get() == "0000":
+            print("יש לעדכן קוד לוקרים!")
+            title_label.config(background="white",
+                               foreground="#333333",
+                               text="נא לעדכן קוד לוקרים",
+                               font=("rubik", 14, "bold"))
+            return
+
+        # מגדיר לקונפיג קודי לוקרים
+        new_config = open("config.txt", "w")
+        new_config.write(f"לוקר ירוק: {green_code_field.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר כחול: {blue_code_field.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר כתום: {orange_code_field.get()}")
+
         txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone)
         messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
         sleep(0.15)
@@ -138,25 +177,25 @@ def locker_popupDesign(root, buyer_phone):
                command= txtMe_sms_starter).pack(pady=11)
                # command= partial(txtMe_sms, message_type=int(radioVar_selection), phone="0584770076")).pack(pady=11)
 
-    # green_code_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
-    # green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
-    # green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
-    # green_code_field.pack()
-    # green_code_field.insert(0, "1478")
-    #
-    # blue_fields_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
-    # blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
-    # blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
-    # blue_code_field.pack()
-    # blue_code_field.insert(0, "2580")
-    #
-    # orange_fields_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
-    # orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
-    # blue_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
-    # blue_code_field.pack()
-    # blue_code_field.insert(0, "2356")
+    green_code_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
+    green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
+    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
+    green_code_field.pack()
+    green_code_field.insert(0, locker_code_list[0]) #Green 1478
+
+    blue_fields_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
+    blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
+    blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
+    blue_code_field.pack()
+    blue_code_field.insert(0, locker_code_list[1]) #Blue 2580
+
+    orange_fields_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
+    orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
+    orange_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
+    orange_code_field.pack()
+    orange_code_field.insert(0, locker_code_list[2]) #Orange 2356
 
 ## Example
-# master = Tk()
-# locker_popupDesign(master, "0584770076")
-# mainloop()
+master = Tk()
+locker_popupDesign(master, "0584770076")
+mainloop()

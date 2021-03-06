@@ -6,8 +6,8 @@ from requests.structures import CaseInsensitiveDict
 
 
 def woocomarce_api(numOrder):
-    # url = "https://spider3d.co.il/wp-json/wc/v3/orders/27975" # לקוח כולל הערה
 
+    # url = "https://spider3d.co.il/wp-json/wc/v3/orders" # כלל ההזמנות
     url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
     # numOrder = "27695" # איסוף עצמי
     # numOrder = "25560" # Eyal Biton הזמנה עבור
@@ -17,11 +17,17 @@ def woocomarce_api(numOrder):
     headers["Authorization"] = \
         "Basic Y2tfMzAyZWJkYmQ4OTNjNzU2YTFlOTlmZjhlZmNjMzZiYjYzNWZjNDRjNzpjc19lMTUyMTc0MWJlNDYzMWZjMzljMTQyNzUwZDg0YmU2YTJiYWVlMWIx"
 
+    # data = {
+    #     "status": "completed",
+    # }
+
+    # resp = requests.get(url, headers=headers, data=data)
     resp = requests.get(url, headers=headers)
 
     print(resp.status_code)
     order_details = resp.json()
-    # print(order_details["billing"])
+    # print(order_details)
+    # print(len(order_details))
 
     def try_get_item(json_path):
         try:
@@ -85,4 +91,4 @@ def woocomarce_api(numOrder):
            email, phone, high_quantity, deliveryNeeded, customer_note
 
 # woocomarce_api(numOrder=27975)
-# woocomarce_api(numOrder=25560)
+woocomarce_api(numOrder=25560)
