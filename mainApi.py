@@ -30,7 +30,7 @@ def main_api(numOrder, numOfPacks):
         # from selenium.webdriver.support import ui
 
         # user_field = "idanb"
-        chrome_ver = "87"  # 86/87/88
+        chrome_ver = "89"  # 86/87/88
         # global chrome_ver
         # options = webdriver.ChromeOptions()  # פיתחת כרום דרך משתמש רגיל
         # options.add_argument(f"user-data-dir=C:\\Users\\{user_field.get()}\\AppData\\Local\\Google\\Chrome\\User Data")
@@ -144,21 +144,9 @@ def main_api(numOrder, numOfPacks):
     # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
     butikTrackNumber, butikBarCode = create_sticker(browser=browser)
 
-
-    winsound.Beep(2000, 150)
-    winsound.Beep(1500, 150)
-    browser.execute_script('window.print();')
-    sleep(0.15)
-    winsound.Beep(800, 150)
-    winsound.Beep(800, 150)
-    sleep(0.27)
-    winsound.Beep(1400, 150)
-    winsound.Beep(1400, 150)
-    # Press and release space
-    # keyboard.press(Key.enter)
-    # keyboard.release(Key.enter)
-
     return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+
+# main_api(28020,1)
 
 # if __name__ == '__main__':
 #     main()

@@ -1,0 +1,6 @@
+callr~=2.1.0
+future~=0.18.2
+twilio~=6.53.0
+requests~=2.25.1
+selenium~=3.141.0
+pynput~=1.7.3

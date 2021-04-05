@@ -26,8 +26,8 @@ def main_starter():
     # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
     try:
         api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
-    except:
-        messagebox.showerror("שגיאה", "חלה שגיאה בהפעלת התוכנה")
+    except ValueError as e:
+        messagebox.showerror("שגיאה", f"{e}")
         api_output = "FAILED"
         # e = str(e)
         # print("ValueError:")
@@ -57,6 +57,7 @@ def main_starter():
 def part_b_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
     try:
+        browser.quit()
         print("orderLinkField.get() is ", orderLinkField.get())
     except:
         messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")

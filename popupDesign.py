@@ -5,23 +5,35 @@ from tkinter import ttk, messagebox
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 ## get updated config
+def write_config():
+    config = open("config.txt", "w")
+    config.write("לוקר ירוק: 0000")
+    config.write("\n")
+    config.write("לוקר כחול: 0000")
+    config.write("\n")
+    config.write("לוקר כתום: 0000")
+
 def get_config():
     try:
         config = open("config.txt", "r")
     except:
-        config = open("config.txt", "w")
-        config.write("לוקר ירוק: 0000")
-        config.write("\n")
-        config.write("לוקר כחול: 0000")
-        config.write("\n")
-        config.write("לוקר כתום: 0000")
-        config = open("config.txt", "r")
+        write_config()
 
+    config = open("config.txt", "r")
     read_config = config.read()
-    # print(type(read_config))
 
     config_list = read_config.splitlines()
-    # print(config_list)
+    print("config_list")
+    print(*config_list)
+
+    if len(config_list) == 0:
+        write_config()
+        config = open("config.txt", "r")
+        read_config = config.read()
+
+        config_list = read_config.splitlines()
+        print("config_list update")
+        print(*config_list)
 
     _locker_code_list = []
     for item in config_list:
@@ -152,14 +164,6 @@ def locker_popupDesign(root, buyer_phone):
                                text="נא לבחור צבע לוקר",
                                font=("rubik", 14, "bold"))
 
-        # מוודא שהוכנסו קודי לוקרים
-        if green_code_field.get() == "0000" or blue_code_field.get() == "0000":
-            print("יש לעדכן קוד לוקרים!")
-            title_label.config(background="white",
-                               foreground="#333333",
-                               text="נא לעדכן קוד לוקרים",
-                               font=("rubik", 14, "bold"))
-            # return
 
         # מגדיר לקונפיג קודי לוקרים
         new_config = open("config.txt", "w")
@@ -169,8 +173,24 @@ def locker_popupDesign(root, buyer_phone):
         new_config.write("\n")
         new_config.write(f"לוקר כתום: {orange_code_field.get()}")
 
+        _locker_code_field = ""
+        if radioVar_selection == 1: _locker_code_field = green_code_field.get()
+        if radioVar_selection == 2: _locker_code_field = blue_code_field.get()
+        if radioVar_selection == 3: _locker_code_field = orange_code_field.get()
+        print("_locker_code_field")
+        print(_locker_code_field)
+
+        # מוודא שהוכנסו קודי לוקרים
+        if green_code_field.get() == "0000" or blue_code_field.get() == "0000":
+            print("יש לעדכן קוד לוקרים!")
+            title_label.config(background="white",
+                               foreground="#333333",
+                               text="נא לעדכן קוד לוקרים",
+                               font=("rubik", 14, "bold"))
+            # return
+
         if radioVar_selection < 10:
-            txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone)
+            txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone, locker_code_field = _locker_code_field)
             messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
             sleep(0.15)
             lockerPopup.destroy()

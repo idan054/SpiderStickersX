@@ -3,7 +3,7 @@ import requests
 from Gadgets.multi_usage.bcolors import bcolors
 
 global locker_color, locker_code, final_msg
-def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no needed on pickup
+def txtMe_sms(message_type, phone, butikTrackNumber=None, locker_code_field="0110"): #butikTrackNumber no needed on pickup
     global locker_color, locker_code, final_msg
     print("message_type = ", message_type)
 
@@ -15,19 +15,28 @@ def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no 
 
     if message_type == 1 : # locker
         locker_color = "הירוק 🟢"
-        locker_code =  "1478"
+        # locker_code =  "1478"
+        locker_code =  locker_code_field
     if message_type == 2 : # locker
         locker_color = "הכחול 🔵"
-        locker_code =  "2580"
+        # locker_code =  "2580"
+        locker_code =  locker_code_field
     if message_type == 3 : # locker
         locker_color = "הכתום 🟠"
-        locker_code =  "2356"
+        # locker_code =  "2356"
+        locker_code =  locker_code_field
     if message_type < 4 : # phone pickup
         final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
 ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
 החבילה זמינה 24/7 בלוקר {locker_color}
 קוד: *️⃣ {locker_code} ומפתח 🔑
 בברכה, צוות ספיידר 3D"""
+    if message_type == 4:  # delivery
+        final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+        ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
+        אנא צור קשר לפני הגעה כדי שנוציא לך את החבילה
+        052-2509900
+        בברכה, צוות ספיידר 3D"""
     if message_type == 5 : # delivery
         # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
         final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
@@ -81,4 +90,5 @@ def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no 
 
 ## Example
 # txtMe_sms(message_type=2, phone="0584770076")
+
 
