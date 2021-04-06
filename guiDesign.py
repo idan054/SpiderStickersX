@@ -132,29 +132,37 @@ packNum.insert(0, "1")
 # endregion
 
 # region כפתורי רדיו
-def change_chrome_selection():
-   selection = "You selected the option " + str(chrome_radioVar.get())
-   Label(root).config(text = selection)
-   print(chrome_radioVar.get())
-   chrome_ver = chrome_radioVar.get()
-   print("Chrome_ver is " + str(chrome_ver))
-# ----
-RadioFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-RadioFrame.place(relx=0.03, rely=0.56, height=100, width=100, )
-# style = Style(root)
-# style.configure("TRadiobutton", background = "light green",
-#                 foreground = "red", font = ("arial", 10, "bold"))
-chrome_radioVar = IntVar()
-R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=chrome_radioVar, value="86", command=change_chrome_selection, style="myStyle.TRadiobutton")
-# ----
-R1.pack( anchor = W )
-# ----
-R2 = ttk.Radiobutton(RadioFrame, text="Chrome 87", variable=chrome_radioVar, value="87", command=change_chrome_selection, style="myStyle.TRadiobutton")
-R2.pack( anchor = W )
-R2.state(['selected'])
-# ----
-R3 = ttk.Radiobutton(RadioFrame, text="Chrome 88", variable=chrome_radioVar, value="88", command=change_chrome_selection, style="myStyle.TRadiobutton")
-R3.pack( anchor = W)
+# def change_chrome_selection():
+#    selection = "You selected the option " + str(chrome_radioVar.get())
+#    Label(root).config(text = selection)
+#    print(chrome_radioVar.get())
+#    chrome_ver = chrome_radioVar.get()
+#    print("Chrome_ver is " + str(chrome_ver))
+# # ----
+# RadioFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+# RadioFrame.place(relx=0.03, rely=0.56, height=100, width=100, )
+# # style = Style(root)
+# # style.configure("TRadiobutton", background = "light green",
+# #                 foreground = "red", font = ("arial", 10, "bold"))
+# chrome_radioVar = IntVar()
+# R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=chrome_radioVar, value="86", command=change_chrome_selection, style="myStyle.TRadiobutton")
+# # ----
+# R1.pack( anchor = W )
+# # ----
+# R2 = ttk.Radiobutton(RadioFrame, text="Chrome 87", variable=chrome_radioVar, value="87", command=change_chrome_selection, style="myStyle.TRadiobutton")
+# R2.pack( anchor = W )
+# R2.state(['selected'])
+# # ----
+# R3 = ttk.Radiobutton(RadioFrame, text="Chrome 88", variable=chrome_radioVar, value="88", command=change_chrome_selection, style="myStyle.TRadiobutton")
+# R3.pack( anchor = W)
+# endregion
+
+# region שדה מס' אריזות
+entry_pack_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט כמות חבילות
+entry_pack_Frame.place(relx=0.04, rely=0.72, height=25, width=115, )
+packNum = ttk.Entry(entry_pack_Frame, font=("rubik", 13), width=33, justify="center", foreground='grey')
+packNum.pack()
+packNum.insert(0, "89.0.4389.23")
 # endregion
 
 # region כותרת "הכנס מס' הזמנה"
@@ -167,6 +175,10 @@ main_label.pack()
 subTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
 subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )
 subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.06₪", font=("rubik", 9), bg="#23964e", fg="white").pack()
+
+driverTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+driverTextFrame.place(relx=0.04, rely=0.88, height=20, width=150, )
+driverTextLabel = Label(driverTextFrame, text="מס' כרום דרייבר", font=("rubik", 9), bg="#23964e", fg="white").pack()
 # endregion "כותרת "הכנס מס' הזמנה
 
 root.mainloop()

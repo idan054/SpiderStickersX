@@ -79,7 +79,10 @@ def main_api(numOrder, numOfPacks):
 
     ## Check customer note
     if buyer_notes != "":
-        messagebox.showinfo("הערה מהלקוח", "ಠ_ಠ שים לב להערה של הלקוח")
+        # messagebox.showinfo("הערה מהלקוח", buyer_notes)
+        # messagebox.showinfo("הערה מהלקוח", f"ಠ_ಠ שים לב להערה של הלקוח")
+        messagebox.showinfo("הערה מהלקוח", f"""                       ಠ_ಠ :שים לב להערה של הלקוח
+        "{buyer_notes}" """)
 
     ## Check delivery method
     # (and stop running if delivery not needed)
