@@ -1,9 +1,31 @@
 Start SpiderSticker_log
-orderLinkField = 28020
+orderLinkField = 28021
 packNum = 1
 [93m[1mStart[0m
 woocomarce_api Start
 200
 first_name is  idan
 last_name is  biton
-address_1 is  [91m'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)[0m
+address_1 is  חבקוק 114
+street_num is  114
+street is  חבקוק
+city is  גדרה
+email is  idanbit80@gmail.com
+phone is  0584770076
+customer_note is  חשוב לי לשבח את עידן על שירות מדהים!
+deliveryNeeded?  False
+woocomarce_api Done
+https://www.spider3d.co.il/wp-admin/post.php?post=28021&action=edit
+Please Wait!
+[93m[1mיש כפילות[0m
+high_quantity = True
+[93m[1m STOP! - עוצר. "איסוף עצמי" נמצא [0m
+True
+Fast return...
+api_output is  0584770076
+write_config()...
+config_list
+לוקר ירוק: 0000 לוקר כחול: 0000 לוקר כתום: 0000
+['0000', '0000', '0000']
+Packs field reset to 1
+[93m[1mDone.[0m

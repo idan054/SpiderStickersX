@@ -6,7 +6,7 @@ from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 ## get updated config
 def write_config():
-    config = open("config.txt", "w")
+    config = open("config.txt", "w", encoding='utf-8')
     config.write("לוקר ירוק: 0000")
     config.write("\n")
     config.write("לוקר כחול: 0000")
@@ -15,14 +15,14 @@ def write_config():
 
 def get_config():
     try:
-        config = open("config.txt", "r")
+        config = open("config.txt", "r", encoding='utf-8')
         print("CONFIG.TXT")
         print(config.read())
     except:
         print("write_config()...")
         write_config()
 
-    config = open("config.txt", "r")
+    config = open("config.txt", "r", encoding='utf-8')
     read_config = config.read()
 
     config_list = read_config.splitlines()
@@ -31,7 +31,7 @@ def get_config():
 
     if len(config_list) == 0:
         write_config()
-        config = open("config.txt", "r")
+        config = open("config.txt", "r", encoding='utf-8')
         read_config = config.read()
 
         config_list = read_config.splitlines()
