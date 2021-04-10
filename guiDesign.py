@@ -15,6 +15,10 @@ from popupDesign import locker_popupDesign
 
 global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 
+import sys  # first of all import the module
+sys.stdout = open("SpiderSticker_log.txt", "w")
+print("Start SpiderSticker_log")
+
 global hex_c, radioVar_selection
 def main_starter():
 
@@ -49,6 +53,8 @@ def main_starter():
         if api_output[0] != "0":  # After delivery
             mailButton['state'] = NORMAL
         print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
+
+        sys.stdout.close()
     except Exception as e:
         printRed(str(e))
         messagebox.showerror("שגיאה", f"{e}")
@@ -57,6 +63,7 @@ def main_starter():
         # print("ValueError:")
         # print(f"{bcolors.Red}e:{bcolors.Normal}")
         # print(e)
+        sys.stdout.close()
 
 def part_b_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
