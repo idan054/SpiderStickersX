@@ -16,7 +16,10 @@ def write_config():
 def get_config():
     try:
         config = open("config.txt", "r")
+        print("CONFIG.TXT")
+        print(config.read())
     except:
+        print("write_config()...")
         write_config()
 
     config = open("config.txt", "r")
@@ -163,6 +166,19 @@ def locker_popupDesign(root, buyer_phone):
                                foreground="#333333",
                                text="נא לבחור צבע לוקר",
                                font=("rubik", 14, "bold"))
+            # return
+
+
+
+        # מוודא שהוכנסו קודי לוקרים
+        if green_code_field.get() == "0000" or blue_code_field.get() == "0000" or orange_code_field.get() == "0000":
+            print("יש לעדכן קוד לוקרים!")
+            # print(green_code_field.get())
+            title_label.config(background="white",
+                               foreground="#333333",
+                               text="נא לעדכן קוד לוקרים",
+                               font=("rubik", 14, "bold"))
+            return
 
 
         # מגדיר לקונפיג קודי לוקרים
@@ -174,19 +190,15 @@ def locker_popupDesign(root, buyer_phone):
         new_config.write(f"לוקר כתום: {orange_code_field.get()}")
 
         _locker_code_field = ""
-        if radioVar_selection == 1: _locker_code_field = green_code_field.get()
-        if radioVar_selection == 2: _locker_code_field = blue_code_field.get()
-        if radioVar_selection == 3: _locker_code_field = orange_code_field.get()
+        if radioVar_selection == 1:
+            _locker_code_field = green_code_field.get()
+        if radioVar_selection == 2:
+            _locker_code_field = blue_code_field.get()
+        if radioVar_selection == 3:
+            _locker_code_field = orange_code_field.get()
         print("_locker_code_field")
+        print(type(_locker_code_field))
         print(_locker_code_field)
-
-        # מוודא שהוכנסו קודי לוקרים
-        if green_code_field.get() == "0000" or blue_code_field.get() == "0000":
-            print("יש לעדכן קוד לוקרים!")
-            title_label.config(background="white",
-                               foreground="#333333",
-                               text="נא לעדכן קוד לוקרים",
-                               font=("rubik", 14, "bold"))
             # return
 
         if radioVar_selection < 10:

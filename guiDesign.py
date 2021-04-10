@@ -4,6 +4,8 @@ from time import sleep
 from tkinter import *
 from tkinter import messagebox, ttk
 
+from color_printer import printRed
+
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.pickup_sms import pickup_sms
 from Scripts.B1_complete_and_notifications import complete_and_notifications
@@ -15,44 +17,46 @@ global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buye
 
 global hex_c, radioVar_selection
 def main_starter():
-    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
-    winsound.Beep(2000, 300)
-    winsound.Beep(1000, 100)
-    # mailButton['state'] = DISABLED
-    # mailButton['state'] = NORMAL
-    # sys.stdout = open("SpiderLog.txt", "w")
-    print(f"orderLinkField = {orderLinkField.get()}")
-    print(f"packNum = {packNum.get()}")
-    # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
+
     try:
+        global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+        winsound.Beep(2000, 300)
+        winsound.Beep(1000, 100)
+        # mailButton['state'] = DISABLED
+        # mailButton['state'] = NORMAL
+        # sys.stdout = open("SpiderLog.txt", "w")
+        print(f"orderLinkField = {orderLinkField.get()}")
+        print(f"packNum = {packNum.get()}")
+        # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
         api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
-    except ValueError as e:
+
+        print("api_output is ", api_output)
+        # if api_output == "pickup":
+        if api_output[0] == "0":  # return phone only
+            locker_popupDesign(root=root, buyer_phone=api_output)
+
+        else:  # When no pickup...
+            browser, finalOrderLink, buyer_name, butikTrackNumber, \
+            butikBarCode, buyer_phone = api_output
+
+            main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
+            main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
+
+        packNum.delete(0, END)
+        packNum.insert(0, "1")  # Reset to 1 when finish
+        print("Packs field reset to 1")
+
+        if api_output[0] != "0":  # After delivery
+            mailButton['state'] = NORMAL
+        print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
+    except Exception as e:
+        printRed(str(e))
         messagebox.showerror("שגיאה", f"{e}")
         api_output = "FAILED"
         # e = str(e)
         # print("ValueError:")
         # print(f"{bcolors.Red}e:{bcolors.Normal}")
         # print(e)
-
-    print("api_output is ",api_output)
-    # if api_output == "pickup":
-    if api_output[0] == "0": # return phone only
-        locker_popupDesign(root=root, buyer_phone=api_output)
-
-    else: # When no pickup...
-        browser, finalOrderLink, buyer_name, butikTrackNumber,\
-        butikBarCode, buyer_phone = api_output
-
-        main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
-        main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
-
-    packNum.delete(0, END)
-    packNum.insert(0, "1") # Reset to 1 when finish
-    print("Packs field reset to 1")
-
-    if api_output[0] != "0":               # After delivery
-        mailButton['state'] = NORMAL
-    print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def part_b_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
@@ -158,11 +162,11 @@ packNum.insert(0, "1")
 # endregion
 
 # region שדה מס' אריזות
-entry_pack_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט כמות חבילות
-entry_pack_Frame.place(relx=0.04, rely=0.72, height=25, width=115, )
-packNum = ttk.Entry(entry_pack_Frame, font=("rubik", 13), width=33, justify="center", foreground='grey')
-packNum.pack()
-packNum.insert(0, "89.0.4389.23")
+# entry_chromeDriver_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט כמות חבילות
+# entry_chromeDriver_Frame.place(relx=0.04, rely=0.72, height=25, width=115, )
+# chromeDriver = ttk.Entry(entry_chromeDriver_Frame, font=("rubik", 13), width=33, justify="center", foreground='grey')
+# chromeDriver.pack()
+# chromeDriver.insert(0, "89.0.4389.23")
 # endregion
 
 # region כותרת "הכנס מס' הזמנה"
@@ -176,9 +180,9 @@ subTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידו�
 subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )
 subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.06₪", font=("rubik", 9), bg="#23964e", fg="white").pack()
 
-driverTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-driverTextFrame.place(relx=0.04, rely=0.88, height=20, width=150, )
-driverTextLabel = Label(driverTextFrame, text="מס' כרום דרייבר", font=("rubik", 9), bg="#23964e", fg="white").pack()
+# driverTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+# driverTextFrame.place(relx=0.04, rely=0.88, height=20, width=150, )
+# driverTextLabel = Label(driverTextFrame, text="מס' כרום דרייבר", font=("rubik", 9), bg="#23964e", fg="white").pack()
 # endregion "כותרת "הכנס מס' הזמנה
 
 root.mainloop()
