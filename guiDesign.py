@@ -19,7 +19,7 @@ global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buye
 
 global hex_c, radioVar_selection
 def main_starter():
-    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
+    # sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
     print("Start SpiderSticker_log")
 
     try:
@@ -54,7 +54,7 @@ def main_starter():
             mailButton['state'] = NORMAL
         print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
-        sys.stdout.close()
+        # sys.stdout.close()
     except Exception as e:
         printRed(str(e))
         messagebox.showerror("שגיאה", f"{e}")

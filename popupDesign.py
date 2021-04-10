@@ -19,7 +19,7 @@ def get_config():
         print("CONFIG.TXT")
         print(config.read())
     except:
-        print("write_config()...")
+        print("config.txt not found! Start write_config()...")
         write_config()
 
     config = open("config.txt", "r", encoding='utf-8')
@@ -27,9 +27,10 @@ def get_config():
 
     config_list = read_config.splitlines()
     print("config_list")
-    print(*config_list)
+    print(config_list)
 
     if len(config_list) == 0:
+        print("config_list (Based config.txt) is Empty! Start write_config()")
         write_config()
         config = open("config.txt", "r", encoding='utf-8')
         read_config = config.read()
@@ -89,6 +90,7 @@ def locker_popupDesign(root, buyer_phone):
     def change_selection():
         global hex_c, radioVar_selection, radioVar, color_title
         radioVar_selection = int(radioVar.get())
+        print("radioVar_selection")
         print(radioVar_selection)
         color_title = ""
         hex_c = "bdbdbd"
@@ -110,6 +112,9 @@ def locker_popupDesign(root, buyer_phone):
             color_title = "תיאום טלפוני"
             radioVar_selection = int(radioVar.get())
             # 5 = משלוח
+
+        # messagebox.showinfo(f"{radioVar_selection}", f"X")
+
 
         ## Change backgrounds & frames
         # radioButtonFrame.configure(background=f"#{hex_c}")
@@ -169,7 +174,6 @@ def locker_popupDesign(root, buyer_phone):
             # return
 
 
-
         # מוודא שהוכנסו קודי לוקרים
         if green_code_field.get() == "0000" or blue_code_field.get() == "0000" or orange_code_field.get() == "0000":
             print("יש לעדכן קוד לוקרים!")
@@ -182,12 +186,18 @@ def locker_popupDesign(root, buyer_phone):
 
 
         # מגדיר לקונפיג קודי לוקרים
-        new_config = open("config.txt", "w")
+        new_config = open("config.txt", "w", encoding='utf-8')
+        print(f'new_config.write(f"לוקר ירוק: {green_code_field.get()}")')
         new_config.write(f"לוקר ירוק: {green_code_field.get()}")
         new_config.write("\n")
+        print(f'new_config.write(f"לוקר כחול: {blue_code_field.get()}")')
         new_config.write(f"לוקר כחול: {blue_code_field.get()}")
         new_config.write("\n")
+        print(f'new_config.write(f"לוקר כתום: {orange_code_field.get()}")')
         new_config.write(f"לוקר כתום: {orange_code_field.get()}")
+        new_config = open("config.txt", "r", encoding='utf-8')
+        print("new_config.read()")
+        print(new_config.read())
 
         _locker_code_field = ""
         if radioVar_selection == 1:
@@ -205,6 +215,7 @@ def locker_popupDesign(root, buyer_phone):
             txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone, locker_code_field = _locker_code_field)
             messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
             sleep(0.15)
+            # sys.stdout.close() # Close SpiderSticker_log.txt
             lockerPopup.destroy()
 
     buttonSMSFrame = tk.Frame(lockerPopup, bg=theGrey)  # טקסט המלצה לווידוא פרטים

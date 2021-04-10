@@ -23,9 +23,10 @@ high_quantity = True
 True
 Fast return...
 api_output is  0584770076
-write_config()...
+CONFIG.TXT
+config.txt not found! Start write_config()...
 config_list
-לוקר ירוק: 0000 לוקר כחול: 0000 לוקר כתום: 0000
+['לוקר ירוק: 0000', 'לוקר כחול: 0000', 'לוקר כתום: 0000']
 ['0000', '0000', '0000']
 Packs field reset to 1
 [93m[1mDone.[0m
