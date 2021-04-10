@@ -12,15 +12,15 @@ from Scripts.B1_complete_and_notifications import complete_and_notifications
 from mainApi import main_api
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
 from popupDesign import locker_popupDesign
+import sys  # first of all import the module
 
 global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 
-import sys  # first of all import the module
-sys.stdout = open("SpiderSticker_log.txt", "w")
-print("Start SpiderSticker_log")
 
 global hex_c, radioVar_selection
 def main_starter():
+    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
+    print("Start SpiderSticker_log")
 
     try:
         global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
