@@ -5,3 +5,4 @@ requests~=2.25.1
 selenium~=3.141.0
 pynput~=1.7.3
 reportlab~=3.5.66
+fpdf~=1.7.2

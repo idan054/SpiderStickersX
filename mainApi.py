@@ -75,6 +75,8 @@ def main_api(numOrder, numOfPacks):
     first_name, last_name, clean_address, buyer_street_number, buyer_street, buyer_city, \
     buyer_email, buyer_phone, high_quantity, deliveryNeeded, buyer_notes = woocomarce_api(numOrder=numOrder)
 
+    buyer_name = f"{first_name} {last_name}"
+
     print("woocomarce_api Done")
 
     finalOrderLink = f"https://www.spider3d.co.il/wp-admin/post.php?post={numOrder}&action=edit"
@@ -113,7 +115,7 @@ def main_api(numOrder, numOfPacks):
         ## When delivery no needed.
         if value: # default is False - לא ליצור משלוח
             print("Fast return...")
-            return buyer_phone
+            return buyer_phone, buyer_name
             # return "pickup"
             # return "browser", "finalOrderLink", "buyer_name", "butikTrackNumber", "butikBarCode", "buyer_phone"
         else:
@@ -124,7 +126,7 @@ def main_api(numOrder, numOfPacks):
 
     ## rework buyer & address details + CHECK FOR BUYER NOTES
     # rework API Values to the traditional (from v1.0)
-    buyer_name = f"{first_name} {last_name}"
+    # buyer_name = f"{first_name} {last_name}"
     # buyer_city = city
     # buyer_street = street
     # buyer_street_number = street_num

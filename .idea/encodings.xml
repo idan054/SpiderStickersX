@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/SpiderSticker_log.txt" charset="windows-1255" />
-    <file url="file://$PROJECT_DIR$/config.txt" charset="windows-1255" />
+    <file url="file://$PROJECT_DIR$/Assets/SpiderSticker_log.txt" charset="windows-1255" />
+    <file url="file://$PROJECT_DIR$/Assets/SpiderSticker_log.txt" charset="windows-1255" />
+    <file url="file://$PROJECT_DIR$/Assets/config.txt" charset="windows-1255" />
+    <file url="file://$PROJECT_DIR$/Assets/config.txt" charset="windows-1255" />
     <file url="file://$PROJECT_DIR$/dist/config.txt" charset="windows-1255" />
   </component>
 </project>

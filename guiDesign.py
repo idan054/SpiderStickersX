@@ -8,6 +8,7 @@ from color_printer import printRed
 
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.pickup_sms import pickup_sms
+from Scripts.A1_wooGetAPI import woo_api_get_processing
 from Scripts.B1_complete_and_notifications import complete_and_notifications
 from mainApi import main_api
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
@@ -16,11 +17,15 @@ import sys  # first of all import the module
 
 global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
 
+processing_num_api = woo_api_get_processing()
 
 global hex_c, radioVar_selection
 def main_starter():
     # sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
     print("Start SpiderSticker_log")
+
+    _processing_num_api = woo_api_get_processing()
+    processing_num.configure(text=f"{_processing_num_api}")
 
     try:
         global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
@@ -36,8 +41,10 @@ def main_starter():
 
         print("api_output is ", api_output)
         # if api_output == "pickup":
-        if api_output[0] == "0":  # return phone only
-            locker_popupDesign(root=root, buyer_phone=api_output)
+        if api_output[0][0] == "0":  # return phone & buyer name only
+            print("api_output[0][0]")
+            print(api_output[0][0])
+            locker_popupDesign(root=root, buyer_phone=api_output[0], locker_name=api_output[1], order_number=orderLinkField.get())
 
         else:  # When no pickup...
             browser, finalOrderLink, buyer_name, butikTrackNumber, \
@@ -50,7 +57,7 @@ def main_starter():
         packNum.insert(0, "1")  # Reset to 1 when finish
         print("Packs field reset to 1")
 
-        if api_output[0] != "0":  # After delivery
+        if api_output[0][0] != "0":  # After delivery
             mailButton['state'] = NORMAL
         print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
@@ -182,6 +189,18 @@ main_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווי�
 main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
 main_label = Label(main_label_frame, text="הכנס מס' הזמנה", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
 main_label.pack()
+
+processing_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+processing_label_frame.place(relx=0.085, rely=0.55, height=30, width=60, )
+processing_label = Label(processing_label_frame, text=":בטיפול", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
+# processing_label.configure(text="8")
+processing_label.pack()
+
+processing_num_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
+processing_num_label_frame.place(relx=0.02, rely=0.56, height=30, width=20, )
+processing_num = Label(processing_num_label_frame, text=f"{processing_num_api}", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
+# processing_num.configure(text="8")
+processing_num.pack()
 
 subTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
 subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )

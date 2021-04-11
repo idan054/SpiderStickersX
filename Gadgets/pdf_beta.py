@@ -10,14 +10,13 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import textobject
 from reportlab.pdfgen.canvas import Canvas
-from selenium import webdriver
 
 def reverse_text(text):
     string_list = []
     for l in reversed(text):
         # print(l)
         string_list.append(l)
-    listToStr = ' '.join([str(elem) for elem in string_list])
+    listToStr = ''.join([str(elem) for elem in string_list])
     # print(listToStr)
     return listToStr
 
@@ -55,6 +54,7 @@ import os
 # import webbrowser
 # webbrowser.open(r'file:///test.pdf')
 
+from selenium import webdriver
 def setup_browser():
     # option = webdriver.ChromeOptions()
     # option.binary_location = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
