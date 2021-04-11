@@ -1,0 +1,29 @@
+Start SpiderSticker_log
+orderLinkField = 28020
+packNum = 1
+[93m[1mStart[0m
+woocomarce_api Start
+200
+first_name is  idan
+last_name is  biton
+address_1 is  חבקוק 114
+street_num is  114
+street is  חבקוק
+city is  גדרה
+email is  idanbit80@gmail.com
+phone is  0584770076
+customer_note is  חשוב לי לשבח את עידן על שירות מדהים!
+deliveryNeeded?  True
+woocomarce_api Done
+https://www.spider3d.co.il/wp-admin/post.php?post=28020&action=edit
+Please Wait!
+[93m[1mיש כפילות[0m
+high_quantity = True
+deliveryNeeded = True
+ChromeVer 89
+ChromeDriverVer 89
+x
+[91mMessage: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=89.0.4389.114)
+[0m

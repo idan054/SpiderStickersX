@@ -27,7 +27,9 @@ def localPickupSticker(name, orderNum, phone):
     # Add a DejaVu Unicode font (uses UTF-8)
     # Supports more than 200 languages. For a coverage status see:
     # http://dejavu.svn.sourceforge.net/viewvc/dejavu/trunk/dejavu-fonts/langcover.txt
-    pdf.add_font('DejaVu', '', 'Assets\DejaVuSansCondensed.ttf', uni=True)
+
+    # pdf.add_font('DejaVu', '', 'Assets\DejaVuSansCondensed.ttf', uni=True)
+    pdf.add_font('DejaVu', '', 'C:\Windows\Fonts\Arial.ttf', uni=True)
     pdf.set_font('DejaVu', '', 70)
 
     pdf.write(8, reverse_text("איסוף עצמי       "))
@@ -88,5 +90,5 @@ def localPickupSticker(name, orderNum, phone):
 ## Example
 # import time
 # localPickupSticker(name="Dudi halevi", orderNum="28090", phone="0542323167")
-# # localPickupSticker(name="ישראל ישראלי", orderNum="28090", phone="0542323167")
+# localPickupSticker(name="ישראל ישראלי", orderNum="28090", phone="0542323167")
 # time.sleep(7)

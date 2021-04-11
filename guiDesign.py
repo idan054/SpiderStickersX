@@ -21,7 +21,7 @@ processing_num_api = woo_api_get_processing()
 
 global hex_c, radioVar_selection
 def main_starter():
-    # sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
+    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
     print("Start SpiderSticker_log")
 
     _processing_num_api = woo_api_get_processing()

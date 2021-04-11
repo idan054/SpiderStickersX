@@ -8,7 +8,7 @@ from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 ## get updated config
 def write_config():
-    config = open("Assets/config.txt", "w", encoding='utf-8')
+    config = open("config.txt", "w", encoding='utf-8')
     config.write("לוקר ירוק: 0000")
     config.write("\n")
     config.write("לוקר כחול: 0000")
@@ -17,14 +17,14 @@ def write_config():
 
 def get_config():
     try:
-        config = open("Assets/config.txt", "r", encoding='utf-8')
+        config = open("config.txt", "r", encoding='utf-8')
         print("CONFIG.TXT")
         print(config.read())
     except:
         print("config.txt not found! Start write_config()...")
         write_config()
 
-    config = open("Assets/config.txt", "r", encoding='utf-8')
+    config = open("config.txt", "r", encoding='utf-8')
     read_config = config.read()
 
     config_list = read_config.splitlines()
@@ -34,7 +34,7 @@ def get_config():
     if len(config_list) == 0:
         print("config_list (Based config.txt) is Empty! Start write_config()")
         write_config()
-        config = open("Assets/config.txt", "r", encoding='utf-8')
+        config = open("config.txt", "r", encoding='utf-8')
         read_config = config.read()
 
         config_list = read_config.splitlines()
@@ -191,7 +191,7 @@ def locker_popupDesign(root, buyer_phone, locker_name, order_number):
 
 
         # מגדיר לקונפיג קודי לוקרים
-        new_config = open("Assets/config.txt", "w", encoding='utf-8')
+        new_config = open("config.txt", "w", encoding='utf-8')
         print(f'new_config.write(f"לוקר ירוק: {green_code_field.get()}")')
         new_config.write(f"לוקר ירוק: {green_code_field.get()}")
         new_config.write("\n")
@@ -200,7 +200,7 @@ def locker_popupDesign(root, buyer_phone, locker_name, order_number):
         new_config.write("\n")
         print(f'new_config.write(f"לוקר כתום: {orange_code_field.get()}")')
         new_config.write(f"לוקר כתום: {orange_code_field.get()}")
-        new_config = open("Assets/config.txt", "r", encoding='utf-8')
+        new_config = open("config.txt", "r", encoding='utf-8')
         print("new_config.read()")
         print(new_config.read())
 
@@ -219,9 +219,12 @@ def locker_popupDesign(root, buyer_phone, locker_name, order_number):
         if radioVar_selection < 10:
             txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone, locker_code_field = _locker_code_field)
             messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
-            localPickupSticker(name=locker_name, orderNum=order_number, phone=buyer_phone) # Make pickup Sticker
+            try:
+                localPickupSticker(name=locker_name, orderNum=order_number, phone=buyer_phone) # Make pickup Sticker
+            except Exception as e:
+                print(str(e))
             sleep(0.15)
-            # sys.stdout.close() # Close SpiderSticker_log.txt
+            sys.stdout.close() # Close SpiderSticker_log.txt
             lockerPopup.destroy()
 
     buttonSMSFrame = tk.Frame(lockerPopup, bg=theGrey)  # טקסט המלצה לווידוא פרטים
