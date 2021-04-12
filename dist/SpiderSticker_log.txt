@@ -1,5 +1,5 @@
 Start SpiderSticker_log
-orderLinkField = 28021
+orderLinkField = 
 packNum = 1
 [93m[1mStart[0m
 woocomarce_api Start
@@ -13,40 +13,14 @@ city is  גדרה
 email is  idanbit80@gmail.com
 phone is  0584770076
 customer_note is  חשוב לי לשבח את עידן על שירות מדהים!
-deliveryNeeded?  False
+deliveryNeeded?  True
 woocomarce_api Done
-https://www.spider3d.co.il/wp-admin/post.php?post=28021&action=edit
+https://www.spider3d.co.il/wp-admin/post.php?post=28020&action=edit
 Please Wait!
 [93m[1mיש כפילות[0m
 high_quantity = True
-[93m[1m STOP! - עוצר. "איסוף עצמי" נמצא [0m
-True
-Fast return...
-api_output is  ('0584770076', 'idan biton')
-api_output[0][0]
-0
-CONFIG.TXT
-לוקר ירוק: 22
-לוקר כחול: 00121300
-לוקר כתום: 0003330
-config_list
-['לוקר ירוק: 22', 'לוקר כחול: 00121300', 'לוקר כתום: 0003330']
-['22', '00121300', '0003330']
-Packs field reset to 1
-[93m[1mDone.[0m
-radioVar_selection
-1
-new_config.write(f"לוקר ירוק: 22")
-new_config.write(f"לוקר כחול: 00121300")
-new_config.write(f"לוקר כתום: 0003330")
-new_config.read()
-לוקר ירוק: 22
-לוקר כחול: 00121300
-לוקר כתום: 0003330
-_locker_code_field
-<class 'str'>
-22
-message_type =  1
-[93mSMS will be sent[0m
+deliveryNeeded = True
 ChromeVer 89
 ChromeDriverVer 89
+x
+[93mחלון כרום הישן *לא* נסגר![0m

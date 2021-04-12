@@ -30,7 +30,7 @@ def main_starter():
     except:
         printYellow("חלון כרום הישן *לא* נסגר!")
 
-    # sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
+    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
     print("Start SpiderSticker_log")
 
     _processing_num_api = woo_api_get_processing()
