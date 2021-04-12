@@ -1,3 +1,6 @@
-from Gadgets.fpdf_beta import localPickupSticker
+from tkinter import messagebox
 
-localPickupSticker(name="ישראל ישראלי", orderNum="28090", phone="0542323167")
+value = messagebox.askyesno(
+    "משלוח הושלם", """(^///^)  האם לשנות את סטטוס ההזמנה להושלם
+                   ?ולהודיע ללקוח שהמשלוח יצא בסמס""",
+    default='yes')

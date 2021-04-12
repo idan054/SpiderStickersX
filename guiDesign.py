@@ -4,12 +4,12 @@ from time import sleep
 from tkinter import *
 from tkinter import messagebox, ttk
 
-from color_printer import printRed
+from color_printer import *
 
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.pickup_sms import pickup_sms
 from Scripts.A1_wooGetAPI import woo_api_get_processing
-from Scripts.B1_complete_and_notifications import complete_and_notifications
+from Scripts.B1_complete_and_notifications import complete_and_notifications, wooApi_mail_complete
 from mainApi import main_api
 # Need ...starter() because gui can't implement attributes (numOrder, numOfPacks)
 from popupDesign import locker_popupDesign
@@ -21,6 +21,15 @@ processing_num_api = woo_api_get_processing()
 
 global hex_c, radioVar_selection
 def main_starter():
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+
+    try:
+        print("browser: ", browser)
+        browser.quit()
+        printGreen("חלון כרום הישן נסגר!")
+    except:
+        printYellow("חלון כרום הישן *לא* נסגר!")
+
     # sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
     print("Start SpiderSticker_log")
 
@@ -28,7 +37,6 @@ def main_starter():
     processing_num.configure(text=f"{_processing_num_api}")
 
     # try:
-    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
     # mailButton['state'] = DISABLED
@@ -45,20 +53,31 @@ def main_starter():
         print("len(api_output)")
         print(len(api_output)) # return phone & buyer name only
         locker_popupDesign(root=root, buyer_phone=api_output[0], locker_name=api_output[1], order_number=orderLinkField.get())
+        wooApi_mail_complete(numOrder=orderLinkField.get(), buyer_name="",
+                             butikTrackNumber="", sendMailNeeded=False)
+
 
     else:  # When no pickup...
         browser, finalOrderLink, buyer_name, butikTrackNumber, \
         butikBarCode, buyer_phone = api_output
 
         main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
-        main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
+        # main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
 
     packNum.delete(0, END)
     packNum.insert(0, "1")  # Reset to 1 when finish
     print("Packs field reset to 1")
 
     if len(api_output) != 2:  #S != | AKA Only After delivery
-        mailButton['state'] = NORMAL
+        # mailButton['state'] = NORMAL
+        printYellow(' STOP! - עוצר. התראת משלוח הושלם ')
+        value = messagebox.askyesno(
+            "משלוח הושלם", """(^///^)  האם לשנות את סטטוס ההזמנה להושלם
+                           ?ולהודיע ללקוח שהמשלוח יצא בסמס""",
+            default='yes')
+        if value:
+            part_b_starter()
+
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
     # sys.stdout.close()
@@ -75,7 +94,7 @@ def main_starter():
 def part_b_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
     try:
-        browser.quit()
+        # browser.quit()
         print("orderLinkField.get() is ", orderLinkField.get())
     except:
         messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
@@ -90,9 +109,9 @@ def part_b_starter():
 
     # orderLinkField.configure(foreground="#a5a5a5")
     # main_label.config(text=f"הזמנה #25550 הושלמה                     ")
-    mailButton['state'] = DISABLED
-    main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
-    main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
+    # mailButton['state'] = DISABLED
+    # main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
+    # main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
 
 
 ## Design
@@ -107,13 +126,13 @@ ttk.Style(root).configure('W.TButton', font =('rubik', 12,), justify="center", f
 # root.iconbitmap(r'C:\Users\idanb\Documents\MEGAsync\App4Sale\Spider3D\BlackLogoRoundedPNG.ico', )#לא בטוח למה צריך את הr
 # root.iconbitmap(r'Assets/StickerApp.ico')#לא בטוח למה צריך את הr
 
-canvas = tk.Canvas(root, height=150, width=300, bg="#23964e", highlightbackground="#23964e")
+canvas = tk.Canvas(root, height=100, width=300, bg="#23964e", highlightbackground="#23964e")
 canvas.pack()
 # endregion הגדרות טקינטר
 
 # region כפתור "המשך" לתחילת פעולה
 linkButtonSaver = tk.Frame(root, bg="#23964e")  # כפתור שמירת קישור ותחילת עבודה
-linkButtonSaver.place(relx=0.035, rely=0.32, height=30, width=60, )
+linkButtonSaver.place(relx=0.035, rely=0.38, height=30, width=60, )
 linkButton = ttk.Button(linkButtonSaver, text="המשך", style="W.TButton",
                         command=main_starter).pack()
 # endregion כפתור המשך לתחילת פעולה
@@ -126,14 +145,15 @@ mailButton = ttk.Button(packButtonSaver,
                         style="W.TButton",
                         state=DISABLED,
                         command=part_b_starter)
-mailButton.pack()
+## Mail button Unpack!!
+# mailButton.pack()
 # mailButton.configure(state=DISABLED)
 # mailButton.config(state=DISABLED)
 # endregion כפתור מייל מעקב
 
 # region שדה מס' הזמנה
 entry_link_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט לקישור
-entry_link_Frame.place(relx=0.25, rely=0.32, height=30, width=184, )
+entry_link_Frame.place(relx=0.25, rely=0.38, height=30, width=184, )
 orderLinkField = ttk.Entry(entry_link_Frame, font=("rubik", 14 ), width=30, justify="center")
 orderLinkField.pack()
 # endregion שדה מס' הזמנה
@@ -143,7 +163,7 @@ orderLinkField.pack()
 
 # region שדה מס' אריזות
 entry_pack_Frame = tk.Frame(root, bg="#23964e")  # שדה טקסט כמות חבילות
-entry_pack_Frame.place(relx=0.87, rely=0.32, height=30, width=33, )
+entry_pack_Frame.place(relx=0.87, rely=0.38, height=30, width=33, )
 packNum = ttk.Entry(entry_pack_Frame, font=("rubik", 14 ), width=33, justify="center")
 packNum.pack()
 packNum.insert(0, "1")
@@ -186,24 +206,25 @@ packNum.insert(0, "1")
 # region כותרת "הכנס מס' הזמנה"
 ## Official green V1. #23964e
 main_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
+main_label_frame.place(relx=0.29, rely=0.05, height=25, width=300, )
 main_label = Label(main_label_frame, text="הכנס מס' הזמנה", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
 main_label.pack()
 
 processing_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-processing_label_frame.place(relx=0.085, rely=0.55, height=30, width=60, )
+processing_label_frame.place(relx=0.085, rely=0.75, height=30, width=60, )
 processing_label = Label(processing_label_frame, text=":בטיפול", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
 # processing_label.configure(text="8")
 processing_label.pack()
 
 processing_num_label_frame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-processing_num_label_frame.place(relx=0.02, rely=0.56, height=30, width=20, )
+processing_num_label_frame.place(relx=0.02, rely=0.76, height=30, width=20, )
 processing_num = Label(processing_num_label_frame, text=f"{processing_num_api}", font=("rubik", 12, "bold"), bg="#23964e", fg="white")
 # processing_num.configure(text="8")
 processing_num.pack()
 
+# blue style #234795
 subTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים
-subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )
+subTextFrame.place(relx=0.45, rely=0.8, height=20, width=200, )
 subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.06₪", font=("rubik", 9), bg="#23964e", fg="white").pack()
 
 # driverTextFrame = tk.Frame(root, bg="#23964e")  # טקסט המלצה לווידוא פרטים

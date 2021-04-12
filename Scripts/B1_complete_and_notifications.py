@@ -4,36 +4,32 @@ from tkinter import messagebox
 import requests
 from requests.structures import CaseInsensitiveDict
 
-## Send mail & change order to succeed
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
+## Send mail & change order to completed
+def wooApi_mail_complete(numOrder, buyer_name, butikTrackNumber, sendMailNeeded):
+    print("START wooApi_mail_complete()")
 
-def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
-                               buyer_phone, butikBarCode):
+    headers = CaseInsensitiveDict()
+    headers["Authorization"] = \
+        "Basic Y2tfMzAyZWJkYmQ4OTNjNzU2YTFlOTlmZjhlZmNjMzZiYjYzNWZjNDRjNzpjc19lMTUyMTc0MWJlNDYzMWZjMzljMTQyNzUwZDg0YmU2YTJiYWVlMWIx"
+    notes_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}/notes"
 
-    winsound.Beep(2000, 110)
-    winsound.Beep(1000, 100)
+    # butikTrackNumber = str(butikTrackNumber)
+    # print(butikTrackNumber)
+    print("\nPlease Wait!")
 
-    def wooApi_mail_complete():
-        headers = CaseInsensitiveDict()
-        headers["Authorization"] = \
-            "Basic Y2tfMzAyZWJkYmQ4OTNjNzU2YTFlOTlmZjhlZmNjMzZiYjYzNWZjNDRjNzpjc19lMTUyMTc0MWJlNDYzMWZjMzljMTQyNzUwZDg0YmU2YTJiYWVlMWIx"
-        notes_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}/notes"
+    mailValue = str("""
+        היי """ + str(buyer_name) + """, 
+    המשלוח שלך נאסף ממחסנינו ע"י חברת המשלוחים 
+    וצפוי להגיע אליך תוך 2-3 ימי עסקים. 
+    **במידה ובחרת במשלוח מהיר, המשלוח יגיע אליך תוך יום עסקים 1**
+    מס' המשלוח שלך הינו """ + str(butikTrackNumber) + """
+    במקרה הצורך ניתן ליצור קשר עם חברת המשלוחים ב- 03-5109114
+    תודה לך, צוות ספיידר תלת מימד
+        """)
 
-        # butikTrackNumber = str(butikTrackNumber)
-        # print(butikTrackNumber)
-        print("\nPlease Wait!")
-
-        mailValue = str("""
-            היי """ + str(buyer_name) + """, 
-        המשלוח שלך נאסף ממחסנינו ע"י חברת המשלוחים 
-        וצפוי להגיע אליך תוך 2-3 ימי עסקים. 
-        **במידה ובחרת במשלוח מהיר, המשלוח יגיע אליך תוך יום עסקים 1**
-        מס' המשלוח שלך הינו """ + str(butikTrackNumber) + """
-        במקרה הצורך ניתן ליצור קשר עם חברת המשלוחים ב- 03-5109114
-        תודה לך, צוות ספיידר תלת מימד
-            """)
-
+    if sendMailNeeded:
         ## 1 Post mail based POST Api
         data = {
             "note": mailValue,
@@ -41,14 +37,25 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
         }
         requests.post(url=notes_url, headers=headers, data=data).json()
 
-        ## 1 Put status complete mail based PUT Api
-        data = {
-            "status": "completed"
-        }
-        order_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
-        # print(requests.put(url=order_url, headers=headers, data=data).json())
-        requests.put(url=order_url, headers=headers, data=data).json()
-    wooApi_mail_complete()
+    ## 2 Put status complete mail based PUT Api
+    data = {
+        "status": "completed"
+    }
+    order_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
+    # print(requests.put(url=order_url, headers=headers, data=data).json())
+    requests.put(url=order_url, headers=headers, data=data).json()
+
+    print("DONE wooApi_mail_complete()")
+
+def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
+                               buyer_phone, butikBarCode):
+
+    # winsound.Beep(2000, 110)
+    # winsound.Beep(1000, 100)
+
+
+    wooApi_mail_complete(numOrder=numOrder, buyer_name=buyer_name,
+                         butikTrackNumber=butikTrackNumber, sendMailNeeded=True)
 
     # message_type means delivery
     txtMe_sms(message_type=5, phone=buyer_phone, butikTrackNumber=butikTrackNumber)
@@ -59,8 +66,8 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     # sleep(0.12)
     winsound.Beep(2000, 150)
     winsound.Beep(1500, 150)
-    try: browser.quit()  # סוגר את הכרום
-    except: print("Failed to browser.quit() - PASS")
+    # try: browser.quit()  # סוגר את הכרום
+    # except: print("Failed to browser.quit() - PASS")
     winsound.Beep(1500, 150)
     winsound.Beep(2000, 150)
 
