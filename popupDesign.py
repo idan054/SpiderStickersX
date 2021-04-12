@@ -224,7 +224,7 @@ def locker_popupDesign(root, buyer_phone, locker_name, order_number):
             except Exception as e:
                 print(str(e))
             sleep(0.15)
-            sys.stdout.close() # Close SpiderSticker_log.txt
+            # sys.stdout.close() # Close SpiderSticker_log.txt
             lockerPopup.destroy()
 
     buttonSMSFrame = tk.Frame(lockerPopup, bg=theGrey)  # טקסט המלצה לווידוא פרטים

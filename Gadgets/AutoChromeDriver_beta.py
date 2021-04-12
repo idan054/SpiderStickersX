@@ -38,7 +38,6 @@ def setup_browser():
 
             url = 'f"https://chromedriver.storage.googleapis.com/{e[16]}/chromedriver_win.zip'
             r = requests.get(url, allow_redirects=True)
-
             open('facebook.ico', 'wb').write(r.content)
 
 

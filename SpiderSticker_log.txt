@@ -23,7 +23,22 @@ deliveryNeeded = True
 ChromeVer 89
 ChromeDriverVer 89
 x
-[91mMessage: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=89.0.4389.114)
-[0m
+Successfully redirect active available tab
+משלוח חדש
+משלוח חדש
+[92mSuccess adding spider details automatically0...[0m
+Try adding Note!
+clean_address:
+חבקוק 114
+butikTrackNumber is  1310504
+Successfully redirect active available tab
+משלוח - 1310504
+משלוח - 1310504
+https://members.lionwheel.com/tasks/1310504/print_labels != משלוח - 1310504
+Butik 24 Not Found, try OPEN Butik24 Tab
+משלוח - 1310504
+https://members.lionwheel.com/tasks/1310504/print_labels != משלוח - 1310504
+Lionwheel | Generate Labels
+Lionwheel | Generate Labels
+api_output is  (<selenium.webdriver.chrome.webdriver.WebDriver (session="607eac16ae0eb1c4e90c9ed0c8178e65")>, 'https://www.spider3d.co.il/wp-admin/post.php?post=28020&action=edit', 'idan biton', 1310504, 'Not in use', '0584770076')
+[91m'WebDriver' object is not subscriptable[0m

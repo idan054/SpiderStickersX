@@ -34,6 +34,7 @@ def localPickupSticker(name, orderNum, phone):
     pdf.add_font('DejaVu', '', 'C:\Windows\Fonts\Arial.ttf', uni=True)
     pdf.set_font('DejaVu', '', 40)
 
+    pdf.write(40, "\n")
     pdf.write(8, reverse_text("איסוף עצמי"))
     pdf.write(20, "\n")
     pdf.write(8, f" #{orderNum}")
@@ -54,8 +55,8 @@ def localPickupSticker(name, orderNum, phone):
 
     browser.get(pdf_path)
 
-## Example
+# Example
 # import time
 # localPickupSticker(name="Dudi halevi", orderNum="28090", phone="0542323167")
-# # localPickupSticker(name="ישראל ישראלי", orderNum="28090", phone="0542323167")
+# localPickupSticker(name="ישראל ישראלי", orderNum="28090", phone="0542323167")
 # time.sleep(7)

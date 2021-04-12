@@ -21,56 +21,56 @@ processing_num_api = woo_api_get_processing()
 
 global hex_c, radioVar_selection
 def main_starter():
-    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
+    # sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
     print("Start SpiderSticker_log")
 
     _processing_num_api = woo_api_get_processing()
     processing_num.configure(text=f"{_processing_num_api}")
 
-    try:
-        global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
-        winsound.Beep(2000, 300)
-        winsound.Beep(1000, 100)
-        # mailButton['state'] = DISABLED
-        # mailButton['state'] = NORMAL
-        # sys.stdout = open("SpiderLog.txt", "w")
-        print(f"orderLinkField = {orderLinkField.get()}")
-        print(f"packNum = {packNum.get()}")
-        # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
-        api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
+    # try:
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+    winsound.Beep(2000, 300)
+    winsound.Beep(1000, 100)
+    # mailButton['state'] = DISABLED
+    # mailButton['state'] = NORMAL
+    # sys.stdout = open("SpiderLog.txt", "w")
+    print(f"orderLinkField = {orderLinkField.get()}")
+    print(f"packNum = {packNum.get()}")
+    # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
+    api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get())
 
-        print("api_output is ", api_output)
-        # if api_output == "pickup":
-        if api_output[0][0] == "0":  # return phone & buyer name only
-            print("api_output[0][0]")
-            print(api_output[0][0])
-            locker_popupDesign(root=root, buyer_phone=api_output[0], locker_name=api_output[1], order_number=orderLinkField.get())
+    print("api_output is ", api_output)
+    # if api_output == "pickup":
+    if len(api_output) == 2:  #S == | AKA Only After localPickup
+        print("len(api_output)")
+        print(len(api_output)) # return phone & buyer name only
+        locker_popupDesign(root=root, buyer_phone=api_output[0], locker_name=api_output[1], order_number=orderLinkField.get())
 
-        else:  # When no pickup...
-            browser, finalOrderLink, buyer_name, butikTrackNumber, \
-            butikBarCode, buyer_phone = api_output
+    else:  # When no pickup...
+        browser, finalOrderLink, buyer_name, butikTrackNumber, \
+        butikBarCode, buyer_phone = api_output
 
-            main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
-            main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
+        main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
+        main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
 
-        packNum.delete(0, END)
-        packNum.insert(0, "1")  # Reset to 1 when finish
-        print("Packs field reset to 1")
+    packNum.delete(0, END)
+    packNum.insert(0, "1")  # Reset to 1 when finish
+    print("Packs field reset to 1")
 
-        if api_output[0][0] != "0":  # After delivery
-            mailButton['state'] = NORMAL
-        print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
+    if len(api_output) != 2:  #S != | AKA Only After delivery
+        mailButton['state'] = NORMAL
+    print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
-        # sys.stdout.close()
-    except Exception as e:
-        printRed(str(e))
-        messagebox.showerror("שגיאה", f"{e}")
-        api_output = "FAILED"
-        # e = str(e)
-        # print("ValueError:")
-        # print(f"{bcolors.Red}e:{bcolors.Normal}")
-        # print(e)
-        sys.stdout.close()
+    # sys.stdout.close()
+    # except Exception as e:
+    #     printRed(str(e))
+    #     messagebox.showerror("שגיאה", f"{e}")
+    #     api_output = "FAILED"
+    #     # e = str(e)
+    #     # print("ValueError:")
+    #     # print(f"{bcolors.Red}e:{bcolors.Normal}")
+    #     # print(e)
+    #     sys.stdout.close()
 
 def part_b_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
