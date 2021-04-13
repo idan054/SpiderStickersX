@@ -52,6 +52,8 @@ def get_config():
 global hex_c, radioVar_selection, radioVar, color_title
 theGrey = "#f0f0f0" # Windows default grey
 def locker_popupDesign(root, buyer_phone, locker_name, order_number):
+    global hex_c, radioVar_selection
+
     # print("BUYER PHONE = ", buyer_phone)
 
 

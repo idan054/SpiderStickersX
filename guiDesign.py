@@ -22,23 +22,26 @@ processing_num_api = woo_api_get_processing()
 global hex_c, radioVar_selection
 def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+    winsound.Beep(2000, 300)
+    winsound.Beep(1000, 100)
+
+    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
+    print("Start SpiderSticker_log")
 
     try:
-        print("browser: ", browser)
+        print("browser: ")
+        print(browser)
         browser.quit()
         printGreen("חלון כרום הישן נסגר!")
     except:
         printYellow("חלון כרום הישן *לא* נסגר!")
 
-    sys.stdout = open("SpiderSticker_log.txt", "w", encoding='utf-8')
-    print("Start SpiderSticker_log")
+
 
     _processing_num_api = woo_api_get_processing()
     processing_num.configure(text=f"{_processing_num_api}")
 
     # try:
-    winsound.Beep(2000, 300)
-    winsound.Beep(1000, 100)
     # mailButton['state'] = DISABLED
     # mailButton['state'] = NORMAL
     # sys.stdout = open("SpiderLog.txt", "w")
@@ -52,7 +55,8 @@ def main_starter():
     if len(api_output) == 2:  #S == | AKA Only After localPickup
         print("len(api_output)")
         print(len(api_output)) # return phone & buyer name only
-        locker_popupDesign(root=root, buyer_phone=api_output[0], locker_name=api_output[1], order_number=orderLinkField.get())
+        browser_localPickup = locker_popupDesign(root=root, buyer_phone=api_output[0], locker_name=api_output[1], order_number=orderLinkField.get())
+        browser = browser_localPickup
         wooApi_mail_complete(numOrder=orderLinkField.get(), buyer_name="",
                              butikTrackNumber="", sendMailNeeded=False)
 

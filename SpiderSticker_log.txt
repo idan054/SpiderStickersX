@@ -1,5 +1,6 @@
 Start SpiderSticker_log
-orderLinkField = 28020
+[93mחלון כרום הישן *לא* נסגר![0m
+orderLinkField = 28021
 packNum = 1
 [93m[1mStart[0m
 woocomarce_api Start
@@ -13,32 +14,15 @@ city is  גדרה
 email is  idanbit80@gmail.com
 phone is  0584770076
 customer_note is  חשוב לי לשבח את עידן על שירות מדהים!
-deliveryNeeded?  True
+deliveryNeeded?  False
 woocomarce_api Done
-https://www.spider3d.co.il/wp-admin/post.php?post=28020&action=edit
+https://www.spider3d.co.il/wp-admin/post.php?post=28021&action=edit
 Please Wait!
 [93m[1mיש כפילות[0m
 high_quantity = True
-deliveryNeeded = True
+[93m[1m STOP! - עוצר. "איסוף עצמי" נמצא [0m
+False
+deliveryNeeded = False
 ChromeVer 89
 ChromeDriverVer 89
 x
-Successfully redirect active available tab
-משלוח חדש
-משלוח חדש
-[92mSuccess adding spider details automatically0...[0m
-Try adding Note!
-clean_address:
-חבקוק 114
-butikTrackNumber is  1310504
-Successfully redirect active available tab
-משלוח - 1310504
-משלוח - 1310504
-https://members.lionwheel.com/tasks/1310504/print_labels != משלוח - 1310504
-Butik 24 Not Found, try OPEN Butik24 Tab
-משלוח - 1310504
-https://members.lionwheel.com/tasks/1310504/print_labels != משלוח - 1310504
-Lionwheel | Generate Labels
-Lionwheel | Generate Labels
-api_output is  (<selenium.webdriver.chrome.webdriver.WebDriver (session="607eac16ae0eb1c4e90c9ed0c8178e65")>, 'https://www.spider3d.co.il/wp-admin/post.php?post=28020&action=edit', 'idan biton', 1310504, 'Not in use', '0584770076')
-[91m'WebDriver' object is not subscriptable[0m
