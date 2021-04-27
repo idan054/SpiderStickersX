@@ -25,17 +25,26 @@ def main_starter():
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
     # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
-    # try:
-    api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get(),
+    try:
+        api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get(),
                           deliveryCompany=deliveryCompany_radioVar.get())
-    # except Exception as e:
-    #     print(e)
-    #     messagebox.showerror("שגיאה", "חלה שגיאה בהפעלת התוכנה")
-    #     api_output = "FAILED"
+    except Exception as e:
+        print(e)
+        # messagebox.showerror("שגיאה", "חלה שגיאה בהפעלת התוכנה")
+        api_output = "FAILED"
         # e = str(e)
         # print("ValueError:")
         # print(f"{bcolors.Red}e:{bcolors.Normal}")
         # print(e)
+        winsound.Beep(2000, 150)
+        winsound.Beep(1500, 150)
+        # browser.execute_script('window.print();')
+        sleep(0.15)
+        winsound.Beep(800, 150)
+        winsound.Beep(800, 150)
+        sleep(0.27)
+        winsound.Beep(1400, 150)
+        winsound.Beep(1400, 150)
 
     print("api_output is ",api_output)
     # if api_output == "pickup":
@@ -45,7 +54,9 @@ def main_starter():
     else: # When no pickup...
         browser, finalOrderLink, buyer_name, butikTrackNumber,\
         butikBarCode, buyer_phone = api_output
-        print(api_output)
+        # print(api_output)
+        print()
+        print()
         print(api_output)
 
         main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/dist/guiDesign.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/A2_loginButik24.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A2_loginButik24.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/A4_createSticker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A4_createSticker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" afterDir="false" />
@@ -16,10 +12,6 @@
       <change beforePath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiDesign.spec" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/popupDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/popupDesign.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tkinter_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tkinter_tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +216,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613476140369</updated>
-      <workItem from="1619548837477" duration="2210000" />
+      <workItem from="1619548837477" duration="2549000" />
     </task>
     <task id="LOCAL‎00001" summary="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works.">
       <created>1613494561773</created>
@@ -382,7 +374,13 @@
       <option name="presentableId" value="LOCAL‎00026" />
       <updated>1614991391048</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎00027" summary="B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+      <created>1619551095360</created>
+      <option name="number" value="LOCAL‎00027" />
+      <option name="presentableId" value="LOCAL‎00027" />
+      <updated>1619551095360</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
