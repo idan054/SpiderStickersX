@@ -63,7 +63,7 @@ def openNewWindow():
         color_title = ""
         hex_c = "bdbdbd"
         if radioVar.get() == 1:
-            hex_c = "23964e" # Green
+            hex_c = "236795" # Green
             color_title = "לוקר ירוק"
         if radioVar.get() == 2:
             hex_c = "2d81be" # Blue
@@ -121,19 +121,19 @@ def openNewWindow():
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
     # endregion כפתורי רדיו
 
-    green_code_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    green_code_frame = tk.Frame(newWindow, bg="#236795")  # שדה טקסט כמות חבילות
     green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
-    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
+    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#236795")
     green_code_field.pack()
     green_code_field.insert(0, "1478")
 
-    blue_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    blue_fields_frame = tk.Frame(newWindow, bg="#236795")  # שדה טקסט כמות חבילות
     blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
     blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
     blue_code_field.pack()
     blue_code_field.insert(0, "2580")
 
-    orange_fields_frame = tk.Frame(newWindow, bg="#23964e")  # שדה טקסט כמות חבילות
+    orange_fields_frame = tk.Frame(newWindow, bg="#236795")  # שדה טקסט כמות חבילות
     orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
     blue_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
     blue_code_field.pack()

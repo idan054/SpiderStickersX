@@ -79,7 +79,7 @@ def locker_popupDesign(root, buyer_phone):
         hex_c = "bdbdbd"
         # 0 = יש לבחור
         if radioVar_selection == 1:
-            hex_c = "23964e" # Green
+            hex_c = "236795" # Green
             color_title = "לוקר ירוק"
             radioVar_selection = int(radioVar.get())
         if radioVar_selection == 2:
@@ -183,19 +183,19 @@ def locker_popupDesign(root, buyer_phone):
                command= txtMe_sms_starter).pack(pady=11)
                # command= partial(txtMe_sms, message_type=int(radioVar_selection), phone="0584770076")).pack(pady=11)
 
-    green_code_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
+    green_code_frame = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
     green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
-    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#23964e")
+    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#236795")
     green_code_field.pack()
     green_code_field.insert(0, locker_code_list[0]) #Green 1478
 
-    blue_fields_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
+    blue_fields_frame = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
     blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
     blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
     blue_code_field.pack()
     blue_code_field.insert(0, locker_code_list[1]) #Blue 2580
 
-    orange_fields_frame = tk.Frame(lockerPopup, bg="#23964e")  # שדה טקסט כמות חבילות
+    orange_fields_frame = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
     orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
     orange_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
     orange_code_field.pack()

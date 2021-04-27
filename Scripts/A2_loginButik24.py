@@ -2,16 +2,23 @@ from time import sleep
 
 
 ## A2 Login butik from selenium
-def loginButik24(browser):
+def loginDeliveryCompany24(browser, deliveryCompany):
     browser.switch_to.window(browser.window_handles[0])  # עובר לטאב פעיל כדי למנוע שגיאה במקרה שהטאב הפעיל נסגר
     browser.get("https://members.lionwheel.com/?locale=he") #התחברות
     print("x")
 
-    pass_field = browser.find_element_by_id("user_password")
-    pass_field.send_keys("575968")
-
     user_wordpress_field = browser.find_element_by_id("user_username")
-    user_wordpress_field.send_keys("ספיידר-3d")
+    pass_field = browser.find_element_by_id("user_password")
+
+    if deliveryCompany == 23:
+        # מהיר לי - 23
+        user_wordpress_field.send_keys("ספיידר תלת מימד")
+        pass_field.send_keys("0585551234")
+    else:
+        # בוטיק 24 - 24
+        user_wordpress_field.send_keys("ספיידר-3d")
+        pass_field.send_keys("575968")
+
 
     sleep(0.3)
     # try:

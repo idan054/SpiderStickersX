@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='C:\\Users\\idanb\\Desktop\\pyton Projects\\SpiderStickersX\\Assets\\StickerApp.ico')
+          console=False , icon='C:\\Users\\idanb\\Documents\\MEGAsync\\App4Sale\\Spider3D\\whitelogo.ico')

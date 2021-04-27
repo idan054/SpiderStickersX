@@ -3,7 +3,7 @@ from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
 from Scripts.A1_wooGetAPI import woocomarce_api
 from Gadgets.multi_usage.goToTab import goToTab
-from Scripts.A2_loginButik24 import loginButik24
+from Scripts.A2_loginButik24 import loginDeliveryCompany24
 from Scripts.A3_embedDetails import embed_details
 from Scripts.A4_createSticker import create_sticker
 from pynput.keyboard import Controller
@@ -15,7 +15,7 @@ keyboard = Controller()
 global browser
 
 ## main based wordpress woocomarce API
-def main_api(numOrder, numOfPacks):
+def main_api(numOrder, numOfPacks, deliveryCompany):
     if numOrder == "":
         numOrder = 28020 # Some default
 
@@ -37,7 +37,7 @@ def main_api(numOrder, numOfPacks):
         # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe", options=options)
 
         options = webdriver.ChromeOptions()
-        options.add_argument("--window-size=550,1080")
+        options.add_argument("--window-size=550,950")
         args = ["hide_console", ]
         _browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe",
                                     service_args=args,
@@ -121,7 +121,7 @@ def main_api(numOrder, numOfPacks):
     browser = setup_browser()
 
     ## A2 Login Butik 24
-    loginButik24(browser=browser)
+    loginDeliveryCompany24(browser=browser, deliveryCompany=deliveryCompany)
 
     # return for saturday without create delivery on Butik24
     # butikBarCode = "FDFRE232432"

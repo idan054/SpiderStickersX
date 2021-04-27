@@ -17,7 +17,8 @@ def create_sticker(browser):
     butikBarCode = browser.find_element_by_xpath("/html/body/div[1]/div[3]/div[2]/div[1]/div/div/div/div[2]/div/div/div[1]/div[6]/div/span[2]").text
     print("butikBarCode is ", butikBarCode)
 
-    stickerLink = f"https://members.lionwheel.com/tasks/{butikTrackNumber}/print_label.pdf"
+    # stickerLink = f"https://members.lionwheel.com/tasks/{butikTrackNumber}/print_label.pdf"
+    stickerLink = f"https://members.lionwheel.com/tasks/{butikTrackNumber}/print_labels"
     goToTab(tabURL=stickerLink, browser=browser)
 
     return butikTrackNumber, butikBarCode
