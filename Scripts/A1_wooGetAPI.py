@@ -92,3 +92,4 @@ def woocomarce_api(numOrder):
 
 # woocomarce_api(numOrder=27975)
 # woocomarce_api(numOrder=25560)
+# woocomarce_api(numOrder=28020)

@@ -84,7 +84,7 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
 
     ## Check customer note
     if buyer_notes != "":
-        messagebox.showinfo("הערה מהלקוח", "ಠ_ಠ שים לב להערה של הלקוח")
+        messagebox.showinfo("הערה מהלקוח", f"ಠ_ಠ שים לב להערה של הלקוח\n{buyer_notes}")
 
     ## Check Location to choose delivery company
     similar_level, locationFromList = location_checker(buyer_city)
