@@ -1,6 +1,7 @@
 import winsound
 from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
+from Gadgets.multi_usage.locationChecker import location_checker
 from Scripts.A1_wooGetAPI import woocomarce_api
 from Gadgets.multi_usage.goToTab import goToTab
 from Scripts.A2_loginButik24 import loginDeliveryCompany24
@@ -16,6 +17,10 @@ global browser
 
 ## main based wordpress woocomarce API
 def main_api(numOrder, numOfPacks, deliveryCompany):
+    print("delivery company from radio buttons:")
+    print(type(deliveryCompany))
+    print(deliveryCompany)
+
     if numOrder == "":
         numOrder = 28020 # Some default
 
@@ -80,6 +85,45 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     ## Check customer note
     if buyer_notes != "":
         messagebox.showinfo("הערה מהלקוח", "ಠ_ಠ שים לב להערה של הלקוח")
+
+    ## Check Location to choose delivery company
+    similar_level, locationFromList = location_checker(buyer_city)
+    if similar_level == 1:
+        messagebox.showinfo("עובר למהיר לי", f"{buyer_city} נמצאת ברשימה! המשלוח הועבר למהיר לי")
+        deliveryCompany = 23
+
+    elif similar_level > 0.7:
+        value = messagebox.askyesno("האם לעבור", f"""
+                         כתובת לקוח:  {buyer_city}
+                      כתובת מהיר לי: {locationFromList}
+           האם לשלוח דרך מהיר לי? {str(similar_level)[:4]} """,
+                                    default='yes')
+        print(value)
+        if value:
+            deliveryCompany = 23
+            ## Beta auto add to list
+            # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
+            # loactions_file.write(f"\n{buyer_city}")
+            # print(buyer_city, "has been added to txt .file")
+        else:
+            deliveryCompany = 24
+
+    else:
+        value = messagebox.askyesno("האם לעבור", f""" 
+            {buyer_city}, לא זוהתה ברשימה ערי הפעילות 
+        ?אנא בדוק ידנית, לשלוח במהיר לי בכל זאת
+                                      {str(similar_level)[:4]} """,
+                                    default='no')
+        if value:
+            deliveryCompany = 23
+            ## Beta auto add to list
+            # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
+            # loactions_file.write(f"\n{buyer_city}")
+            # print(buyer_city, "has been added to txt .file")
+        else: deliveryCompany = 24
+
+
+
 
     ## Check delivery method
     # (and stop running if delivery not needed)
