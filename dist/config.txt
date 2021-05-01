@@ -1,3 +1,1 @@
-לוקר ירוק: 1000
-לוקר כחול: 2000
-לוקר כתום: 0000
+pyinstaller --noconfirm --onefile --windowed --icon "C:/Users/idanb/Documents/MEGAsync/App4Sale/Spider3D/whitelogo.ico"  "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/guiDesign.py"

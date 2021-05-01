@@ -166,12 +166,12 @@ deliveryCompany_radioVar = IntVar()
 # ----
 # R1.pack( anchor = W )
 # ----
-R2 = ttk.Radiobutton(RadioFrame, text="בוטיק 24", variable=deliveryCompany_radioVar, value="24", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
-R2.pack( anchor = W )
-R2.state(['selected'])
+#HIDDEN R2 = ttk.Radiobutton(RadioFrame, text="בוטיק 24", variable=deliveryCompany_radioVar, value="24", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
+#HIDDEN R2.pack( anchor = W )
+#HIDDEN R2.state(['selected'])
 # ----
-R3 = ttk.Radiobutton(RadioFrame, text="מהיר לי", variable=deliveryCompany_radioVar, value="23", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
-R3.pack( anchor = W)
+#HIDDEN R3 = ttk.Radiobutton(RadioFrame, text="מהיר לי", variable=deliveryCompany_radioVar, value="23", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
+#HIDDEN R3.pack( anchor = W)
 # endregion
 
 # region כותרת "הכנס מס' הזמנה"
