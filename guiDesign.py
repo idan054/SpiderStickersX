@@ -59,6 +59,7 @@ def main_starter():
         print()
         print(api_output)
 
+
         main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
         main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
 
