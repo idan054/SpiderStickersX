@@ -1,10 +1,5 @@
-import asyncio
+s = ['I', 'want', 4, 'apples', 'and', 18, 'bananas']
 
-async def print_B(): #Simple async def
-    print("B sms sent")
-
-async def main_def():
-    print("A main starter")
-    await asyncio.gather(print_B())
-    print("C title changed")
-asyncio.run(main_def())
+# using list comprehension 
+listToStr = ' '.join([str(elem) for elem in s])
+print(listToStr)  

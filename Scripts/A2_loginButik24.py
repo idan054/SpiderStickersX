@@ -8,10 +8,12 @@ def loginButik24(browser):
     print("x")
 
     pass_field = browser.find_element_by_id("user_password")
-    pass_field.send_keys("575968")
+    pass_field.send_keys("059947")
+    # pass_field.send_keys("575968")
 
     user_wordpress_field = browser.find_element_by_id("user_username")
-    user_wordpress_field.send_keys("ספיידר-3d")
+    user_wordpress_field.send_keys("טופ")
+    # user_wordpress_field.send_keys("ספיידר-3d")
 
     sleep(0.3)
     # try:
