@@ -21,7 +21,7 @@ def main_starter():
         browser.quit()
         print(browser)
     except Exception as e:
-        print("ERROR : " + str(e))
+        print("ERROR 1 : " + str(e))
 
     def install_chromeDriver():
         import requests
@@ -88,10 +88,11 @@ def main_starter():
     except:
         messagebox.showerror("שגיאה", "Update ChromeDriver in Program Files (x86) \n from https://chromedriver.chromium.org/")
 
-    try:
-        makeSticker(orderLinkField.get(), packNum.get(), browser)
-    except Exception as e:
-        print("ERROR : " + str(e))
+    # try:
+    makeSticker(orderLinkField.get(), packNum.get(), browser)
+        # makeSticker(100012222 , 1, browser)
+    # except Exception as e:
+    #     print("ERROR 2 : " + str(e))
 
 root = tk.Tk()  # המסך הראשי
 root.configure(background="#23964e")

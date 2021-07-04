@@ -48,6 +48,10 @@ def string_cleaner(text):
 global buyer_name, buyer_phone, buyer_email, street, street_number, city, zip_city, local_pickup, full_cityList, full_streetList, heb_city, heb_street
 
 def makeSticker(order_id, pack_num, browser):
+    # makeSticker(100012222 , 1, browser)
+    # order_id = "100012222"
+    # pack_num = 1
+    # browser = browser
     global buyer_name, buyer_phone, buyer_email, street, street_number, city, zip_city, local_pickup, full_cityList, full_streetList, heb_city, heb_street
 
     winsound.Beep(2000, 110)
@@ -428,8 +432,11 @@ def makeSticker(order_id, pack_num, browser):
 
         ## A3 Embed buyer details on order page
         # packNum = packNum.get()
-        embed_details(browser=browser, buyer_city=city, buyer_street=street,
-                      buyer_street_number=street_number, buyer_name=buyer_name,
+        embed_details(browserr=browser,
+                      buyer_city=city,
+                      buyer_street=street,
+                      buyer_street_number=street_number,
+                      buyer_name=buyer_name,
                       clean_address=streetAndNumber,
                       buyer_phone=buyer_phone, buyer_email=buyer_email,
                       buyer_notes=f"{streetAndNumber}, {heb_city}", orderNum=order_id, packNum=pack_num)
