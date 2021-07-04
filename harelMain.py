@@ -1,25 +1,16 @@
+# import chromedriver_autoinstaller
 import winsound
-import time
+from time import sleep
 from tkinter import messagebox
 
 from selenium import webdriver
-# import chromedriver_autoinstaller
-from time import sleep
 from selenium.webdriver.common.keys import Keys
 
 from Gadgets.multi_usage.bcolors import bcolors
-from bcolors import *
-import winsound
-from selenium import webdriver
-from Gadgets.multi_usage.bcolors import bcolors
-from Scripts.A1_wooGetAPI import woocomarce_api
 from Gadgets.multi_usage.goToTab import goToTab
 from Scripts.A2_loginButik24 import loginButik24
 from Scripts.A3_embedDetails import embed_details
 from Scripts.A4_createSticker import create_sticker
-from pynput.keyboard import Controller
-from time import sleep
-from tkinter import messagebox
 
 
 def string_cleaner(text):

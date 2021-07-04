@@ -1,14 +1,11 @@
 import tkinter as tk
-from functools import reduce
-import winsound
-import time
 import tkinter.ttk as ttk
-from tkinter import messagebox
-from selenium import webdriver
-from time import sleep
 from tkinter import *
+from tkinter import messagebox
+
+from selenium import webdriver
+
 from harelMain import makeSticker
-from selenium.webdriver.common.keys import Keys
 
 global browser
 
@@ -53,7 +50,6 @@ def main_starter():
         # options.add_argument(f"user-data-dir=C:\\Users\\{user_field.get()}\\AppData\\Local\\Google\\Chrome\\User Data")
         # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe", options=options)
 
-        from selenium.webdriver.chrome.options import Options
         options = webdriver.ChromeOptions()
         options.add_argument("--window-size=1100,900")
 
