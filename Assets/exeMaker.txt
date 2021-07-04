@@ -1,2 +1,4 @@
-Run this code to make an .exe
+Run this code to make an .exe SPIDER-3D
 pyinstaller --noconfirm --onefile --windowed --icon "C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Assets\StickerApp.ico"  "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/guiDesign.py"
+Run this code to make an .exe TOPIRZUL-BUTIK24
+pyinstaller --noconfirm --onefile --windowed --icon "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/Assets/Butik.ico"  "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/harelDeign.py"

@@ -10,7 +10,8 @@ def create_sticker(browser):
     createDelivery_button.click()
 
     # זיהוי מס' מעקב למשלוח
-    butikTrackNumber = browser.find_element_by_xpath("/html/body/div[1]/div[3]/div[2]/div[1]/div/div/div/div[1]/div[1]/span[1]").text
+    # butikTrackNumber = browser.find_element_by_xpath("/html/body/div[1]/div[3]/div[2]/div[1]/div/div/div/div[1]/div[1]/span[1]").text
+    butikTrackNumber = browser.current_url
     butikTrackNumber = int(''.join(l for l in butikTrackNumber if l.isdigit()))
     print("butikTrackNumber is ", butikTrackNumber)
 

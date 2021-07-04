@@ -96,7 +96,7 @@ def main_starter():
 
 root = tk.Tk()  # המסך הראשי
 root.configure(background="#23964e")
-root.title("Butik Stickers 7.6.2021")
+root.title("Butik Stickers V1.5(1) HarelButik")
 ttk.Style(root).configure('myStyle.TRadiobutton', background="#23964e", foreground='white', font = ("rubik", 9))
 ttk.Style(root).configure('W.TButton', font =('rubik', 12,), foreground = 'black')
 # root.iconbitmap(r'C:\Users\idanb\Documents\MEGAsync\App4Sale\Spider3D\BlackLogoRoundedPNG.ico', )#לא בטוח למה צריך את הr
