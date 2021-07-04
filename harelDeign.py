@@ -9,6 +9,7 @@ from harelMain import makeSticker
 
 global browser
 
+
 def main_starter():
     global browser
 
