@@ -16,15 +16,23 @@ def loginButik24(browser):
     # user_wordpress_field.send_keys("ספיידר-3d")
 
     sleep(0.3)
-    # try:
-    #     browser.find_element_by_xpath("/html/body/div[2]/form/div[5]/button").click()
-    # except:
-    #     print("Xpath A Error!")
     try:
-        browser.find_element_by_xpath('//*[@id="new_user"]/div[4]/button').click()
+        login_button = browser.find_element_by_xpath('/html/body/div[2]/form/div[4]/button')
+        login_button.click()
+    except:
+        print("Xpath A Error!")
+    try:
+        login_button = browser.find_element_by_xpath('//*[@id="new_user"]/div[4]/button')
+        login_button.click()
     except:
         print("Xpath B Error!")
-    # try:
-    #     user_wordpress_field.send_keys("ספיידר-3d").send_keys(Keys.ENTER)
-    # except:
-    #     print("send Keys (C) Error!")
+    try:
+       login_button = browser.find_element_by_link_text("התחבר")
+       login_button.click()
+    except:
+        print("Xpath text C Error!")
+    try:
+        login_button = browser.find_elements_by_tag_name('button')[0]
+        login_button.click()
+    except:
+        print("Xpath text D Error!")

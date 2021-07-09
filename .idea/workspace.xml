@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V1.5(1) Major bug fix based Butik24 design update&#10;&#10;V1.4 butik 24 number removed&#10;- butik 24 number removed&#10;&#10;V1.3 (3) + .exe Auto delivery company choose&#10;- buyer_notes on message box ReAdded&#10;- check similarity of string from list based txt file&#10;- In use! &#10;- if 1.0 auto &quot;Mahir Li&quot;&#10;- if close in 0.7+ Ask to move mahir li&#10;- if less then 0.7 - Ask to Check manually&#10;- Manually radio button hidden&#10;Examples:&#10;#28020 = 1&#10;#29500 = 0.9 (mahir li)&#10;#29499 = 0.0 Check manually (butik24)&#10;&#10;1.2 (Beta 2) Branch Location similar from list&#10;* on test.py&#10;- check similarity of string from list based txt file&#10;&#10;1.1 Branch&#10;- B2.6.3.1 = 1.1&#10;- add back try exempt to main (to enable notification button)&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gadgets/multi_usage/bitlyShorter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gadgets/pickup_sms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/A1_wooGetAPI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/config.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV1.2.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV1.3.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV1.4.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV2.1.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV2.3.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV2.6.2.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesignV2.6.3.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiDesign.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/harelDeign.py" beforeDir="false" afterPath="$PROJECT_DIR$/harelDeign.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/harelMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/harelMain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/popupDesign.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tkinter_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A2_loginButik24.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A2_loginButik24.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/harelDeign/harelDeign.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/build/harelDeign/harelDeign.exe.manifest" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
