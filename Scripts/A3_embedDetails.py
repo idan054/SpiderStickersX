@@ -15,10 +15,10 @@ def embed_details(browserr, buyer_city, buyer_street
                   , buyer_street_number, buyer_name,
                   clean_address, buyer_phone, buyer_email,
                   buyer_notes, orderNum, packNum):
-    print(browserr, buyer_city, buyer_street
-          , buyer_street_number, buyer_name,
-          clean_address, buyer_phone, buyer_email,
-          buyer_notes, orderNum, packNum)
+    # print(browserr, buyer_city, buyer_street
+    #       , buyer_street_number, buyer_name,
+    #       clean_address, buyer_phone, buyer_email,
+    #       buyer_notes, orderNum, packNum)
 
     def embed_spider_details():
         s = browserr.find_element_by_xpath('//*[@id="task_source_name"]')

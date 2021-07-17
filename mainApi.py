@@ -1,9 +1,11 @@
+import webbrowser
 import winsound
 from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.multi_usage.locationChecker import location_checker
 from Scripts.A1_wooGetAPI import woocomarce_api
 from Gadgets.multi_usage.goToTab import goToTab
+from Scripts.A23_NEW_createStickerAPI import create_delivery
 from Scripts.A2_loginButik24 import loginDeliveryCompany24
 from Scripts.A3_embedDetails import embed_details
 from Scripts.A4_createSticker import create_sticker
@@ -13,7 +15,7 @@ from tkinter import messagebox
 
 keyboard = Controller()
 
-global browser
+# global browser
 
 ## main based wordpress woocomarce API
 def main_api(numOrder, numOfPacks, deliveryCompany):
@@ -24,7 +26,7 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     if numOrder == "":
         numOrder = 28020 # Some default
 
-    global browser
+    # global browser
     ## A0 setup browser & Gui
     print(f"{bcolors.Yellow}{bcolors.BOLD}Start{bcolors.Normal}")
     def setup_browser():
@@ -86,11 +88,11 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     if buyer_notes != "":
         messagebox.showinfo("הערה מהלקוח", f"ಠ_ಠ שים לב להערה של הלקוח\n{buyer_notes}")
 
-    ## Check Location to choose delivery company
+    # If in MahirLi Locations List:
     similar_level, locationFromList = location_checker(buyer_city)
     if similar_level == 1:
-        messagebox.showinfo("עובר למהיר לי", f"{buyer_city} נמצאת ברשימה! המשלוח הועבר למהיר לי")
-        deliveryCompany = 23
+        # messagebox.showinfo("עובר למהיר לי", f"{buyer_city} נמצאת ברשימה! המשלוח הועבר למהיר לי")
+        deliveryCompany = 23 # 23 = MahirLi | 24 = Butik24
 
     elif similar_level > 0.7:
         value = messagebox.askyesno("האם לעבור", f"""
@@ -108,19 +110,21 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
         else:
             deliveryCompany = 24
 
-    else:
-        value = messagebox.askyesno("האם לעבור", f""" 
-            {buyer_city}, לא זוהתה ברשימה ערי הפעילות 
-        ?אנא בדוק ידנית, לשלוח במהיר לי בכל זאת
-                                      {str(similar_level)[:4]} """,
-                                    default='no')
-        if value:
-            deliveryCompany = 23
-            ## Beta auto add to list
-            # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
-            # loactions_file.write(f"\n{buyer_city}")
-            # print(buyer_city, "has been added to txt .file")
-        else: deliveryCompany = 24
+    # If Not in MahirLi Locations List:
+    else: deliveryCompany = 24
+    # else:
+    #     value = messagebox.askyesno("האם לעבור", f"""
+    #         {buyer_city}, לא זוהתה ברשימה ערי הפעילות
+    #     ?אנא בדוק ידנית, לשלוח במהיר לי בכל זאת
+    #                                   {str(similar_level)[:4]} """,
+    #                                 default='no')
+    #     if value:
+    #         deliveryCompany = 23
+    #         ## Beta auto add to list
+    #         # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
+    #         # loactions_file.write(f"\n{buyer_city}")
+    #         # print(buyer_city, "has been added to txt .file")
+    #     else: deliveryCompany = 24
 
 
 
@@ -162,36 +166,57 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     # buyer_email = email
     # buyer_notes = customer_note
 
-    browser = setup_browser()
+    # browser = setup_browser()
+    #
+    # ## A2 Login Butik 24
+    # loginDeliveryCompany24(browser=browser, deliveryCompany=deliveryCompany)
+    #
+    # # return for saturday without create delivery on Butik24
+    # # butikBarCode = "FDFRE232432"
+    # # butikTrackNumber = "1123445"
+    # # winsound.Beep(2000, 150), winsound.Beep(1500, 150), sleep(0.15), winsound.Beep(800, 150), winsound.Beep(800, 150), sleep(0.27), winsound.Beep(1400, 150), winsound.Beep(1400, 150)
+    # # return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+    #
+    #
+    # # goToTab(browser=browser, tabURL="https://members.lionwheel.com/tasks/new?locale=he")
+    #
+    #
+    # ## A3 Embed buyer details on order page
+    # # packNum = packNum.get()
+    # embed_details(browser, buyer_city, buyer_street
+    #               , buyer_street_number, buyer_name,
+    #               clean_address, buyer_phone, buyer_email,
+    #               buyer_notes, numOrder, numOfPacks)
+    #
+    # ## A4 Create delivery and redirect to sticker Tab
+    # # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
+    # butikTrackNumber, butikBarCode = create_sticker(browser=browser)
 
-    ## A2 Login Butik 24
-    loginDeliveryCompany24(browser=browser, deliveryCompany=deliveryCompany)
+    if deliveryCompany == 24:
+        messagebox.showinfo("חברת משלוחים", f"{buyer_city} - בוטיק 24")
+    else:
+        messagebox.showinfo("חברת משלוחים", f"{buyer_city} - מהיר לי")
 
-    # return for saturday without create delivery on Butik24
-    # butikBarCode = "FDFRE232432"
-    # butikTrackNumber = "1123445"
-    # winsound.Beep(2000, 150), winsound.Beep(1500, 150), sleep(0.15), winsound.Beep(800, 150), winsound.Beep(800, 150), sleep(0.27), winsound.Beep(1400, 150), winsound.Beep(1400, 150)
-    # return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
+    resp = create_delivery(
+                      delivery_company=deliveryCompany,
+                      buyer_city=buyer_city, buyer_name=buyer_name,
+                      clean_address=clean_address, buyer_phone=buyer_phone, buyer_email=buyer_email,
+                      buyer_notes=buyer_notes, orderNum=numOrder, packNum=numOfPacks)
 
+    # 2
+    # {'barcode': '1689379:',
+    #  'destination_region_str': 'מרכז ודרום תל אביב - מערב',
+    #  'label': 'https://members.lionwheel.com/tasks/print_public_label.pdf?public_id=CCQQAMXR5E',
+    #  'public_id': 'CCQQAMXR5E',
+    #  'task_id': 1689379}
 
-    goToTab(browser=browser, tabURL="https://members.lionwheel.com/tasks/new?locale=he")
-
-
-    ## A3 Embed buyer details on order page
-    # packNum = packNum.get()
-    embed_details(browser, buyer_city, buyer_street
-                  , buyer_street_number, buyer_name,
-                  clean_address, buyer_phone, buyer_email,
-                  buyer_notes, numOrder, numOfPacks)
-
-    ## A4 Create delivery and redirect to sticker Tab
-    # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
-    butikTrackNumber, butikBarCode = create_sticker(browser=browser)
+    butikTrackNumber = resp["task_id"]
+    butikBarCode = resp["barcode"]
+    webbrowser.open(resp["label"])
 
 
     winsound.Beep(2000, 150)
     winsound.Beep(1500, 150)
-    browser.execute_script('window.print();')
     sleep(0.15)
     winsound.Beep(800, 150)
     winsound.Beep(800, 150)
@@ -202,6 +227,7 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     # keyboard.press(Key.enter)
     # keyboard.release(Key.enter)
 
+    browser = "PlaceHolder"
     return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
 
 # if __name__ == '__main__':

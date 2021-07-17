@@ -1,5 +1,6 @@
 import tkinter as tk
 import winsound
+from pprint import pprint
 from time import sleep
 from tkinter import *
 from tkinter import messagebox, ttk
@@ -25,13 +26,13 @@ def main_starter():
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
     # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
-# try:
-    api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get(),
-                      deliveryCompany=deliveryCompany_radioVar.get())
-# except Exception as e:
-#     print(e)
+    try:
+        api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get(),
+                          deliveryCompany=deliveryCompany_radioVar.get())
+    except Exception as e:
+        print(e)
     # messagebox.showerror("שגיאה", "חלה שגיאה בהפעלת התוכנה")
-    api_output = "FAILED"
+    # api_output = "FAILED"
     # e = str(e)
     # print("ValueError:")
     # print(f"{bcolors.Red}e:{bcolors.Normal}")
@@ -46,19 +47,26 @@ def main_starter():
     winsound.Beep(1400, 150)
     winsound.Beep(1400, 150)
 
-    print("api_output is ",api_output)
-    # if api_output == "pickup":
-    if api_output[0] == "0": # return phone only
-        locker_popupDesign(root=root, buyer_phone=api_output)
+    print("api_output is ")
+    print(api_output)
+    browser, finalOrderLink, buyer_name, butikTrackNumber,\
+    butikBarCode, buyer_phone = api_output
+    # ('PlaceHolder',
+    # 'https://www.spider3d.co.il/wp-admin/post.php?post=28020&action=edit',
+    # 'idan biton', 1689410, '1689410:', '0584770076')
 
-    else: # When no pickup...
-        browser, finalOrderLink, buyer_name, butikTrackNumber,\
-        butikBarCode, buyer_phone = api_output
-        # print(api_output)
-        print()
-        print()
-        print(api_output)
-
+    # No Need, App not do local-pickup
+    # # if api_output == "pickup":
+    # if api_output[0] == "0": # return phone only
+    #     locker_popupDesign(root=root, buyer_phone=api_output)
+    #
+    # else: # When no pickup...
+    #     browser, finalOrderLink, buyer_name, butikTrackNumber,\
+    #     butikBarCode, buyer_phone = api_output
+    #     # print(api_output)
+    #     print()
+    #     print()
+    #     print(api_output)
 
     main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
     main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")

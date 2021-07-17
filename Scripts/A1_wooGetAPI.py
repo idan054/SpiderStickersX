@@ -40,7 +40,7 @@ def woocomarce_api(numOrder):
             item = ""
             return item
 
-    first_name = try_get_item(order_details["billing"]["first_name"])
+    first_name = try_get_item(order_details ["billing"]["first_name"])
     print("first_name is ", first_name)
 
     last_name = try_get_item(order_details["billing"]["last_name"])

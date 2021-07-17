@@ -32,7 +32,7 @@ def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no 
         # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
         final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
         מס' מעקב {butikTrackNumber}
-        טל' 035109114"""
+        """
 
     url = "https://my.textme.co.il/api"
 
