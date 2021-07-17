@@ -3,7 +3,7 @@ import requests
 from Gadgets.multi_usage.bcolors import bcolors
 
 global locker_color, locker_code, final_msg
-def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no needed on pickup
+def txtMe_sms(includeAppAd, message_type, phone, butikTrackNumber=None): #butikTrackNumber no needed on pickup
     global locker_color, locker_code, final_msg
     print("message_type = ", message_type)
 
@@ -29,10 +29,17 @@ def txtMe_sms(message_type, phone, butikTrackNumber=None): #butikTrackNumber no 
 קוד: *️⃣ {locker_code} ומפתח 🔑
 בברכה, צוות ספיידר 3D"""
     if message_type == 5 : # delivery
-        # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
-        final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
-        מס' מעקב {butikTrackNumber}
-        """
+        if includeAppAd == 1: # AKA True
+            # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
+            final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+חדש! למעקב ומבצעים מיוחדים, מומלץ להצטרף לאפליקציה!
+https://rebrand.ly/Spider3D-App
+            """
+        else:
+            # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
+            final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+            מס' מעקב {butikTrackNumber}
+            """
 
     url = "https://my.textme.co.il/api"
 

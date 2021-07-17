@@ -20,25 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V1.5(1) + EXE Major bug fix based Butik24 design update">
-      <change afterPath="$PROJECT_DIR$/Scripts/A23_NEW_createStickerAPI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/Tree-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/Tree-01.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/Tree-02.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/guiDesign.exe.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/spiderZip.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gadgets/multi_usage/goToTab.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/A1_wooGetAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A1_wooGetAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/A3_embedDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A3_embedDetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Tree-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Tree-01.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Tree-02.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/guiDesign.exe.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/runw.exe.0ie2df7x" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A23_NEW_createStickerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A2_NEW_createStickerAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A2_loginButik24.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A3_embedDetails.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A4_createSticker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guiDesign.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/guiDesignV3.1.0.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApi.py" afterDir="false" />
     </list>
@@ -110,7 +114,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.guiDesign">
-    <configuration name="A23_NEW_createStickerAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="A2_NEW_createStickerAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SpiderStickersX" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,7 +127,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/A23_NEW_createStickerAPI.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Scripts\A2_NEW_createStickerAPI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,7 +249,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.guiDesign" />
-        <item itemvalue="Python.A23_NEW_createStickerAPI" />
+        <item itemvalue="Python.A2_NEW_createStickerAPI" />
         <item itemvalue="Python.tests" />
         <item itemvalue="Python.popupDesign" />
         <item itemvalue="Python.locationChecker" />
@@ -269,7 +273,7 @@
       <workItem from="1626434549127" duration="26000" />
       <workItem from="1626434909017" duration="86000" />
       <workItem from="1626435033523" duration="634000" />
-      <workItem from="1626448490112" duration="12173000" />
+      <workItem from="1626448490112" duration="17263000" />
     </task>
     <task id="LOCAL‎00001" summary="V1.0 Wordpress - Butik 24&#10;&#10;&quot;Continue&quot; button just works.">
       <created>1613494561773</created>
@@ -457,7 +461,13 @@
       <option name="presentableId" value="LOCAL‎00031" />
       <updated>1619877751359</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL‎00032" summary="B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works.">
+      <created>1626528162360</created>
+      <option name="number" value="LOCAL‎00032" />
+      <option name="presentableId" value="LOCAL‎00032" />
+      <updated>1626528162360</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="V1.2 Wordpress - Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;.exe on dist&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V1.3 Wordpress - Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V1.4 Wordpress - Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (3)&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V2.0 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (3)&#10;V2.0 Wordpress improved time to to Instant using Wordpress Api &#10;⬜ Still need to upgrade 2nd button (send mail)&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
@@ -502,57 +511,62 @@
     <MESSAGE value="1.2 (Beta 1) Branch Location similar from list&#10;* on test.py&#10;- check similarity of string from list based txt file&#10;&#10;1.1 Branch&#10;- B2.6.3.1 = 1.1&#10;- add back try exempt to main (to enable notification button)&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="1.2 (Beta 2) Branch Location similar from list&#10;* on test.py&#10;- check similarity of string from list based txt file&#10;&#10;1.1 Branch&#10;- B2.6.3.1 = 1.1&#10;- add back try exempt to main (to enable notification button)&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V1.3 (1) + .exe Auto delivery company choose&#10;- check similarity of string from list based txt file&#10;- In use! &#10;- if 1.0 auto &quot;Mahir Li&quot;&#10;- if close in 0.7+ Ask to move mahir li&#10;- if less then 0.7 - Ask to Check manually&#10;- Manually radio button hidden&#10;Examples:&#10;#28020 = 1&#10;#29500 = 0.9 (mahir li)&#10;#29499 = 0.0 Check manually (butik24)&#10;&#10;1.2 (Beta 2) Branch Location similar from list&#10;* on test.py&#10;- check similarity of string from list based txt file&#10;&#10;1.1 Branch&#10;- B2.6.3.1 = 1.1&#10;- add back try exempt to main (to enable notification button)&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.3 (1) + .exe Auto delivery company choose&#10;- check similarity of string from list based txt file&#10;- In use! &#10;- if 1.0 auto &quot;Mahir Li&quot;&#10;- if close in 0.7+ Ask to move mahir li&#10;- if less then 0.7 - Ask to Check manually&#10;- Manually radio button hidden&#10;Examples:&#10;#28020 = 1&#10;#29500 = 0.9 (mahir li)&#10;#29499 = 0.0 Check manually (butik24)&#10;&#10;1.2 (Beta 2) Branch Location similar from list&#10;* on test.py&#10;- check similarity of string from list based txt file&#10;&#10;1.1 Branch&#10;- B2.6.3.1 = 1.1&#10;- add back try exempt to main (to enable notification button)&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
+    <MESSAGE value="B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works." />
+    <option name="LAST_COMMIT_MESSAGE" value="B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="160" key="#Plugins" timestamp="1626434996367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="160" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1626434996367" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626449188614">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626528319736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626449188614" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626528319736" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1626439359298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626439359298" />
-    <state width="580" height="891" key="GridCell.Tab.0.bottom" timestamp="1626527197450">
+    <state width="650" height="891" key="GridCell.Tab.0.bottom" timestamp="1626531986214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197450" />
-    <state width="580" height="891" key="GridCell.Tab.0.center" timestamp="1626527197450">
+    <state width="650" height="891" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
+    <state width="650" height="891" key="GridCell.Tab.0.center" timestamp="1626531986214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197450" />
-    <state width="580" height="891" key="GridCell.Tab.0.left" timestamp="1626527197450">
+    <state width="650" height="891" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
+    <state width="650" height="891" key="GridCell.Tab.0.left" timestamp="1626531986214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197450" />
-    <state width="580" height="891" key="GridCell.Tab.0.right" timestamp="1626527197450">
+    <state width="650" height="891" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
+    <state width="650" height="891" key="GridCell.Tab.0.right" timestamp="1626531986214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197450" />
-    <state width="580" height="891" key="GridCell.Tab.1.bottom" timestamp="1626527197334">
+    <state width="650" height="891" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
+    <state width="580" height="891" key="GridCell.Tab.1.bottom" timestamp="1626528754990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197334" />
-    <state width="580" height="891" key="GridCell.Tab.1.center" timestamp="1626527197334">
+    <state width="580" height="891" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
+    <state width="580" height="891" key="GridCell.Tab.1.center" timestamp="1626528754990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197334" />
-    <state width="580" height="891" key="GridCell.Tab.1.left" timestamp="1626527197334">
+    <state width="580" height="891" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
+    <state width="580" height="891" key="GridCell.Tab.1.left" timestamp="1626528754990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197334" />
-    <state width="580" height="891" key="GridCell.Tab.1.right" timestamp="1626527197334">
+    <state width="580" height="891" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
+    <state width="580" height="891" key="GridCell.Tab.1.right" timestamp="1626528754990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="580" height="891" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626527197334" />
-    <state x="668" y="239" width="583" height="562" key="find.popup" timestamp="1626527271270">
+    <state width="580" height="891" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1626528164255">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="239" width="583" height="562" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626527271270" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626528164255" />
+    <state x="668" y="239" width="583" height="562" key="find.popup" timestamp="1626532808490">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="668" y="239" width="583" height="562" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626532808490" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1626434980037">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -560,6 +574,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SpiderStickersX$A23_NEW_createStickerAPI.coverage" NAME="A23_NEW_createStickerAPI Coverage Results" MODIFIED="1626524506254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
-    <SUITE FILE_PATH="coverage/SpiderStickersX$guiDesign.coverage" NAME="guiDesign Coverage Results" MODIFIED="1626527197265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SpiderStickersX$guiDesign.coverage" NAME="guiDesign Coverage Results" MODIFIED="1626531986195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

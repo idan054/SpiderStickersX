@@ -19,9 +19,10 @@ def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
-    # mailButton['state'] = DISABLED
+    mailButton['state'] = DISABLED
     # mailButton['state'] = NORMAL
     # sys.stdout = open("SpiderLog.txt", "w")
+    print(f"checkBox_AppAdToSMS.get() = {checkBox_AppAdToSMS.get()}")
     print(f"deliveryCompany_radioVar = {deliveryCompany_radioVar.get()}")
     print(f"orderLinkField = {orderLinkField.get()}")
     print(f"packNum = {packNum.get()}")
@@ -92,7 +93,7 @@ def part_b_starter():
     complete_and_notifications(
         browser=browser,
         numOrder=orderLinkField.get(), buyer_name=buyer_name, butikTrackNumber=butikTrackNumber,
-        buyer_phone=buyer_phone, butikBarCode=butikBarCode)
+        buyer_phone=buyer_phone, butikBarCode=butikBarCode, includeAppAd=checkBox_AppAdToSMS.get())
     print(f"{bcolors.Yellow}{bcolors.BOLD}Track SMS & Mail sent\nOrder status changed to complete.{bcolors.Normal}")
 
     # orderLinkField.configure(foreground="#a5a5a5")
@@ -173,13 +174,15 @@ deliveryCompany_radioVar = IntVar()
 # R1 = ttk.Radiobutton(RadioFrame, text="Chrome 86", variable=chrome_radioVar, value="86", command=change_chrome_selection, style="myStyle.TRadiobutton")
 # ----
 # R1.pack( anchor = W )
+R1 = ttk.Radiobutton(RadioFrame, text="אוטומטי", variable=deliveryCompany_radioVar, value="0", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
+R1.pack( anchor = W )
+R1.state(['selected'])
 # ----
-#HIDDEN R2 = ttk.Radiobutton(RadioFrame, text="בוטיק 24", variable=deliveryCompany_radioVar, value="24", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
-#HIDDEN R2.pack( anchor = W )
-#HIDDEN R2.state(['selected'])
+R2 = ttk.Radiobutton(RadioFrame, text="בוטיק 24", variable=deliveryCompany_radioVar, value="24", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
+R2.pack( anchor = W )
 # ----
-#HIDDEN R3 = ttk.Radiobutton(RadioFrame, text="מהיר לי", variable=deliveryCompany_radioVar, value="23", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
-#HIDDEN R3.pack( anchor = W)
+R3 = ttk.Radiobutton(RadioFrame, text="מהיר לי", variable=deliveryCompany_radioVar, value="23", command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
+R3.pack( anchor = W)
 # endregion
 
 # region כותרת "הכנס מס' הזמנה"
@@ -190,8 +193,19 @@ main_label = Label(main_label_frame, text="הכנס מס' הזמנה", font=("ru
 main_label.pack()
 
 subTextFrame = tk.Frame(root, bg="#236795")  # טקסט המלצה לווידוא פרטים
-subTextFrame.place(relx=0.45, rely=0.88, height=20, width=200, )
-subTextLabel = Label(subTextFrame, text="עלות סמס מעקב 0.06₪", font=("rubik", 9), bg="#236795", fg="white").pack()
+subTextFrame.place(relx=0.48, rely=0.89, height=20, width=130, )
+subTextLabel = Label(subTextFrame, text="סמס עם הזמנה לאפליקציה", font=("rubik", 9), bg="#236795", fg="white").pack()
+
+def change_checkbox():
+   selection = "You selected the option " + str(checkBox_AppAdToSMS.get())
+   print(selection)
+
+## CheckBox
+checkBoxFrame = tk.Frame(root, bg="#236795")  # טקסט המלצה לווידוא פרטים
+checkBoxFrame.place(relx=0.91, rely=0.88, height=20, width=30, )
+checkBox_AppAdToSMS = tk.IntVar()
+c1 = tk.Checkbutton(checkBoxFrame, variable=checkBox_AppAdToSMS, onvalue=1, offvalue=0, bg="#236795", command=change_checkbox)
+c1.pack()
 # endregion "כותרת "הכנס מס' הזמנה
 
 root.mainloop()

@@ -4,11 +4,7 @@ from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.multi_usage.locationChecker import location_checker
 from Scripts.A1_wooGetAPI import woocomarce_api
-from Gadgets.multi_usage.goToTab import goToTab
-from Scripts.A23_NEW_createStickerAPI import create_delivery
-from Scripts.A2_loginButik24 import loginDeliveryCompany24
-from Scripts.A3_embedDetails import embed_details
-from Scripts.A4_createSticker import create_sticker
+from Scripts.A2_NEW_createStickerAPI import create_delivery
 from pynput.keyboard import Controller
 from time import sleep
 from tkinter import messagebox
@@ -20,7 +16,6 @@ keyboard = Controller()
 ## main based wordpress woocomarce API
 def main_api(numOrder, numOfPacks, deliveryCompany):
     print("delivery company from radio buttons:")
-    print(type(deliveryCompany))
     print(deliveryCompany)
 
     if numOrder == "":
@@ -29,40 +24,6 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     # global browser
     ## A0 setup browser & Gui
     print(f"{bcolors.Yellow}{bcolors.BOLD}Start{bcolors.Normal}")
-    def setup_browser():
-        # option = webdriver.ChromeOptions()
-        # option.binary_location = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
-        # option.binary_location = r'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
-
-        # from selenium.webdriver.support import ui
-
-        # user_field = "idanb"
-        chrome_ver = "87"  # 86/87/88
-        # global chrome_ver
-        # options = webdriver.ChromeOptions()  # פיתחת כרום דרך משתמש רגיל
-        # options.add_argument(f"user-data-dir=C:\\Users\\{user_field.get()}\\AppData\\Local\\Google\\Chrome\\User Data")
-        # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe", options=options)
-
-        options = webdriver.ChromeOptions()
-        options.add_argument("--window-size=550,950")
-        args = ["hide_console", ]
-        _browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\\chromedriver{chrome_ver}.exe",
-                                    service_args=args,
-                                    options=options)
-
-        # browser = webdriver.Chrome(options=options)
-        ChromeVer = _browser.capabilities['browserVersion']
-        ChromeDriverVer = _browser.capabilities['chrome']['chromedriverVersion'].split(' ')[0]
-        # print(ChromeVer)
-        # print(ChromeDriverVer)
-        print("ChromeVer " + ChromeVer[0:2])
-        print("ChromeDriverVer " + ChromeDriverVer[0:2])
-        # and if it doesn't exist, download it automatically,
-        # then add chromedriver to path
-
-        # chrome_ver = radioVar.get()  # 86/87/88
-        # browser = webdriver.Chrome(executable_path=fr"C:\Program Files (x86)\chromedriver{chrome_ver}.exe")
-        return _browser
 
     print("woocomarce_api Start")
 
@@ -88,48 +49,7 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     if buyer_notes != "":
         messagebox.showinfo("הערה מהלקוח", f"ಠ_ಠ שים לב להערה של הלקוח\n{buyer_notes}")
 
-    # If in MahirLi Locations List:
-    similar_level, locationFromList = location_checker(buyer_city)
-    if similar_level == 1:
-        # messagebox.showinfo("עובר למהיר לי", f"{buyer_city} נמצאת ברשימה! המשלוח הועבר למהיר לי")
-        deliveryCompany = 23 # 23 = MahirLi | 24 = Butik24
-
-    elif similar_level > 0.7:
-        value = messagebox.askyesno("האם לעבור", f"""
-                         כתובת לקוח:  {buyer_city}
-                      כתובת מהיר לי: {locationFromList}
-           האם לשלוח דרך מהיר לי? {str(similar_level)[:4]} """,
-                                    default='yes')
-        print(value)
-        if value:
-            deliveryCompany = 23
-            ## Beta auto add to list
-            # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
-            # loactions_file.write(f"\n{buyer_city}")
-            # print(buyer_city, "has been added to txt .file")
-        else:
-            deliveryCompany = 24
-
-    # If Not in MahirLi Locations List:
-    else: deliveryCompany = 24
-    # else:
-    #     value = messagebox.askyesno("האם לעבור", f"""
-    #         {buyer_city}, לא זוהתה ברשימה ערי הפעילות
-    #     ?אנא בדוק ידנית, לשלוח במהיר לי בכל זאת
-    #                                   {str(similar_level)[:4]} """,
-    #                                 default='no')
-    #     if value:
-    #         deliveryCompany = 23
-    #         ## Beta auto add to list
-    #         # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
-    #         # loactions_file.write(f"\n{buyer_city}")
-    #         # print(buyer_city, "has been added to txt .file")
-    #     else: deliveryCompany = 24
-
-
-
-
-    ## Check delivery method
+    ## Check if deliveryNeeded
     # (and stop running if delivery not needed)
     if not deliveryNeeded: # When deliveryNeeded = False
         print(f"{bcolors.Yellow}{bcolors.BOLD}"
@@ -155,6 +75,53 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
                 return
     print(f"deliveryNeeded = {deliveryNeeded}")
 
+    if deliveryCompany == 0: # 0 Means AUTO Select
+        print("Select deliveryCompany Auto")
+
+        # If in MahirLi Locations List:
+        similar_level, locationFromList = location_checker(buyer_city)
+        if similar_level == 1:
+            # messagebox.showinfo("עובר למהיר לי", f"{buyer_city} נמצאת ברשימה! המשלוח הועבר למהיר לי")
+            deliveryCompany = 23  # 23 = MahirLi | 24 = Butik24
+
+        elif similar_level > 0.7:
+            value = messagebox.askyesno("האם לעבור", f"""
+                             כתובת לקוח:  {buyer_city}
+                          כתובת מהיר לי: {locationFromList}
+               האם לשלוח דרך מהיר לי? {str(similar_level)[:4]} """,
+                                        default='yes')
+            print(value)
+            if value:
+                deliveryCompany = 23
+                ## Beta auto add to list
+                # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
+                # loactions_file.write(f"\n{buyer_city}")
+                # print(buyer_city, "has been added to txt .file")
+            else:
+                deliveryCompany = 24
+
+        # If Not in MahirLi Locations List:
+        else:
+            deliveryCompany = 24
+
+        # else:
+        #     value = messagebox.askyesno("האם לעבור", f"""
+        #         {buyer_city}, לא זוהתה ברשימה ערי הפעילות
+        #     ?אנא בדוק ידנית, לשלוח במהיר לי בכל זאת
+        #                                   {str(similar_level)[:4]} """,
+        #                                 default='no')
+        #     if value:
+        #         deliveryCompany = 23
+        #         ## Beta auto add to list
+        #         # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
+        #         # loactions_file.write(f"\n{buyer_city}")
+        #         # print(buyer_city, "has been added to txt .file")
+        #     else: deliveryCompany = 24
+    else:
+        print("deliveryCompany Selected by Radio Button")
+    print(f"deliveryCompany is {deliveryCompany}")
+
+
     ## rework buyer & address details + CHECK FOR BUYER NOTES
     # rework API Values to the traditional (from v1.0)
     buyer_name = f"{first_name} {last_name}"
@@ -166,31 +133,6 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     # buyer_email = email
     # buyer_notes = customer_note
 
-    # browser = setup_browser()
-    #
-    # ## A2 Login Butik 24
-    # loginDeliveryCompany24(browser=browser, deliveryCompany=deliveryCompany)
-    #
-    # # return for saturday without create delivery on Butik24
-    # # butikBarCode = "FDFRE232432"
-    # # butikTrackNumber = "1123445"
-    # # winsound.Beep(2000, 150), winsound.Beep(1500, 150), sleep(0.15), winsound.Beep(800, 150), winsound.Beep(800, 150), sleep(0.27), winsound.Beep(1400, 150), winsound.Beep(1400, 150)
-    # # return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone
-    #
-    #
-    # # goToTab(browser=browser, tabURL="https://members.lionwheel.com/tasks/new?locale=he")
-    #
-    #
-    # ## A3 Embed buyer details on order page
-    # # packNum = packNum.get()
-    # embed_details(browser, buyer_city, buyer_street
-    #               , buyer_street_number, buyer_name,
-    #               clean_address, buyer_phone, buyer_email,
-    #               buyer_notes, numOrder, numOfPacks)
-    #
-    # ## A4 Create delivery and redirect to sticker Tab
-    # # input("Make a sticker??") # ע"מ למנוע יצירת מדבקות לבדיקות כשאין צורך
-    # butikTrackNumber, butikBarCode = create_sticker(browser=browser)
 
     if deliveryCompany == 24:
         messagebox.showinfo("חברת משלוחים", f"{buyer_city} - בוטיק 24")
