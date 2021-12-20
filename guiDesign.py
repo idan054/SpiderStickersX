@@ -40,6 +40,7 @@ def main_starter():
     # print(f"{bcolors.Red}e:{bcolors.Normal}")
     # print(e)
     winsound.Beep(2000, 150)
+
     winsound.Beep(1500, 150)
     # browser.execute_script('window.print();')
     sleep(0.15)
@@ -75,13 +76,17 @@ def main_starter():
 
     packNum.delete(0, END)
     packNum.insert(0, "1") # Reset to 1 when finish
+
     print("Packs field reset to 1")
 
     if api_output[0] != "0":               # After delivery
+        mainButton['state'] = DISABLED
         mailButton['state'] = NORMAL
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 def part_b_starter():
+    mainButton['state'] = NORMAL
+
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
     try:
         print("orderLinkField.get() is ", orderLinkField.get())
@@ -121,10 +126,11 @@ canvas.pack()
 # endregion הגדרות טקינטר
 
 # region כפתור "המשך" לתחילת פעולה
-linkButtonSaver = tk.Frame(root, bg="#236795")  # כפתור שמירת קישור ותחילת עבודה
-linkButtonSaver.place(relx=0.035, rely=0.32, height=30, width=60, )
-linkButton = ttk.Button(linkButtonSaver, text="המשך", style="W.TButton",
-                        command=main_starter).pack()
+mainButtonSaver = tk.Frame(root, bg="#236795")  # כפתור שמירת קישור ותחילת עבודה
+mainButtonSaver.place(relx=0.035, rely=0.32, height=30, width=60, )
+mainButton = ttk.Button(mainButtonSaver, text="המשך", style="W.TButton",
+                        command=main_starter)
+mainButton.pack()
 # endregion כפתור המשך לתחילת פעולה
 
 # region כפתור מייל מעקב

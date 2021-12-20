@@ -48,11 +48,13 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
         order_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
         # print(requests.put(url=order_url, headers=headers, data=data).json())
         requests.put(url=order_url, headers=headers, data=data).json()
+
+    print('Start wooApi_mail_complete()')
     wooApi_mail_complete()
 
     # message_type means delivery
+    print('Start textMe_sms()')
     txtMe_sms(message_type=5, phone=buyer_phone, butikTrackNumber=butikTrackNumber, includeAppAd=includeAppAd)
-
     messagebox.showinfo("המשימה הושלמה",
                         "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
 

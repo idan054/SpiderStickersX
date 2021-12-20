@@ -1,1 +1,1 @@
-pyinstaller --noconfirm --onefile --windowed --icon "C:/Users/idanb/Documents/MEGAsync/App4Sale/Spider3D/whitelogo.ico"  "C:/Users/idanb/Desktop/pyton Projects/SpiderStickersX/guiDesign.py"
+pyinstaller --noconfirm --onefile --windowed --icon "C:\Users\Idan\OneDrive\Desktop\MyStuff\whitelogo.ico"  "C:\Users\Idan\PycharmProjects\SpiderStickersX\guiDesign.py"

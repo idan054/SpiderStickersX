@@ -6,6 +6,7 @@ global locker_color, locker_code, final_msg
 def txtMe_sms(includeAppAd, message_type, phone, butikTrackNumber=None): #butikTrackNumber no needed on pickup
     global locker_color, locker_code, final_msg
     print("message_type = ", message_type)
+    print("includeAppAd = ", includeAppAd)
 
     # locker_color = "הירוק 🟢"
     # locker_color = "הכחול 🔵"
