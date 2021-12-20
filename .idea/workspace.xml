@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,8 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V1.5(1) + EXE Major bug fix based Butik24 design update">
-      <change afterPath="$PROJECT_DIR$/dist/spiderZip.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/guiDesign.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/guiDesignV3.1.0.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SpiderStickersX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SpiderStickersX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +45,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="B2.6.3" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,7 +81,16 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.CommentHighlighterCustomTokensSettingsPage" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="SpiderStickersX" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="SpiderStickersX" />
+      </console-settings>
+    </option>
+    <option name="myUseExistingConsole" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -224,17 +239,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.A2_NEW_createStickerAPI" />
+      <item itemvalue="Python.locationChecker" />
+      <item itemvalue="Python.popupDesign" />
+      <item itemvalue="Python.tests" />
+      <item itemvalue="Python.guiDesign" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.guiDesign" />
-        <item itemvalue="Python.A2_NEW_createStickerAPI" />
         <item itemvalue="Python.tests" />
+        <item itemvalue="Python.A2_NEW_createStickerAPI" />
         <item itemvalue="Python.popupDesign" />
         <item itemvalue="Python.locationChecker" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -467,7 +490,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -497,67 +519,5 @@
     <MESSAGE value="B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="B3.1.0 .EXE LionWheel Core BETA&#10;✔ Working version based lionwheel core instead Selenium&#10;✔ Radio button of Auto/ MahirLi/ Butik24&#10;✔ Spider-App Ad Checkbox &#10;&#10;B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works." />
     <option name="LAST_COMMIT_MESSAGE" value="B3.1.0 .EXE LionWheel Core BETA&#10;✔ Working version based lionwheel core instead Selenium&#10;✔ Radio button of Auto/ MahirLi/ Butik24&#10;✔ Spider-App Ad Checkbox &#10;&#10;B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="160" key="#Plugins" timestamp="1626434996367">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="160" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1626434996367" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626528319736">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626528319736" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1626439359298">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626439359298" />
-    <state width="650" height="891" key="GridCell.Tab.0.bottom" timestamp="1626531986214">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="650" height="891" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
-    <state width="650" height="891" key="GridCell.Tab.0.center" timestamp="1626531986214">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="650" height="891" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
-    <state width="650" height="891" key="GridCell.Tab.0.left" timestamp="1626531986214">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="650" height="891" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
-    <state width="650" height="891" key="GridCell.Tab.0.right" timestamp="1626531986214">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="650" height="891" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626531986214" />
-    <state width="580" height="891" key="GridCell.Tab.1.bottom" timestamp="1626528754990">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="580" height="891" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
-    <state width="580" height="891" key="GridCell.Tab.1.center" timestamp="1626528754990">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="580" height="891" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
-    <state width="580" height="891" key="GridCell.Tab.1.left" timestamp="1626528754990">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="580" height="891" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
-    <state width="580" height="891" key="GridCell.Tab.1.right" timestamp="1626528754990">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="580" height="891" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626528754990" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1626533167742">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626533167742" />
-    <state x="668" y="239" width="583" height="562" key="find.popup" timestamp="1626532808490">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="239" width="583" height="562" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626532808490" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1626434980037">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626434980037" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SpiderStickersX$A23_NEW_createStickerAPI.coverage" NAME="A23_NEW_createStickerAPI Coverage Results" MODIFIED="1626524506254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
-    <SUITE FILE_PATH="coverage/SpiderStickersX$guiDesign.coverage" NAME="guiDesign Coverage Results" MODIFIED="1626531986195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

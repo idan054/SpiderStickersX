@@ -14,9 +14,10 @@ def woocomarce_api(numOrder):
     # numOrder = "27692" # כולל הערות + כמות גבוהה
 
     headers = CaseInsensitiveDict()
-    headers["Authorization"] = \
-        "Basic Y2tfMzAyZWJkYmQ4OTNjNzU2YTFlOTlmZjhlZmNjMzZiYjYzNWZjNDRjNzpjc19lMTUyMTc0MWJlNDYzMWZjMzljMTQyNzUwZDg0YmU2YTJiYWVlMWIx"
-
+    # To get headers["Authorization"] Token: insert Woo Api customer_key & secret_key
+    # as user & pass in https://reqbin.com/ with the url above
+    headers[
+        "Authorization"] = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
     # data = {
     #     "status": "completed",
     # }

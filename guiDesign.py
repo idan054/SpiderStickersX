@@ -31,6 +31,7 @@ def main_starter():
         api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get(),
                           deliveryCompany=deliveryCompany_radioVar.get())
     except Exception as e:
+        print('Exception:')
         print(e)
     # messagebox.showerror("שגיאה", "חלה שגיאה בהפעלת התוכנה")
     # api_output = "FAILED"
