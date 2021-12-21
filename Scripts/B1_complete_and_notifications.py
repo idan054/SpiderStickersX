@@ -17,7 +17,7 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     def wooApi_mail_complete():
         headers = CaseInsensitiveDict()
         headers["Authorization"] = \
-            "Basic Y2tfMzAyZWJkYmQ4OTNjNzU2YTFlOTlmZjhlZmNjMzZiYjYzNWZjNDRjNzpjc19lMTUyMTc0MWJlNDYzMWZjMzljMTQyNzUwZDg0YmU2YTJiYWVlMWIx"
+            woo_token = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
         notes_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}/notes"
 
         # butikTrackNumber = str(butikTrackNumber)
