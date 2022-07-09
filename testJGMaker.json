@@ -1,0 +1,300 @@
+[
+  {
+    "id": 37301,
+    "date_created": "2021-12-09T10:38:22",
+    "date_created_gmt": "2021-12-09T07:38:22",
+    "date_modified": "2021-12-18T01:30:46",
+    "date_modified_gmt": "2021-12-17T22:30:46",
+    "description": "",
+    "permalink": "https://www.spider3d.co.il/מדפסות-תלת-מימד/jgmaker-artist-d-dual-extruder-%d7%9c%d7%94%d7%93%d7%a4%d7%a1%d7%94-%d7%91-2-%d7%a6%d7%91%d7%a2%d7%99%d7%9d-%d7%91%d7%9e%d7%a7%d7%91%d7%99%d7%9c/?attribute_pa_%25d7%259e%25d7%25a6%25d7%2591=%25d7%259e%25d7%25aa%25d7%25a6%25d7%2595%25d7%2592%25d7%2594",
+    "sku": "artist pro",
+    "price": "2700.00",
+    "regular_price": "3590.00",
+    "sale_price": "2700.00",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": true,
+    "visible": true,
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [
+
+    ],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": true,
+    "stock_quantity": 1,
+    "in_stock": true,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "",
+    "dimensions": {
+      "length": "",
+      "width": "",
+      "height": ""
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 32037,
+      "date_created": "2021-08-18T14:37:36",
+      "date_created_gmt": "2021-08-18T08:37:36",
+      "date_modified": "2021-12-18T04:30:46",
+      "date_modified_gmt": "2021-12-17T22:30:46",
+      "src": "https://www.spider3d.co.il/wp-content/uploads/2021/08/247_800x.jpg",
+      "name": "JGMaker Artist-D Dual Extruder ג&#8217;יי מייקר ארטיסט די מדפסת תלת מימד אומנים / מעצבים",
+      "alt": "JGMaker Artist-D Dual Extruder ג'יי מייקר ארטיסט די מדפסת תלת מימד אומנים / מעצבים",
+      "position": 0
+    },
+    "attributes": [
+      {
+        "id": 158,
+        "name": "מצב",
+        "option": "%d7%9e%d7%aa%d7%a6%d7%95%d7%92%d7%94"
+      }
+    ],
+    "menu_order": 0,
+    "meta_data": [
+      {
+        "id": 1499663,
+        "key": "_woocommerce_gpf_data",
+        "value": [
+
+        ]
+      }
+    ],
+    "gpf_data": {
+      "description": null,
+      "availability": null,
+      "is_bundle": null,
+      "availability_date": null,
+      "condition": null,
+      "brand": null,
+      "mpn": null,
+      "product_type": null,
+      "google_product_category": null,
+      "gtin": null,
+      "gender": null,
+      "age_group": null,
+      "color": null,
+      "size": null,
+      "size_type": null,
+      "size_system": null,
+      "unit_pricing_measure": null,
+      "unit_pricing_base_measure": null,
+      "multipack": null,
+      "installment": null,
+      "material": null,
+      "pattern": null,
+      "adult": null,
+      "identifier_exists": null,
+      "adwords_grouping": null,
+      "adwords_labels": null,
+      "bing_category": null,
+      "delivery_label": null,
+      "transit_time_label": null,
+      "min_handling_time": null,
+      "max_handling_time": null,
+      "energy_efficiency_class": null,
+      "min_energy_efficiency_class": null,
+      "max_energy_efficiency_class": null,
+      "energy_label_image_link": null,
+      "cost_of_goods_sold": null,
+      "included_destination": null,
+      "excluded_destination": null,
+      "consumer_notice": null,
+      "product_highlight": null,
+      "product_detail": null,
+      "consumer_datasheet": null,
+      "product_fee": null,
+      "sell_on_google_quantity": null,
+      "purchase_quantity_limit": null,
+      "google_funded_promotion_eligibility": null,
+      "return_address_label": null,
+      "return_policy_label": null,
+      "custom_label_0": null,
+      "custom_label_1": null,
+      "custom_label_2": null,
+      "custom_label_3": null,
+      "custom_label_4": null,
+      "promotion_id": null,
+      "shippingprice": null,
+      "shippingcountryprice": null,
+      "shippingcountryserviceprice": null,
+      "exclude_product": null
+    },
+    "is_purchased": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/32034/variations/37301"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/32034/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/32034"
+        }
+      ]
+    }
+  },
+  {
+    "id": 37300,
+    "date_created": "2021-12-09T10:38:03",
+    "date_created_gmt": "2021-12-09T07:38:03",
+    "date_modified": "2021-12-09T10:39:25",
+    "date_modified_gmt": "2021-12-09T07:39:25",
+    "description": "",
+    "permalink": "https://www.spider3d.co.il/מדפסות-תלת-מימד/jgmaker-artist-d-dual-extruder-%d7%9c%d7%94%d7%93%d7%a4%d7%a1%d7%94-%d7%91-2-%d7%a6%d7%91%d7%a2%d7%99%d7%9d-%d7%91%d7%9e%d7%a7%d7%91%d7%99%d7%9c/?attribute_pa_%25d7%259e%25d7%25a6%25d7%2591=%25d7%2597%25d7%2593%25d7%25a9",
+    "sku": "artist pro",
+    "price": "3590",
+    "regular_price": "3590",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "visible": true,
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [
+
+    ],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": true,
+    "stock_quantity": 0,
+    "in_stock": false,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "",
+    "dimensions": {
+      "length": "",
+      "width": "",
+      "height": ""
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 32037,
+      "date_created": "2021-08-18T14:37:36",
+      "date_created_gmt": "2021-08-18T08:37:36",
+      "date_modified": "2021-12-18T04:30:46",
+      "date_modified_gmt": "2021-12-17T22:30:46",
+      "src": "https://www.spider3d.co.il/wp-content/uploads/2021/08/247_800x.jpg",
+      "name": "JGMaker Artist-D Dual Extruder ג&#8217;יי מייקר ארטיסט די מדפסת תלת מימד אומנים / מעצבים",
+      "alt": "JGMaker Artist-D Dual Extruder ג'יי מייקר ארטיסט די מדפסת תלת מימד אומנים / מעצבים",
+      "position": 0
+    },
+    "attributes": [
+      {
+        "id": 158,
+        "name": "מצב",
+        "option": "%d7%97%d7%93%d7%a9"
+      }
+    ],
+    "menu_order": 0,
+    "meta_data": [
+      {
+        "id": 1499659,
+        "key": "_woocommerce_gpf_data",
+        "value": [
+
+        ]
+      }
+    ],
+    "gpf_data": {
+      "description": null,
+      "availability": null,
+      "is_bundle": null,
+      "availability_date": null,
+      "condition": null,
+      "brand": null,
+      "mpn": null,
+      "product_type": null,
+      "google_product_category": null,
+      "gtin": null,
+      "gender": null,
+      "age_group": null,
+      "color": null,
+      "size": null,
+      "size_type": null,
+      "size_system": null,
+      "unit_pricing_measure": null,
+      "unit_pricing_base_measure": null,
+      "multipack": null,
+      "installment": null,
+      "material": null,
+      "pattern": null,
+      "adult": null,
+      "identifier_exists": null,
+      "adwords_grouping": null,
+      "adwords_labels": null,
+      "bing_category": null,
+      "delivery_label": null,
+      "transit_time_label": null,
+      "min_handling_time": null,
+      "max_handling_time": null,
+      "energy_efficiency_class": null,
+      "min_energy_efficiency_class": null,
+      "max_energy_efficiency_class": null,
+      "energy_label_image_link": null,
+      "cost_of_goods_sold": null,
+      "included_destination": null,
+      "excluded_destination": null,
+      "consumer_notice": null,
+      "product_highlight": null,
+      "product_detail": null,
+      "consumer_datasheet": null,
+      "product_fee": null,
+      "sell_on_google_quantity": null,
+      "purchase_quantity_limit": null,
+      "google_funded_promotion_eligibility": null,
+      "return_address_label": null,
+      "return_policy_label": null,
+      "custom_label_0": null,
+      "custom_label_1": null,
+      "custom_label_2": null,
+      "custom_label_3": null,
+      "custom_label_4": null,
+      "promotion_id": null,
+      "shippingprice": null,
+      "shippingcountryprice": null,
+      "shippingcountryserviceprice": null,
+      "exclude_product": null
+    },
+    "is_purchased": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/32034/variations/37300"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/32034/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/32034"
+        }
+      ]
+    }
+  }
+]

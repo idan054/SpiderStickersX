@@ -1,0 +1,1390 @@
+[
+  {
+    "id": 14553,
+    "date_created": "2020-07-12T11:26:51",
+    "date_created_gmt": "2020-07-12T08:26:51",
+    "date_modified": "2021-11-28T07:58:11",
+    "date_modified_gmt": "2021-11-28T04:58:11",
+    "description": "",
+    "permalink": "https://www.spider3d.co.il/שדרוגים-וחלפים-למדפסות-תלת-מימד/%d7%93%d7%99%d7%96%d7%94-%d7%a0%d7%95%d7%96%d7%9cmk8-3d-printer-nozzl-%d7%9e%d7%99%d7%93%d7%95%d7%aa-1-75-%d7%9e%d7%9e-%d7%91%d7%a7%d7%98%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c-0-2-0-5-%d7%9e%d7%9e/?attribute_%25d7%2591%25d7%2597%25d7%25a8-%25d7%2597%25d7%2591%25d7%2599%25d7%259c%25d7%2594=3+%D7%93%D7%99%D7%96%D7%95%D7%AA+%2B+3+%D7%9B%D7%99%D7%A1%D7%95%D7%99%D7%99+%D7%A1%D7%99%D7%9C%D7%A7%D7%95%D7%9F+mk8",
+    "sku": "דיזהMK8",
+    "price": "99",
+    "regular_price": "135",
+    "sale_price": "99",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": true,
+    "visible": true,
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [
+
+    ],
+    "download_limit": 0,
+    "download_expiry": 0,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 100,
+    "in_stock": true,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "",
+    "dimensions": {
+      "length": "",
+      "width": "",
+      "height": ""
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 14551,
+      "date_created": "2020-07-12T14:22:29",
+      "date_created_gmt": "2020-07-12T08:22:29",
+      "date_modified": "2020-07-12T14:23:06",
+      "date_modified_gmt": "2020-07-12T08:23:06",
+      "src": "https://www.spider3d.co.il/wp-content/uploads/2019/11/413FtM4eVCL1.jpg",
+      "name": "דיזה-mk8-אנדר-3-ender-3",
+      "alt": "דיזה-mk8-אנדר-3-ender-3",
+      "position": 0
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "בחר-חבילה",
+        "option": "3 דיזות + 3 כיסויי סילקון mk8"
+      }
+    ],
+    "menu_order": 2,
+    "meta_data": [
+      {
+        "id": 174206,
+        "key": "_op_barcode",
+        "value": "00000014553"
+      },
+      {
+        "id": 174207,
+        "key": "_op_cost_price",
+        "value": ""
+      },
+      {
+        "id": 174208,
+        "key": "_op_qty_warehouse_5703",
+        "value": ""
+      },
+      {
+        "id": 178125,
+        "key": "_openpos_product_version_0",
+        "value": "1603883406"
+      },
+      {
+        "id": 344138,
+        "key": "_nab_permalink",
+        "value": "https://www.spider3d.co.il/shop/%D7%A9%D7%93%D7%A8%D7%95%D7%92%D7%99%D7%9D-%D7%95%D7%97%D7%9C%D7%A4%D7%99%D7%9D-%D7%9C%D7%9E%D7%93%D7%A4%D7%A1%D7%95%D7%AA-%D7%AA%D7%9C%D7%AA-%D7%9E%D7%99%D7%9E%D7%93/%D7%93%D7%99%D7%96%D7%94-%D7%A0%D7%95%D7%96%D7%9Cmk8-3d-printer-nozzl-%D7%9E%D7%99%D7%93%D7%95%D7%AA-1-75-%D7%9E%D7%9E-%D7%91%D7%A7%D7%98%D7%A8%D7%99%D7%9D-%D7%A9%D7%9C-0-2-0-5-%D7%9E%D7%9E/?attribute_%25d7%2591%25d7%2597%25d7%25a8-%25d7%2597%25d7%2591%25d7%2599%25d7%259c%25d7%2594=3+%D7%99%D7%97%D7%99+%D7%93%D7%99%D7%96%D7%95%D7%AA+%2B+3+%D7%9B%D7%99%D7%A1%D7%95%D7%99%D7%99+%D7%A1%D7%99%D7%9C%D7%A7%D7%95%D7%9F+mk8"
+      },
+      {
+        "id": 344139,
+        "key": "_fgm2wc_old_product_id",
+        "value": ""
+      },
+      {
+        "id": 344140,
+        "key": "_min_variation_price",
+        "value": ""
+      },
+      {
+        "id": 344141,
+        "key": "_max_variation_price",
+        "value": ""
+      },
+      {
+        "id": 344142,
+        "key": "_vcv-sourceChecksum",
+        "value": ""
+      },
+      {
+        "id": 344143,
+        "key": "vcvSourceCssFileUrl",
+        "value": ""
+      },
+      {
+        "id": 344144,
+        "key": "_vcv-globalCssMigrated",
+        "value": ""
+      },
+      {
+        "id": 344145,
+        "key": "_op_weight_base_pricing",
+        "value": ""
+      },
+      {
+        "id": 344146,
+        "key": "_product_layout",
+        "value": ""
+      },
+      {
+        "id": 344147,
+        "key": "_product_style",
+        "value": ""
+      },
+      {
+        "id": 344148,
+        "key": "_total_stock_quantity",
+        "value": ""
+      },
+      {
+        "id": 344149,
+        "key": "_specifications_display_attributes",
+        "value": ""
+      },
+      {
+        "id": 344150,
+        "key": "_specifications_attributes_title",
+        "value": ""
+      },
+      {
+        "id": 344151,
+        "key": "_specifications",
+        "value": ""
+      },
+      {
+        "id": 344152,
+        "key": "slide_template",
+        "value": ""
+      },
+      {
+        "id": 344153,
+        "key": "rs_page_bg_color",
+        "value": ""
+      },
+      {
+        "id": 344154,
+        "key": "lrm_auto_trigger_on",
+        "value": ""
+      },
+      {
+        "id": 344155,
+        "key": "lrm_auto_trigger_timeout",
+        "value": ""
+      },
+      {
+        "id": 344156,
+        "key": "lrm_auto_trigger_tab",
+        "value": ""
+      },
+      {
+        "id": 344157,
+        "key": "_yoast_wpseo_newssitemap-exclude",
+        "value": ""
+      },
+      {
+        "id": 344158,
+        "key": "_yoast_wpseo_content_score",
+        "value": ""
+      },
+      {
+        "id": 344159,
+        "key": "_yoast_wpseo_focuskeywords",
+        "value": ""
+      },
+      {
+        "id": 344160,
+        "key": "_yoast_wpseo_keywordsynonyms",
+        "value": ""
+      },
+      {
+        "id": 344161,
+        "key": "_woocommerce_product_gallery_slider_enabled",
+        "value": ""
+      },
+      {
+        "id": 344162,
+        "key": "_woocommerce_product_gallery_slider_archives_enabled",
+        "value": ""
+      },
+      {
+        "id": 344163,
+        "key": "cwg_total_subscribers",
+        "value": ""
+      },
+      {
+        "id": 344164,
+        "key": "_yst_prominent_words_version",
+        "value": ""
+      },
+      {
+        "id": 344165,
+        "key": "_custom_accessory_group_id",
+        "value": ""
+      },
+      {
+        "id": 344166,
+        "key": "custom_accessory_choose",
+        "value": ""
+      },
+      {
+        "id": 344167,
+        "key": "_wc_facebook_sync_enabled",
+        "value": ""
+      },
+      {
+        "id": 344168,
+        "key": "_yoast_wpseo_primary_product_cat",
+        "value": ""
+      },
+      {
+        "id": 344171,
+        "key": "__post_views_count",
+        "value": ""
+      },
+      {
+        "id": 344172,
+        "key": "_wp_page_template",
+        "value": ""
+      },
+      {
+        "id": 344173,
+        "key": "lws_woorewards_social_hash",
+        "value": ""
+      },
+      {
+        "id": 344174,
+        "key": "_vi_woo_product_variation_swatches_product_attribute",
+        "value": ""
+      },
+      {
+        "id": 344178,
+        "key": "_wc_max_points_earned",
+        "value": ""
+      },
+      {
+        "id": 344179,
+        "key": "_wc_min_points_earned",
+        "value": ""
+      },
+      {
+        "id": 344182,
+        "key": "_yoast_wpseo_videositemap-duration",
+        "value": ""
+      },
+      {
+        "id": 344183,
+        "key": "_yoast_wpseo_videositemap-rating",
+        "value": ""
+      },
+      {
+        "id": 344186,
+        "key": "mpd_my_post_viewed",
+        "value": ""
+      },
+      {
+        "id": 344187,
+        "key": "_swatch_type",
+        "value": ""
+      },
+      {
+        "id": 344188,
+        "key": "_wp_old_date",
+        "value": ""
+      },
+      {
+        "id": 344189,
+        "key": "_enable_watermark",
+        "value": ""
+      },
+      {
+        "id": 344190,
+        "key": "_video_url",
+        "value": ""
+      },
+      {
+        "id": 344191,
+        "key": "_video_image_url",
+        "value": ""
+      },
+      {
+        "id": 344199,
+        "key": "_rocket_exclude_minify_html",
+        "value": ""
+      },
+      {
+        "id": 344206,
+        "key": "_rocket_exclude_lazyload",
+        "value": ""
+      },
+      {
+        "id": 344207,
+        "key": "_rocket_exclude_lazyload_iframes",
+        "value": ""
+      },
+      {
+        "id": 344216,
+        "key": "_fgm2wc_old_link_id",
+        "value": ""
+      },
+      {
+        "id": 344218,
+        "key": "_fgm2wc_imported",
+        "value": ""
+      },
+      {
+        "id": 344226,
+        "key": "_vi_wad_aff_url",
+        "value": ""
+      },
+      {
+        "id": 344227,
+        "key": "_vi_wad_aliexpress_product_id",
+        "value": ""
+      },
+      {
+        "id": 344228,
+        "key": "_vi_wad_check_alive",
+        "value": ""
+      },
+      {
+        "id": 344229,
+        "key": "_vi_wad_aliexpress_variation_id",
+        "value": ""
+      },
+      {
+        "id": 344230,
+        "key": "_vi_wad_aliexpress_variation_attr",
+        "value": ""
+      },
+      {
+        "id": 344240,
+        "key": "_wp_desired_post_slug",
+        "value": ""
+      },
+      {
+        "id": 344261,
+        "key": "_woocommerce_gpf_data",
+        "value": {
+          "description": "",
+          "is_bundle": "",
+          "availability_date": "",
+          "condition": "",
+          "gtin": "",
+          "gender": "",
+          "age_group": "",
+          "color": "",
+          "size": "",
+          "size_type": "",
+          "unit_pricing_measure": "",
+          "unit_pricing_base_measure": "",
+          "multipack": "",
+          "installment": "",
+          "material": "",
+          "pattern": "",
+          "adult": "",
+          "identifier_exists": "",
+          "adwords_grouping": "",
+          "adwords_labels": "",
+          "bing_category": "",
+          "delivery_label": "",
+          "transit_time_label": "",
+          "min_handling_time": "",
+          "max_handling_time": "",
+          "energy_efficiency_class": "",
+          "min_energy_efficiency_class": "",
+          "max_energy_efficiency_class": "",
+          "energy_label_image_link": "",
+          "cost_of_goods_sold": "",
+          "included_destination": "",
+          "excluded_destination": "",
+          "consumer_notice": "",
+          "product_highlight": "",
+          "product_detail": "",
+          "consumer_datasheet": "",
+          "product_fee": "",
+          "sell_on_google_quantity": "",
+          "purchase_quantity_limit": "",
+          "google_funded_promotion_eligibility": "",
+          "return_address_label": "",
+          "return_policy_label": "",
+          "custom_label_0": "",
+          "custom_label_1": "",
+          "custom_label_2": "",
+          "custom_label_3": "",
+          "custom_label_4": "",
+          "promotion_id": "",
+          "shippingprice": "",
+          "shippingcountryprice": "",
+          "shippingcountryserviceprice": ""
+        }
+      },
+      {
+        "id": 541383,
+        "key": "toolstipssynonyms",
+        "value": ""
+      },
+      {
+        "id": 541387,
+        "key": "berocket_post_order",
+        "value": ""
+      },
+      {
+        "id": 541388,
+        "key": "_rocket_exclude_defer_all_js",
+        "value": ""
+      },
+      {
+        "id": 541406,
+        "key": "somdn_dlcount",
+        "value": ""
+      },
+      {
+        "id": 541424,
+        "key": "_alg_wc_pif_enabled_local_1",
+        "value": ""
+      },
+      {
+        "id": 541425,
+        "key": "_alg_wc_pif_type_local_1",
+        "value": ""
+      },
+      {
+        "id": 541426,
+        "key": "_alg_wc_pif_required_local_1",
+        "value": ""
+      },
+      {
+        "id": 541427,
+        "key": "_alg_wc_pif_title_local_1",
+        "value": ""
+      },
+      {
+        "id": 541428,
+        "key": "_alg_wc_pif_placeholder_local_1",
+        "value": ""
+      },
+      {
+        "id": 541429,
+        "key": "_alg_wc_pif_default_value_local_1",
+        "value": ""
+      },
+      {
+        "id": 541430,
+        "key": "_alg_wc_pif_class_local_1",
+        "value": ""
+      },
+      {
+        "id": 541431,
+        "key": "_alg_wc_pif_style_local_1",
+        "value": ""
+      },
+      {
+        "id": 541432,
+        "key": "_alg_wc_pif_required_message_local_1",
+        "value": ""
+      },
+      {
+        "id": 541433,
+        "key": "_alg_wc_pif_input_restrictions_min_local_1",
+        "value": ""
+      },
+      {
+        "id": 541434,
+        "key": "_alg_wc_pif_input_restrictions_max_local_1",
+        "value": ""
+      },
+      {
+        "id": 541435,
+        "key": "_alg_wc_pif_input_restrictions_step_local_1",
+        "value": ""
+      },
+      {
+        "id": 541436,
+        "key": "_alg_wc_pif_input_restrictions_maxlength_local_1",
+        "value": ""
+      },
+      {
+        "id": 541437,
+        "key": "_alg_wc_pif_input_restrictions_pattern_local_1",
+        "value": ""
+      },
+      {
+        "id": 541438,
+        "key": "_alg_wc_pif_type_checkbox_yes_local_1",
+        "value": ""
+      },
+      {
+        "id": 541439,
+        "key": "_alg_wc_pif_type_checkbox_no_local_1",
+        "value": ""
+      },
+      {
+        "id": 541440,
+        "key": "_alg_wc_pif_type_file_accept_local_1",
+        "value": ""
+      },
+      {
+        "id": 541441,
+        "key": "_alg_wc_pif_type_file_wrong_type_msg_local_1",
+        "value": ""
+      },
+      {
+        "id": 541442,
+        "key": "_alg_wc_pif_type_file_max_size_local_1",
+        "value": ""
+      },
+      {
+        "id": 541443,
+        "key": "_alg_wc_pif_type_file_max_size_msg_local_1",
+        "value": ""
+      },
+      {
+        "id": 541444,
+        "key": "_alg_wc_pif_type_datepicker_format_local_1",
+        "value": ""
+      },
+      {
+        "id": 541445,
+        "key": "_alg_wc_pif_type_datepicker_mindate_local_1",
+        "value": ""
+      },
+      {
+        "id": 541446,
+        "key": "_alg_wc_pif_type_datepicker_maxdate_local_1",
+        "value": ""
+      },
+      {
+        "id": 541447,
+        "key": "_alg_wc_pif_type_datepicker_addyear_local_1",
+        "value": ""
+      },
+      {
+        "id": 541448,
+        "key": "_alg_wc_pif_type_datepicker_yearrange_local_1",
+        "value": ""
+      },
+      {
+        "id": 541449,
+        "key": "_alg_wc_pif_type_datepicker_firstday_local_1",
+        "value": ""
+      },
+      {
+        "id": 541450,
+        "key": "_alg_wc_pif_type_timepicker_format_local_1",
+        "value": ""
+      },
+      {
+        "id": 541451,
+        "key": "_alg_wc_pif_type_timepicker_interval_local_1",
+        "value": ""
+      },
+      {
+        "id": 541452,
+        "key": "_alg_wc_pif_type_color_allow_typing_local_1",
+        "value": ""
+      },
+      {
+        "id": 541453,
+        "key": "_alg_wc_pif_type_select_options_local_1",
+        "value": ""
+      },
+      {
+        "id": 541454,
+        "key": "_alg_wc_pif_local_total_number",
+        "value": ""
+      },
+      {
+        "id": 541469,
+        "key": "_rocket_exclude_minify_css",
+        "value": ""
+      },
+      {
+        "id": 541470,
+        "key": "_rocket_exclude_minify_js",
+        "value": ""
+      },
+      {
+        "id": 541471,
+        "key": "_rocket_exclude_async_css",
+        "value": ""
+      },
+      {
+        "id": 1341177,
+        "key": "fb_product_item_id",
+        "value": "5564116350297577"
+      }
+    ],
+    "gpf_data": {
+      "description": null,
+      "availability": null,
+      "is_bundle": null,
+      "availability_date": null,
+      "condition": null,
+      "brand": null,
+      "mpn": null,
+      "product_type": null,
+      "google_product_category": null,
+      "gtin": null,
+      "gender": null,
+      "age_group": null,
+      "color": null,
+      "size": null,
+      "size_type": null,
+      "size_system": null,
+      "unit_pricing_measure": null,
+      "unit_pricing_base_measure": null,
+      "multipack": null,
+      "installment": null,
+      "material": null,
+      "pattern": null,
+      "adult": null,
+      "identifier_exists": null,
+      "adwords_grouping": null,
+      "adwords_labels": null,
+      "bing_category": null,
+      "delivery_label": null,
+      "transit_time_label": null,
+      "min_handling_time": null,
+      "max_handling_time": null,
+      "energy_efficiency_class": null,
+      "min_energy_efficiency_class": null,
+      "max_energy_efficiency_class": null,
+      "energy_label_image_link": null,
+      "cost_of_goods_sold": null,
+      "included_destination": null,
+      "excluded_destination": null,
+      "consumer_notice": null,
+      "product_highlight": null,
+      "product_detail": null,
+      "consumer_datasheet": null,
+      "product_fee": null,
+      "sell_on_google_quantity": null,
+      "purchase_quantity_limit": null,
+      "google_funded_promotion_eligibility": null,
+      "return_address_label": null,
+      "return_policy_label": null,
+      "custom_label_0": null,
+      "custom_label_1": null,
+      "custom_label_2": null,
+      "custom_label_3": null,
+      "custom_label_4": null,
+      "promotion_id": null,
+      "shippingprice": null,
+      "shippingcountryprice": null,
+      "shippingcountryserviceprice": null,
+      "exclude_product": null
+    },
+    "is_purchased": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/9239/variations/14553"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/9239/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/9239"
+        }
+      ]
+    }
+  },
+  {
+    "id": 14552,
+    "date_created": "2020-07-12T11:26:42",
+    "date_created_gmt": "2020-07-12T08:26:42",
+    "date_modified": "2021-11-28T07:58:11",
+    "date_modified_gmt": "2021-11-28T04:58:11",
+    "description": "",
+    "permalink": "https://www.spider3d.co.il/שדרוגים-וחלפים-למדפסות-תלת-מימד/%d7%93%d7%99%d7%96%d7%94-%d7%a0%d7%95%d7%96%d7%9cmk8-3d-printer-nozzl-%d7%9e%d7%99%d7%93%d7%95%d7%aa-1-75-%d7%9e%d7%9e-%d7%91%d7%a7%d7%98%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c-0-2-0-5-%d7%9e%d7%9e/?attribute_%25d7%2591%25d7%2597%25d7%25a8-%25d7%2597%25d7%2591%25d7%2599%25d7%259c%25d7%2594=3+%D7%93%D7%99%D7%96%D7%95%D7%AA",
+    "sku": "AA3-B-2",
+    "price": "49",
+    "regular_price": "55",
+    "sale_price": "49",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": true,
+    "visible": true,
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [
+
+    ],
+    "download_limit": 0,
+    "download_expiry": 0,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 100,
+    "in_stock": true,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "",
+    "dimensions": {
+      "length": "",
+      "width": "",
+      "height": ""
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 14551,
+      "date_created": "2020-07-12T14:22:29",
+      "date_created_gmt": "2020-07-12T08:22:29",
+      "date_modified": "2020-07-12T14:23:06",
+      "date_modified_gmt": "2020-07-12T08:23:06",
+      "src": "https://www.spider3d.co.il/wp-content/uploads/2019/11/413FtM4eVCL1.jpg",
+      "name": "דיזה-mk8-אנדר-3-ender-3",
+      "alt": "דיזה-mk8-אנדר-3-ender-3",
+      "position": 0
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "בחר-חבילה",
+        "option": "3 דיזות"
+      }
+    ],
+    "menu_order": 1,
+    "meta_data": [
+      {
+        "id": 174213,
+        "key": "_op_barcode",
+        "value": "00000014552"
+      },
+      {
+        "id": 174214,
+        "key": "_op_cost_price",
+        "value": ""
+      },
+      {
+        "id": 174215,
+        "key": "_op_qty_warehouse_5703",
+        "value": ""
+      },
+      {
+        "id": 213312,
+        "key": "_openpos_product_version_0",
+        "value": "1612555620"
+      },
+      {
+        "id": 344014,
+        "key": "_nab_permalink",
+        "value": "https://www.spider3d.co.il/shop/%D7%A9%D7%93%D7%A8%D7%95%D7%92%D7%99%D7%9D-%D7%95%D7%97%D7%9C%D7%A4%D7%99%D7%9D-%D7%9C%D7%9E%D7%93%D7%A4%D7%A1%D7%95%D7%AA-%D7%AA%D7%9C%D7%AA-%D7%9E%D7%99%D7%9E%D7%93/%D7%93%D7%99%D7%96%D7%94-%D7%A0%D7%95%D7%96%D7%9Cmk8-3d-printer-nozzl-%D7%9E%D7%99%D7%93%D7%95%D7%AA-1-75-%D7%9E%D7%9E-%D7%91%D7%A7%D7%98%D7%A8%D7%99%D7%9D-%D7%A9%D7%9C-0-2-0-5-%D7%9E%D7%9E/?attribute_%25d7%2591%25d7%2597%25d7%25a8-%25d7%2597%25d7%2591%25d7%2599%25d7%259c%25d7%2594=%D7%93%D7%99%D7%96%D7%94"
+      },
+      {
+        "id": 344015,
+        "key": "_fgm2wc_old_product_id",
+        "value": ""
+      },
+      {
+        "id": 344016,
+        "key": "_min_variation_price",
+        "value": ""
+      },
+      {
+        "id": 344017,
+        "key": "_max_variation_price",
+        "value": ""
+      },
+      {
+        "id": 344018,
+        "key": "_vcv-sourceChecksum",
+        "value": ""
+      },
+      {
+        "id": 344019,
+        "key": "vcvSourceCssFileUrl",
+        "value": ""
+      },
+      {
+        "id": 344020,
+        "key": "_vcv-globalCssMigrated",
+        "value": ""
+      },
+      {
+        "id": 344021,
+        "key": "_op_weight_base_pricing",
+        "value": ""
+      },
+      {
+        "id": 344022,
+        "key": "_product_layout",
+        "value": ""
+      },
+      {
+        "id": 344023,
+        "key": "_product_style",
+        "value": ""
+      },
+      {
+        "id": 344024,
+        "key": "_total_stock_quantity",
+        "value": ""
+      },
+      {
+        "id": 344025,
+        "key": "_specifications_display_attributes",
+        "value": ""
+      },
+      {
+        "id": 344026,
+        "key": "_specifications_attributes_title",
+        "value": ""
+      },
+      {
+        "id": 344027,
+        "key": "_specifications",
+        "value": ""
+      },
+      {
+        "id": 344028,
+        "key": "slide_template",
+        "value": ""
+      },
+      {
+        "id": 344029,
+        "key": "rs_page_bg_color",
+        "value": ""
+      },
+      {
+        "id": 344030,
+        "key": "lrm_auto_trigger_on",
+        "value": ""
+      },
+      {
+        "id": 344031,
+        "key": "lrm_auto_trigger_timeout",
+        "value": ""
+      },
+      {
+        "id": 344032,
+        "key": "lrm_auto_trigger_tab",
+        "value": ""
+      },
+      {
+        "id": 344033,
+        "key": "_yoast_wpseo_newssitemap-exclude",
+        "value": ""
+      },
+      {
+        "id": 344034,
+        "key": "_yoast_wpseo_content_score",
+        "value": ""
+      },
+      {
+        "id": 344035,
+        "key": "_yoast_wpseo_focuskeywords",
+        "value": ""
+      },
+      {
+        "id": 344036,
+        "key": "_yoast_wpseo_keywordsynonyms",
+        "value": ""
+      },
+      {
+        "id": 344037,
+        "key": "_woocommerce_product_gallery_slider_enabled",
+        "value": ""
+      },
+      {
+        "id": 344038,
+        "key": "_woocommerce_product_gallery_slider_archives_enabled",
+        "value": ""
+      },
+      {
+        "id": 344039,
+        "key": "cwg_total_subscribers",
+        "value": ""
+      },
+      {
+        "id": 344040,
+        "key": "_yst_prominent_words_version",
+        "value": ""
+      },
+      {
+        "id": 344041,
+        "key": "_custom_accessory_group_id",
+        "value": ""
+      },
+      {
+        "id": 344042,
+        "key": "custom_accessory_choose",
+        "value": ""
+      },
+      {
+        "id": 344043,
+        "key": "_wc_facebook_sync_enabled",
+        "value": ""
+      },
+      {
+        "id": 344044,
+        "key": "_yoast_wpseo_primary_product_cat",
+        "value": ""
+      },
+      {
+        "id": 344047,
+        "key": "__post_views_count",
+        "value": ""
+      },
+      {
+        "id": 344048,
+        "key": "_wp_page_template",
+        "value": ""
+      },
+      {
+        "id": 344049,
+        "key": "lws_woorewards_social_hash",
+        "value": ""
+      },
+      {
+        "id": 344050,
+        "key": "_vi_woo_product_variation_swatches_product_attribute",
+        "value": ""
+      },
+      {
+        "id": 344054,
+        "key": "_wc_max_points_earned",
+        "value": ""
+      },
+      {
+        "id": 344055,
+        "key": "_wc_min_points_earned",
+        "value": ""
+      },
+      {
+        "id": 344058,
+        "key": "_yoast_wpseo_videositemap-duration",
+        "value": ""
+      },
+      {
+        "id": 344059,
+        "key": "_yoast_wpseo_videositemap-rating",
+        "value": ""
+      },
+      {
+        "id": 344062,
+        "key": "mpd_my_post_viewed",
+        "value": ""
+      },
+      {
+        "id": 344063,
+        "key": "_swatch_type",
+        "value": ""
+      },
+      {
+        "id": 344064,
+        "key": "_wp_old_date",
+        "value": ""
+      },
+      {
+        "id": 344065,
+        "key": "_enable_watermark",
+        "value": ""
+      },
+      {
+        "id": 344066,
+        "key": "_video_url",
+        "value": ""
+      },
+      {
+        "id": 344067,
+        "key": "_video_image_url",
+        "value": ""
+      },
+      {
+        "id": 344075,
+        "key": "_rocket_exclude_minify_html",
+        "value": ""
+      },
+      {
+        "id": 344082,
+        "key": "_rocket_exclude_lazyload",
+        "value": ""
+      },
+      {
+        "id": 344083,
+        "key": "_rocket_exclude_lazyload_iframes",
+        "value": ""
+      },
+      {
+        "id": 344092,
+        "key": "_fgm2wc_old_link_id",
+        "value": ""
+      },
+      {
+        "id": 344094,
+        "key": "_fgm2wc_imported",
+        "value": ""
+      },
+      {
+        "id": 344102,
+        "key": "_vi_wad_aff_url",
+        "value": ""
+      },
+      {
+        "id": 344103,
+        "key": "_vi_wad_aliexpress_product_id",
+        "value": ""
+      },
+      {
+        "id": 344104,
+        "key": "_vi_wad_check_alive",
+        "value": ""
+      },
+      {
+        "id": 344105,
+        "key": "_vi_wad_aliexpress_variation_id",
+        "value": ""
+      },
+      {
+        "id": 344106,
+        "key": "_vi_wad_aliexpress_variation_attr",
+        "value": ""
+      },
+      {
+        "id": 344116,
+        "key": "_wp_desired_post_slug",
+        "value": ""
+      },
+      {
+        "id": 344137,
+        "key": "_woocommerce_gpf_data",
+        "value": {
+          "description": "",
+          "is_bundle": "",
+          "availability_date": "",
+          "condition": "",
+          "gtin": "",
+          "gender": "",
+          "age_group": "",
+          "color": "",
+          "size": "",
+          "size_type": "",
+          "unit_pricing_measure": "",
+          "unit_pricing_base_measure": "",
+          "multipack": "",
+          "installment": "",
+          "material": "",
+          "pattern": "",
+          "adult": "",
+          "identifier_exists": "",
+          "adwords_grouping": "",
+          "adwords_labels": "",
+          "bing_category": "",
+          "delivery_label": "",
+          "transit_time_label": "",
+          "min_handling_time": "",
+          "max_handling_time": "",
+          "energy_efficiency_class": "",
+          "min_energy_efficiency_class": "",
+          "max_energy_efficiency_class": "",
+          "energy_label_image_link": "",
+          "cost_of_goods_sold": "",
+          "included_destination": "",
+          "excluded_destination": "",
+          "consumer_notice": "",
+          "product_highlight": "",
+          "product_detail": "",
+          "consumer_datasheet": "",
+          "product_fee": "",
+          "sell_on_google_quantity": "",
+          "purchase_quantity_limit": "",
+          "google_funded_promotion_eligibility": "",
+          "return_address_label": "",
+          "return_policy_label": "",
+          "custom_label_0": "",
+          "custom_label_1": "",
+          "custom_label_2": "",
+          "custom_label_3": "",
+          "custom_label_4": "",
+          "promotion_id": "",
+          "shippingprice": "",
+          "shippingcountryprice": "",
+          "shippingcountryserviceprice": ""
+        }
+      },
+      {
+        "id": 541291,
+        "key": "toolstipssynonyms",
+        "value": ""
+      },
+      {
+        "id": 541295,
+        "key": "berocket_post_order",
+        "value": ""
+      },
+      {
+        "id": 541296,
+        "key": "_rocket_exclude_defer_all_js",
+        "value": ""
+      },
+      {
+        "id": 541314,
+        "key": "somdn_dlcount",
+        "value": ""
+      },
+      {
+        "id": 541332,
+        "key": "_alg_wc_pif_enabled_local_1",
+        "value": ""
+      },
+      {
+        "id": 541333,
+        "key": "_alg_wc_pif_type_local_1",
+        "value": ""
+      },
+      {
+        "id": 541334,
+        "key": "_alg_wc_pif_required_local_1",
+        "value": ""
+      },
+      {
+        "id": 541335,
+        "key": "_alg_wc_pif_title_local_1",
+        "value": ""
+      },
+      {
+        "id": 541336,
+        "key": "_alg_wc_pif_placeholder_local_1",
+        "value": ""
+      },
+      {
+        "id": 541337,
+        "key": "_alg_wc_pif_default_value_local_1",
+        "value": ""
+      },
+      {
+        "id": 541338,
+        "key": "_alg_wc_pif_class_local_1",
+        "value": ""
+      },
+      {
+        "id": 541339,
+        "key": "_alg_wc_pif_style_local_1",
+        "value": ""
+      },
+      {
+        "id": 541340,
+        "key": "_alg_wc_pif_required_message_local_1",
+        "value": ""
+      },
+      {
+        "id": 541341,
+        "key": "_alg_wc_pif_input_restrictions_min_local_1",
+        "value": ""
+      },
+      {
+        "id": 541342,
+        "key": "_alg_wc_pif_input_restrictions_max_local_1",
+        "value": ""
+      },
+      {
+        "id": 541343,
+        "key": "_alg_wc_pif_input_restrictions_step_local_1",
+        "value": ""
+      },
+      {
+        "id": 541344,
+        "key": "_alg_wc_pif_input_restrictions_maxlength_local_1",
+        "value": ""
+      },
+      {
+        "id": 541345,
+        "key": "_alg_wc_pif_input_restrictions_pattern_local_1",
+        "value": ""
+      },
+      {
+        "id": 541346,
+        "key": "_alg_wc_pif_type_checkbox_yes_local_1",
+        "value": ""
+      },
+      {
+        "id": 541347,
+        "key": "_alg_wc_pif_type_checkbox_no_local_1",
+        "value": ""
+      },
+      {
+        "id": 541348,
+        "key": "_alg_wc_pif_type_file_accept_local_1",
+        "value": ""
+      },
+      {
+        "id": 541349,
+        "key": "_alg_wc_pif_type_file_wrong_type_msg_local_1",
+        "value": ""
+      },
+      {
+        "id": 541350,
+        "key": "_alg_wc_pif_type_file_max_size_local_1",
+        "value": ""
+      },
+      {
+        "id": 541351,
+        "key": "_alg_wc_pif_type_file_max_size_msg_local_1",
+        "value": ""
+      },
+      {
+        "id": 541352,
+        "key": "_alg_wc_pif_type_datepicker_format_local_1",
+        "value": ""
+      },
+      {
+        "id": 541353,
+        "key": "_alg_wc_pif_type_datepicker_mindate_local_1",
+        "value": ""
+      },
+      {
+        "id": 541354,
+        "key": "_alg_wc_pif_type_datepicker_maxdate_local_1",
+        "value": ""
+      },
+      {
+        "id": 541355,
+        "key": "_alg_wc_pif_type_datepicker_addyear_local_1",
+        "value": ""
+      },
+      {
+        "id": 541356,
+        "key": "_alg_wc_pif_type_datepicker_yearrange_local_1",
+        "value": ""
+      },
+      {
+        "id": 541357,
+        "key": "_alg_wc_pif_type_datepicker_firstday_local_1",
+        "value": ""
+      },
+      {
+        "id": 541358,
+        "key": "_alg_wc_pif_type_timepicker_format_local_1",
+        "value": ""
+      },
+      {
+        "id": 541359,
+        "key": "_alg_wc_pif_type_timepicker_interval_local_1",
+        "value": ""
+      },
+      {
+        "id": 541360,
+        "key": "_alg_wc_pif_type_color_allow_typing_local_1",
+        "value": ""
+      },
+      {
+        "id": 541361,
+        "key": "_alg_wc_pif_type_select_options_local_1",
+        "value": ""
+      },
+      {
+        "id": 541362,
+        "key": "_alg_wc_pif_local_total_number",
+        "value": ""
+      },
+      {
+        "id": 541377,
+        "key": "_rocket_exclude_minify_css",
+        "value": ""
+      },
+      {
+        "id": 541378,
+        "key": "_rocket_exclude_minify_js",
+        "value": ""
+      },
+      {
+        "id": 541379,
+        "key": "_rocket_exclude_async_css",
+        "value": ""
+      },
+      {
+        "id": 1341176,
+        "key": "fb_product_item_id",
+        "value": "3819707631478582"
+      }
+    ],
+    "gpf_data": {
+      "description": null,
+      "availability": null,
+      "is_bundle": null,
+      "availability_date": null,
+      "condition": null,
+      "brand": null,
+      "mpn": null,
+      "product_type": null,
+      "google_product_category": null,
+      "gtin": null,
+      "gender": null,
+      "age_group": null,
+      "color": null,
+      "size": null,
+      "size_type": null,
+      "size_system": null,
+      "unit_pricing_measure": null,
+      "unit_pricing_base_measure": null,
+      "multipack": null,
+      "installment": null,
+      "material": null,
+      "pattern": null,
+      "adult": null,
+      "identifier_exists": null,
+      "adwords_grouping": null,
+      "adwords_labels": null,
+      "bing_category": null,
+      "delivery_label": null,
+      "transit_time_label": null,
+      "min_handling_time": null,
+      "max_handling_time": null,
+      "energy_efficiency_class": null,
+      "min_energy_efficiency_class": null,
+      "max_energy_efficiency_class": null,
+      "energy_label_image_link": null,
+      "cost_of_goods_sold": null,
+      "included_destination": null,
+      "excluded_destination": null,
+      "consumer_notice": null,
+      "product_highlight": null,
+      "product_detail": null,
+      "consumer_datasheet": null,
+      "product_fee": null,
+      "sell_on_google_quantity": null,
+      "purchase_quantity_limit": null,
+      "google_funded_promotion_eligibility": null,
+      "return_address_label": null,
+      "return_policy_label": null,
+      "custom_label_0": null,
+      "custom_label_1": null,
+      "custom_label_2": null,
+      "custom_label_3": null,
+      "custom_label_4": null,
+      "promotion_id": null,
+      "shippingprice": null,
+      "shippingcountryprice": null,
+      "shippingcountryserviceprice": null,
+      "exclude_product": null
+    },
+    "is_purchased": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/9239/variations/14552"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/9239/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://www.spider3d.co.il/wp-json/wc/v2/products/9239"
+        }
+      ]
+    }
+  }
+]

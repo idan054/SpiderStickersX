@@ -10,11 +10,22 @@ def get_config():
         config = open("config.txt", "r")
     except:
         config = open("config.txt", "w")
-        config.write("לוקר ירוק: 0000")
+        config.write("לוקר 1: 0000")
         config.write("\n")
-        config.write("לוקר כחול: 0000")
+        config.write("לוקר 2: 0000")
         config.write("\n")
-        config.write("לוקר כתום: 0000")
+        config.write("לוקר 3: 0000")
+        config.write("\n")
+        config.write("לוקר 4: 0000")
+        config.write("\n")
+        config.write("לוקר 5: 0000")
+        config.write("\n")
+        config.write("לוקר 6: 0000")
+        config.write("\n")
+        config.write("לוקר 7: 0000")
+        config.write("\n")
+        config.write("לוקר 8: 0000")
+        config.write("\n")
         config = open("config.txt", "r")
 
     read_config = config.read()
@@ -25,16 +36,19 @@ def get_config():
 
     _locker_code_list = []
     for item in config_list:
-        digit_item = ''.join(filter(str.isdigit, item))
+        digit_item = ''.join(filter(str.isdigit, item))[1:]
+        # print('digit_item')
         # print(digit_item)
         _locker_code_list.append(digit_item)
+    print('_locker_code_list')
     print(_locker_code_list)
     return _locker_code_list
 
-global hex_c, radioVar_selection, radioVar, color_title
+global hex_c, radioVar_selection, radioVar, title_text
 theGrey = "#f0f0f0" # Windows default grey
+selectedPassCode = ''
 def locker_popupDesign(root, buyer_phone):
-    global hex_c, radioVar_selection, radioVar, color_title
+    global hex_c, radioVar_selection, radioVar, title_text
     radioVar_selection = 99  # איפוס לפני בחירה
 
     locker_code_list = get_config()
@@ -45,7 +59,7 @@ def locker_popupDesign(root, buyer_phone):
     lockerPopup.focus_force()
     lockerPopup.configure(background="white")
     lockerPopup.title("א.ע")
-    lockerPopup.geometry("200x200")
+    lockerPopup.geometry("200x420")
 
     # sets the geometry of toplevel
 
@@ -72,27 +86,55 @@ def locker_popupDesign(root, buyer_phone):
     # region כפתורי רדיו
 
     def change_selection():
-        global hex_c, radioVar_selection, radioVar, color_title
+        global hex_c, radioVar_selection, radioVar, title_text, selectedPassCode
         radioVar_selection = int(radioVar.get())
         print(radioVar_selection)
-        color_title = ""
+        title_text = ""
         hex_c = "bdbdbd"
         # 0 = יש לבחור
         if radioVar_selection == 1:
             hex_c = "236795" # Green
-            color_title = "לוקר ירוק"
+            title_text = "לוקר 1"
+            selectedPassCode = code_field1.get()
             radioVar_selection = int(radioVar.get())
         if radioVar_selection == 2:
             hex_c = "2d81be" # Blue
-            color_title = "לוקר כחול"
+            title_text = "לוקר 2"
+            selectedPassCode = code_field2.get()
             radioVar_selection = int(radioVar.get())
         if radioVar_selection == 3:
             hex_c = "db8400" # Orange
-            color_title = "לוקר כתום"
+            title_text = "לוקר 3"
+            selectedPassCode = code_field3.get()
             radioVar_selection = int(radioVar.get())
         if radioVar_selection == 4:
+            hex_c = "db8400" # Orange
+            title_text = "לוקר 4"
+            selectedPassCode = code_field4.get()
+            radioVar_selection = int(radioVar.get())
+        if radioVar_selection == 5:
+            hex_c = "db8400" # Orange
+            title_text = "לוקר 5"
+            selectedPassCode = code_field5.get()
+            radioVar_selection = int(radioVar.get())
+        if radioVar_selection == 6:
+            hex_c = "db8400" # Orange
+            title_text = "לוקר 6"
+            selectedPassCode = code_field6.get()
+            radioVar_selection = int(radioVar.get())
+        if radioVar_selection == 7:
+            hex_c = "db8400" # Orange
+            title_text = "לוקר 7"
+            selectedPassCode = code_field7.get()
+            radioVar_selection = int(radioVar.get())
+        if radioVar_selection == 8:
+            hex_c = "db8400" # Orange
+            title_text = "לוקר 8"
+            selectedPassCode = code_field8.get()
+            radioVar_selection = int(radioVar.get())
+        if radioVar_selection == 9:
             hex_c = "333333"  # Orange
-            color_title = "תיאום טלפוני"
+            title_text = "תיאום טלפוני"
             radioVar_selection = int(radioVar.get())
             # 5 = משלוח
 
@@ -106,21 +148,21 @@ def locker_popupDesign(root, buyer_phone):
         ## Change title color_title only
         title_label.config(background="white",
                            foreground=f"#{hex_c}",
-                           text=color_title,
+                           text=title_text,
                            font = ("rubik", 14, "bold"),
                            )
         titleFrame.place(relx=-0.02, rely=0.07, height=40, width=200)
 
     radioVar = IntVar()
     ttk.Radiobutton(radioButtonFrame,
-                     text="      לוקר ירוק",
+                     text="      לוקר 1",
                      variable=radioVar,
                      value=1,
                      command=change_selection,
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
     # ----
     ttk.Radiobutton(radioButtonFrame,
-                     text="     לוקר כחול",
+                     text="     לוקר 2",
                      variable=radioVar,
                      value=2,
                      command=change_selection,
@@ -128,16 +170,51 @@ def locker_popupDesign(root, buyer_phone):
 
     # ----
     ttk.Radiobutton(radioButtonFrame,
-                     text="    לוקר כתום",
+                     text="    לוקר 3",
                      variable=radioVar,
                      value=3,
                      command=change_selection,
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
 
     ttk.Radiobutton(radioButtonFrame,
+                    text="    לוקר 4",
+                    variable=radioVar,
+                    value=4,
+                    command=change_selection,
+                    style="pickupPopup.TRadiobutton").pack(anchor=W)  # .state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
+                    text="    לוקר 5",
+                    variable=radioVar,
+                    value=5,
+                    command=change_selection,
+                    style="pickupPopup.TRadiobutton").pack(anchor=W)  # .state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
+                    text="    לוקר 6",
+                    variable=radioVar,
+                    value=6,
+                    command=change_selection,
+                    style="pickupPopup.TRadiobutton").pack(anchor=W)  # .state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
+                    text="    לוקר 7",
+                    variable=radioVar,
+                    value=7,
+                    command=change_selection,
+                    style="pickupPopup.TRadiobutton").pack(anchor=W)  # .state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
+                    text="    לוקר 8",
+                    variable=radioVar,
+                    value=8,
+                    command=change_selection,
+                    style="pickupPopup.TRadiobutton").pack(anchor=W)  # .state(['selected'])
+
+    ttk.Radiobutton(radioButtonFrame,
                      text="תיאום טלפוני",
                      variable=radioVar,
-                     value=4,
+                     value=9,
                      command=change_selection,
                      style="pickupPopup.TRadiobutton").pack(anchor=W) #.state(['selected'])
     # endregion כפתורי רדיו
@@ -146,14 +223,14 @@ def locker_popupDesign(root, buyer_phone):
         global hex_c, radioVar_selection
         # מוודא שנבחר צבע לוקר
 
-        if radioVar_selection > 5:
+        if selectedPassCode == '':
             title_label.config(background="white",
                                foreground="#333333",
-                               text="נא לבחור צבע לוקר",
+                               text="נא לבחור מס' לוקר",
                                font=("rubik", 14, "bold"))
 
         # מוודא שהוכנסו קודי לוקרים
-        if green_code_field.get() == "0000" or blue_code_field.get() == "0000":
+        if code_field1.get() == "0000" or code_field2.get() == "0000":
             print("יש לעדכן קוד לוקרים!")
             title_label.config(background="white",
                                foreground="#333333",
@@ -163,15 +240,28 @@ def locker_popupDesign(root, buyer_phone):
 
         # מגדיר לקונפיג קודי לוקרים
         new_config = open("config.txt", "w")
-        new_config.write(f"לוקר ירוק: {green_code_field.get()}")
+        new_config.write(f"לוקר 1: {code_field1.get()}")
         new_config.write("\n")
-        new_config.write(f"לוקר כחול: {blue_code_field.get()}")
+        new_config.write(f"לוקר 2: {code_field2.get()}")
         new_config.write("\n")
-        new_config.write(f"לוקר כתום: {orange_code_field.get()}")
+        new_config.write(f"לוקר 3: {code_field3.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר 4: {code_field4.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר 5: {code_field5.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר 6: {code_field6.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר 7: {code_field7.get()}")
+        new_config.write("\n")
+        new_config.write(f"לוקר 8: {code_field8.get()}")
 
         if radioVar_selection < 10:
-            txtMe_sms(message_type = int(radioVar_selection), phone = buyer_phone)
-            messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{color_title} נשלח ללקוח")
+            txtMe_sms(message_type = 4, # LocalPickUp
+                      localLockerNum= int(radioVar_selection),
+                      localLockerPass= selectedPassCode,
+                      phone = buyer_phone, includeAppAd=0) # AKA True BUT doesn't matter
+            messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{title_text} נשלח ללקוח")
             sleep(0.15)
             lockerPopup.destroy()
 
@@ -183,23 +273,54 @@ def locker_popupDesign(root, buyer_phone):
                command= txtMe_sms_starter).pack(pady=11)
                # command= partial(txtMe_sms, message_type=int(radioVar_selection), phone="0584770076")).pack(pady=11)
 
-    green_code_frame = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
-    green_code_frame.place(relx=0.12, rely=0.285, height=22, width=55, )
-    green_code_field = ttk.Entry(green_code_frame, font=("rubik", 14), width=30, justify="center", foreground="#236795")
-    green_code_field.pack()
-    green_code_field.insert(0, locker_code_list[0]) #Green 1478
+    code_frame1 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame1.place(relx=0.12, rely=0.280, height=19, width=55, )
+    code_field1 = ttk.Entry(code_frame1, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field1.pack()
+    code_field1.insert(0, locker_code_list[0])  # Green 1478
 
-    blue_fields_frame = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
-    blue_fields_frame.place(relx=0.12, rely=0.39, height=22, width=55, )
-    blue_code_field = ttk.Entry(blue_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#2d81be")
-    blue_code_field.pack()
-    blue_code_field.insert(0, locker_code_list[1]) #Blue 2580
+    code_frame2 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame2.place(relx=0.12, rely=0.330, height=19, width=55, )
+    code_field2 = ttk.Entry(code_frame2, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field2.pack()
+    code_field2.insert(0, locker_code_list[1])  # Green 1478
 
-    orange_fields_frame = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
-    orange_fields_frame.place(relx=0.12, rely=0.495, height=22, width=55, )
-    orange_code_field = ttk.Entry(orange_fields_frame, font=("rubik", 14), width=30, justify="center", foreground="#db8400")
-    orange_code_field.pack()
-    orange_code_field.insert(0, locker_code_list[2]) #Orange 2356
+    code_frame3 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame3.place(relx=0.12, rely=0.380, height=19, width=55, )
+    code_field3 = ttk.Entry(code_frame3, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field3.pack()
+    code_field3.insert(0, locker_code_list[2])  # Green 1478
+
+    code_frame4 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame4.place(relx=0.12, rely=0.430, height=19, width=55, )
+    code_field4 = ttk.Entry(code_frame4, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field4.pack()
+    code_field4.insert(0, locker_code_list[3])  # Green 1478
+
+    code_frame5 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame5.place(relx=0.12, rely=0.490, height=19, width=55, )
+    code_field5 = ttk.Entry(code_frame5, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field5.pack()
+    code_field5.insert(0, locker_code_list[4])  # Green 1478
+
+    code_frame6 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame6.place(relx=0.12, rely=0.545, height=19, width=55, )
+    code_field6 = ttk.Entry(code_frame6, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field6.pack()
+    code_field6.insert(0, locker_code_list[5])  # Green 1478
+
+    code_frame7 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame7.place(relx=0.12, rely=0.595, height=19, width=55, )
+    code_field7 = ttk.Entry(code_frame7, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field7.pack()
+    code_field7.insert(0, locker_code_list[6])  # Green 1478
+
+    code_frame8 = tk.Frame(lockerPopup, bg="#236795")  # שדה טקסט כמות חבילות
+    code_frame8.place(relx=0.12, rely=0.650, height=19, width=55, )
+    code_field8 = ttk.Entry(code_frame8, font=("rubik", 14), width=30, justify="center", foreground="#236795")
+    code_field8.pack()
+    code_field8.insert(0, locker_code_list[7])  # Green 1478
+
 
 ## Example
 # master = Tk()

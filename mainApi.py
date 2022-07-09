@@ -4,7 +4,8 @@ from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.multi_usage.locationChecker import location_checker
 from Scripts.A1_wooGetAPI import woocomarce_api
-from Scripts.A2_NEW_createStickerAPI import create_delivery
+from Scripts.A2_NEW_createStickerAPI import create_deliveryBaldar
+from Scripts.A2_MahirLiButik_createStickerAPI import create_delivery_mahirLiButik
 from pynput.keyboard import Controller
 from time import sleep
 from tkinter import messagebox
@@ -63,62 +64,23 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
                                                   ?להודיע ללקוח לאסוף בסמס""",
             default='yes')
         print(value)
-        ## When delivery no needed.
         if value: # default is False - לא ליצור משלוח
-            print("Fast return...")
+            print("Fast return - No delivery needed.")
             return buyer_phone
             # return "pickup"
             # return "browser", "finalOrderLink", "buyer_name", "butikTrackNumber", "butikBarCode", "buyer_phone"
         else:
-            delivery_confirm =   messagebox.askyesno("יצירת משלוח", "?ליצור משלוח בכל זאת")
+            delivery_confirm = messagebox.askyesno("יצירת משלוח", "?ליצור משלוח בכל זאת")
             if not delivery_confirm:
                 return
     print(f"deliveryNeeded = {deliveryNeeded}")
 
-    if deliveryCompany == 0: # 0 Means AUTO Select
-        print("Select deliveryCompany Auto")
+    if deliveryCompany == 0:
+        print("Fast return - delivery company unSelected.")
+        messagebox.showinfo("בחר חברת משלוחים", "                   .המשלוח בוטל\n"
+                                                "^o^ בחר חברת משלוחים והתחל מחדש")
+        return
 
-        # If in MahirLi Locations List:
-        similar_level, locationFromList = location_checker(buyer_city)
-        if similar_level == 1:
-            # messagebox.showinfo("עובר למהיר לי", f"{buyer_city} נמצאת ברשימה! המשלוח הועבר למהיר לי")
-            deliveryCompany = 23  # 23 = MahirLi | 24 = Butik24
-
-        elif similar_level > 0.7:
-            value = messagebox.askyesno("האם לעבור", f"""
-                             כתובת לקוח:  {buyer_city}
-                          כתובת מהיר לי: {locationFromList}
-               האם לשלוח דרך מהיר לי? {str(similar_level)[:4]} """,
-                                        default='yes')
-            print(value)
-            if value:
-                deliveryCompany = 23
-                ## Beta auto add to list
-                # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
-                # loactions_file.write(f"\n{buyer_city}")
-                # print(buyer_city, "has been added to txt .file")
-            else:
-                deliveryCompany = 24
-
-        # If Not in MahirLi Locations List:
-        else:
-            deliveryCompany = 24
-
-        # else:
-        #     value = messagebox.askyesno("האם לעבור", f"""
-        #         {buyer_city}, לא זוהתה ברשימה ערי הפעילות
-        #     ?אנא בדוק ידנית, לשלוח במהיר לי בכל זאת
-        #                                   {str(similar_level)[:4]} """,
-        #                                 default='no')
-        #     if value:
-        #         deliveryCompany = 23
-        #         ## Beta auto add to list
-        #         # loactions_file = open("loactions.txt", "a", encoding="utf8") # a = add / append
-        #         # loactions_file.write(f"\n{buyer_city}")
-        #         # print(buyer_city, "has been added to txt .file")
-        #     else: deliveryCompany = 24
-    else:
-        print("deliveryCompany Selected by Radio Button")
     print(f"deliveryCompany is {deliveryCompany}")
 
 
@@ -136,8 +98,10 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
 
     if deliveryCompany == 24:
         messagebox.showinfo("חברת משלוחים", f"{buyer_city} - בוטיק 24")
-    else:
+    if deliveryCompany == 23:
         messagebox.showinfo("חברת משלוחים", f"{buyer_city} - מהיר לי")
+    if deliveryCompany == 22:
+        messagebox.showinfo("חברת משלוחים", f"{buyer_city} - בלדר שליחויות")
 
     resp = create_delivery(
                       delivery_company=deliveryCompany,
@@ -152,9 +116,10 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     #  'public_id': 'CCQQAMXR5E',
     #  'task_id': 1689379}
 
-    butikTrackNumber = resp["task_id"]
-    butikBarCode = resp["barcode"]
-    webbrowser.open(resp["label"])
+    if deliveryCompany == 23 or deliveryCompany == 24:
+        butikTrackNumber = resp["task_id"]
+        butikBarCode = resp["barcode"]
+        webbrowser.open(resp["label"])
 
 
     winsound.Beep(2000, 150)

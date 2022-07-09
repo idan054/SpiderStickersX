@@ -22,27 +22,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V2.8.2 + .EXE Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.2&#10;- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+    <list default="true" id="2135f71b-e297-4650-92d4-d7e7e7c199d8" name="Default Changelist" comment="V2.8.4 + (Exe Added.) Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.4 - Token update (Should be in B1_complete_and_notifications.py &amp; A1_wooGetAPI.py&#10;&#10;V2.8.3 - Make sure to send SMS By disable mainButton (until click mailButton) &#10;V2.8.2- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+      <change afterPath="$PROJECT_DIR$/Scripts/A2_MahirLiButik_createStickerAPI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testJGMaker.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testMK8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SpiderStickersX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SpiderStickersX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A1_wooGetAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A1_wooGetAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/A2_NEW_createStickerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/A2_NEW_createStickerAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/dist/guiDesign.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Tree-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Tree-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Tree-01.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Tree-01.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/Tree-02.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Tree-02.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/base_library.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/guiDesign.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/guiDesign.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spiderZip.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/guiDesign.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiDesign.spec" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popupDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/popupDesign.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,14 +88,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testGit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Scripts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -114,6 +108,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Idan\PycharmProjects\SpiderStickersX\Scripts" />
+      <recent name="C:\Users\Idan\PycharmProjects\SpiderStickersX" />
       <recent name="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX" />
       <recent name="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Gadgets" />
       <recent name="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Scripts" />
@@ -127,7 +123,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.guiDesign">
-    <configuration name="A2_NEW_createStickerAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="A1_wooGetAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SpiderStickersX" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -139,8 +135,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\idanb\Desktop\pyton Projects\SpiderStickersX\Scripts\A2_NEW_createStickerAPI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/A1_wooGetAPI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="A2_NEW_createStickerAPI (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SpiderStickersX" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/A2_NEW_createStickerAPI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,28 +179,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guiDesign.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="locationChecker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SpiderStickersX" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Gadgets/multi_usage" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Gadgets/multi_usage/locationChecker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -261,19 +255,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.A2_NEW_createStickerAPI" />
-      <item itemvalue="Python.locationChecker" />
       <item itemvalue="Python.popupDesign" />
       <item itemvalue="Python.tests" />
       <item itemvalue="Python.guiDesign" />
+      <item itemvalue="Python.A2_NEW_createStickerAPI (1)" />
+      <item itemvalue="Python.A1_wooGetAPI" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.guiDesign" />
-        <item itemvalue="Python.tests" />
-        <item itemvalue="Python.A2_NEW_createStickerAPI" />
         <item itemvalue="Python.popupDesign" />
-        <item itemvalue="Python.locationChecker" />
+        <item itemvalue="Python.A1_wooGetAPI" />
+        <item itemvalue="Python.A2_NEW_createStickerAPI (1)" />
+        <item itemvalue="Python.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -500,7 +494,13 @@
       <option name="presentableId" value="LOCAL‎00034" />
       <updated>1639998051451</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎00035" summary="V2.8.4 + (Exe Added.) Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.4 - Token update (Should be in B1_complete_and_notifications.py &amp; A1_wooGetAPI.py&#10;&#10;V2.8.3 - Make sure to send SMS By disable mainButton (until click mailButton) &#10;V2.8.2- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+      <created>1640094514245</created>
+      <option name="number" value="LOCAL‎00035" />
+      <option name="presentableId" value="LOCAL‎00035" />
+      <updated>1640094514245</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="V2.1 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (3)&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V2.1 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (4)&#10;* .exe update&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V2.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (4)&#10;* .exe update&#10;&#10;V2.2 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V2.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (5)&#10;** .exe update&#10;&#10;V2.2 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
@@ -544,6 +543,7 @@
     <MESSAGE value="B3.1.0 .EXE LionWheel Core BETA&#10;✔ Working version based lionwheel core instead Selenium&#10;✔ Radio button of Auto/ MahirLi/ Butik24&#10;✔ Spider-App Ad Checkbox &#10;&#10;B3.0.0 LionWheel Core BETA&#10;- Working version based lionwheel core instead Selenium&#10;⬜ Radio button of Auto/ MahirLi/ Butik24&#10;* Still have browser and unneeded files&#10;&#10;B2.6.4 Hybrid +.exe &#10;- login button bug fix&#10;&#10;B2.6.3 Branch + EXE&#10;- 2 delivery companies&#10;- &quot;L&quot; bug on sms fixed&#10;&#10;V2.6.2 Wordpress API- Butik 24&#10;&#10;(guiDesign.py as main.py)&#10;Updated .exe on dist (2.3)&#10;* .exe update&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)&#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status&#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api&#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works.&#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V2.8.2 + .EXE Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.1&#10;- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
     <MESSAGE value="V2.8.2 + .EXE Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.2&#10;- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
-    <option name="LAST_COMMIT_MESSAGE" value="V2.8.2 + .EXE Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.2&#10;- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
+    <MESSAGE value="V2.8.4 + (Exe Added.) Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.4 - Token update (Should be in B1_complete_and_notifications.py &amp; A1_wooGetAPI.py&#10;&#10;V2.8.3 - Make sure to send SMS By disable mainButton (until click mailButton) &#10;V2.8.2- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.8.4 + (Exe Added.) Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.4 - Token update (Should be in B1_complete_and_notifications.py &amp; A1_wooGetAPI.py&#10;&#10;V2.8.3 - Make sure to send SMS By disable mainButton (until click mailButton) &#10;V2.8.2- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works." />
   </component>
 </project>

@@ -2,37 +2,34 @@ import xml.etree.ElementTree as ET
 import requests
 from Gadgets.multi_usage.bcolors import bcolors
 
-global locker_color, locker_code, final_msg
-def txtMe_sms(includeAppAd, message_type, phone, butikTrackNumber=None): #butikTrackNumber no needed on pickup
-    global locker_color, locker_code, final_msg
+global locker_num, locker_code, final_msg
+def txtMe_sms(
+        includeAppAd,
+        message_type, # 4 = Local pickup SMS, 5 = Delivery SMS
+        localLockerNum,
+        localLockerPass,
+        phone,
+        butikTrackNumber=None): #butikTrackNumber no needed on pickup
+    global locker_num, locker_code, final_msg
     print("message_type = ", message_type)
     print("includeAppAd = ", includeAppAd)
 
-    # locker_color = "הירוק 🟢"
-    # locker_color = "הכחול 🔵"
-    # locker_color = "הכתום 🟠"
+    # if message_type == 2 : # locker
+    #     locker_num = "הכחול 🔵"
+    #     locker_code =  "2580"
 
-    # message_type = 0 # no selection
-
-    if message_type == 1 : # locker
-        locker_color = "הירוק 🟢"
-        locker_code =  "1478"
-    if message_type == 2 : # locker
-        locker_color = "הכחול 🔵"
-        locker_code =  "2580"
-    if message_type == 3 : # locker
-        locker_color = "הכתום 🟠"
-        locker_code =  "2356"
-    if message_type < 4 : # phone pickup
+    if message_type == 4 : # phone pickup
         final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
-ניתן לאסוף כעת בכתובת חבקוק 114, גדרה
-החבילה זמינה 24/7 בלוקר {locker_color}
-קוד: *️⃣ {locker_code} ומפתח 🔑
+ניתן לאסוף כעת בכתובת חידקל 11, יבנה (בניין 15)
+החבילה זמינה 24/7 בלוקר מס' {localLockerNum}
+קוד:  {localLockerPass}
 בברכה, צוות ספיידר 3D"""
     if message_type == 5 : # delivery
-        if includeAppAd == 1: # AKA True
+        if includeAppAd == 0: # AKA True
             # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
-            final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+            final_msg = f"""
+            משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+             מס' מעקב {butikTrackNumber}
 חדש! למעקב ומבצעים מיוחדים, מומלץ להצטרף לאפליקציה!
 https://rebrand.ly/Spider3D-App
             """

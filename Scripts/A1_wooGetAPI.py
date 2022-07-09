@@ -74,14 +74,20 @@ def woocomarce_api(numOrder):
     print("customer_note is ", customer_note)
 
     products_details = order_details["line_items"]
+    print("products_details length is ", len(products_details))
     high_quantity = False
     for product in products_details: # High quantity Checker
-        # print(product["quantity"])
         if product["quantity"] != 1:
+            print('product["quantity"]' , product["quantity"])
             high_quantity = True
         break
 
-    deliveryNeeded = order_details["shipping_lines"][0]["method_title"]
+    # print('deliveryNeeded' , deliveryNeeded)
+    try:
+        deliveryNeeded = order_details["shipping_lines"][0]["method_title"]
+    except: # when Null
+        deliveryNeeded = "איסוף עצמי"
+
     if "איסוף עצמי" in deliveryNeeded:
         deliveryNeeded = False  # אין צורך במשלוח
     else:
@@ -91,6 +97,5 @@ def woocomarce_api(numOrder):
     return first_name, last_name, address_1, street_num, street, city,\
            email, phone, high_quantity, deliveryNeeded, customer_note
 
-# woocomarce_api(numOrder=27975)
-# woocomarce_api(numOrder=25560)
 # woocomarce_api(numOrder=28020)
+# woocomarce_api(numOrder=45026)

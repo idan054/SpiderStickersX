@@ -54,7 +54,8 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
 
     # message_type means delivery
     print('Start textMe_sms()')
-    txtMe_sms(message_type=5, phone=buyer_phone, butikTrackNumber=butikTrackNumber, includeAppAd=includeAppAd)
+    txtMe_sms(message_type=5, phone=buyer_phone, butikTrackNumber=butikTrackNumber,
+              includeAppAd=includeAppAd)
     messagebox.showinfo("המשימה הושלמה",
                         "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
 
