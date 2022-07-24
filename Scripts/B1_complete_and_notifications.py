@@ -9,8 +9,7 @@ from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 
 def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
-                               buyer_phone, butikBarCode, includeAppAd):
-
+                               buyer_phone, includeAppAd):
     winsound.Beep(2000, 110)
     winsound.Beep(1000, 100)
 
@@ -54,7 +53,9 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
 
     # message_type means delivery
     print('Start textMe_sms()')
-    txtMe_sms(message_type=5, phone=buyer_phone, butikTrackNumber=butikTrackNumber,
+    # if sendSms:
+    txtMe_sms(message_type='Delivery', phone=buyer_phone,
+              butikTrackNumber=butikTrackNumber,
               includeAppAd=includeAppAd)
     messagebox.showinfo("המשימה הושלמה",
                         "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
@@ -62,17 +63,17 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     # sleep(0.12)
     winsound.Beep(2000, 150)
     winsound.Beep(1500, 150)
-    try: browser.quit()  # סוגר את הכרום
-    except: print("Failed to browser.quit() - PASS")
+    try:
+        browser.quit()  # סוגר את הכרום
+    except:
+        print("Failed to browser.quit() - PASS")
     winsound.Beep(1500, 150)
     winsound.Beep(2000, 150)
 
 
 ## Example
-# complete_and_notifications(numOrder=22560, buyer_name="עומרי", butikTrackNumber="1117365",
-#                                buyer_phone="0584770076", butikBarCode="NZW7T3WW4U")
-
-
+# complete_and_notifications(numOrder=45193, buyer_name="עומרי",butikTrackNumber="1117365",
+#                            buyer_phone="0584770076", butikBarCode="NZW7T3WW4U", browser=None, includeAppAd=True)
 
 # Disable browser before use
 # send_track_mail_api(numOrder=28009,

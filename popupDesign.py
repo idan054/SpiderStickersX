@@ -3,8 +3,19 @@ from time import sleep
 from tkinter import *
 from tkinter import ttk, messagebox
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
+import winsound
+from tkinter import messagebox
+
+import requests
+from requests.structures import CaseInsensitiveDict
+
+## Send mail & change order to succeed
+from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 ## get updated config
+from Scripts.B1_complete_and_notifications import complete_and_notifications
+
+
 def get_config():
     try:
         config = open("config.txt", "r")
@@ -47,7 +58,7 @@ def get_config():
 global hex_c, radioVar_selection, radioVar, title_text
 theGrey = "#f0f0f0" # Windows default grey
 selectedPassCode = ''
-def locker_popupDesign(root, buyer_phone):
+def locker_popupDesign(root, buyer_phone, numOrder):
     global hex_c, radioVar_selection, radioVar, title_text
     radioVar_selection = 99  # איפוס לפני בחירה
 
@@ -256,12 +267,31 @@ def locker_popupDesign(root, buyer_phone):
         new_config.write("\n")
         new_config.write(f"לוקר 8: {code_field8.get()}")
 
+        change_selection() # to update selectedPassCode
+        # ttodo Add "Completed & Email notify" here
+
         if radioVar_selection < 10:
-            txtMe_sms(message_type = 4, # LocalPickUp
+            print('textMe_sms() Pickup Details:')
+            print(f'radioVar_selection {radioVar_selection}')
+            print(f'selectedPassCode {selectedPassCode}')
+            print(f'buyer_phone {buyer_phone}')
+
+            txtMe_sms(message_type = 'Pickup', # LocalPickUp
                       localLockerNum= int(radioVar_selection),
                       localLockerPass= selectedPassCode,
-                      phone = buyer_phone, includeAppAd=0) # AKA True BUT doesn't matter
+                      phone = buyer_phone, includeAppAd=True) # AKA True BUT doesn't matter
             messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{title_text} נשלח ללקוח")
+            sleep(0.15)
+
+            headers = CaseInsensitiveDict()
+            headers["Authorization"] = \
+                woo_token = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
+
+            data = { "status": "completed" }
+            order_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
+            # print(requests.put(url=order_url, headers=headers, data=data).json())
+            requests.put(url=order_url, headers=headers, data=data).json()
+
             sleep(0.15)
             lockerPopup.destroy()
 

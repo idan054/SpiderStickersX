@@ -23,16 +23,16 @@ def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
     winsound.Beep(2000, 300)
     winsound.Beep(1000, 100)
-    mailButton['state'] = DISABLED
+    sendSmsButton['state'] = DISABLED
     # mailButton['state'] = NORMAL
     # sys.stdout = open("SpiderLog.txt", "w")
     print(f"checkBox_AppAdToSMS.get() = {checkBox_AppAdToSMS.get()}")
     print(f"deliveryCompany_radioVar = {deliveryCompany_radioVar.get()}")
-    print(f"orderLinkField = {orderLinkField.get()}")
+    print(f"orderLinkField = {orderNumField.get()}")
     print(f"packNum = {packNum.get()}")
     # browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone =
     try:
-        api_output = main_api(numOrder=orderLinkField.get(), numOfPacks=packNum.get(),
+        api_output = main_api(numOrder=orderNumField.get(), numOfPacks=packNum.get(),
                               deliveryCompany=deliveryCompany_radioVar.get())
     except Exception as e:
         print('Exception:')
@@ -55,10 +55,18 @@ def main_starter():
     winsound.Beep(1400, 150)
 
     print("api_output is ")
-    print(api_output) # on Fast return - No delivery needed: api_output = +972584770076
+    print(type(api_output)) # <class 'tuple'> = Delivery || <class 'str'> PickUp
+    print(api_output) # on Fast return AKA Pickup: api_output = phone
+    if type(api_output) == str:
+        print('api_output:')
+        print(api_output)
+        locker_popupDesign(root, f"{api_output}", orderNumField.get())
 
-    # locker_popupDesign(master, "0584770076")
-    locker_popupDesign(root, "0584770076")
+    elif len(api_output) == 1: # tuple of phone
+        print('api_output[0]:')
+        print(api_output[0])
+        locker_popupDesign(root, api_output[0], orderNumField.get())
+
     # browser, finalOrderLink, buyer_name, butikTrackNumber, \
     # butikBarCode, buyer_phone = api_output
 
@@ -80,42 +88,54 @@ def main_starter():
     #     print(api_output)
 
     main_label_frame.place(relx=0.05, rely=0.07, height=30, width=300, )
-    main_label.config(text=f" שלח התראות מעקב להזמנה {orderLinkField.get()}# ")
+    main_label.config(text=f" שלח התראות מעקב להזמנה {orderNumField.get()}# ")
 
     packNum.delete(0, END)
     packNum.insert(0, "1")  # Reset to 1 when finish
 
     print("Packs field reset to 1")
 
-    if api_output[0] != "0":  # After delivery
+    if api_output[0] != "0" and len(api_output) != 1:  # Only After delivery
         mainButton['state'] = DISABLED
-        mailButton['state'] = NORMAL
+        sendSmsButton['state'] = NORMAL
     print(f"{bcolors.Yellow}{bcolors.BOLD}Done.{bcolors.Normal}")
 
 
 def part_b_starter():
     mainButton['state'] = NORMAL
-
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+
+    if len(api_output) != 1:
+        buyer_name = api_output[2]
+        butikTrackNumber = api_output[3]
+        buyer_phone = api_output[5]
+
+    try: print("browser is ", browser)
+    except: browser = None
+
     try:
-        print("orderLinkField.get() is ", orderLinkField.get())
+        print("orderLinkField.get() is ", orderNumField.get())
     except:
         messagebox.showinfo("טעות", "¯\_(ツ)_/¯  לא זוהתה מס' הזמנה")
 
     ## Send track mail & change status to complete
     ## Send SMS confirmation & tracking link on SMS
-    print(butikTrackNumber)
+    # print(butikTrackNumber)
     complete_and_notifications(
         browser=browser,
-        numOrder=orderLinkField.get(), buyer_name=buyer_name, butikTrackNumber=butikTrackNumber,
-        buyer_phone=buyer_phone, butikBarCode=butikBarCode, includeAppAd=checkBox_AppAdToSMS.get())
+        numOrder=orderNumField.get(),
+        buyer_name=buyer_name,
+        butikTrackNumber=butikTrackNumber,
+        buyer_phone=buyer_phone,
+        # butikBarCode=butikBarCode,
+        includeAppAd=checkBox_AppAdToSMS.get())
     print(f"{bcolors.Yellow}{bcolors.BOLD}Track SMS & Mail sent\nOrder status changed to complete.{bcolors.Normal}")
 
     # orderLinkField.configure(foreground="#a5a5a5")
     # main_label.config(text=f"הזמנה #25550 הושלמה                     ")
-    mailButton['state'] = DISABLED
+    sendSmsButton['state'] = DISABLED
     main_label_frame.place(relx=0.29, rely=0.07, height=30, width=300, )
-    main_label.config(text=f"הזמנה #{orderLinkField.get()} הושלמה                     ")
+    main_label.config(text=f"הזמנה #{orderNumField.get()} הושלמה                     ")
 
 
 ## Design
@@ -145,12 +165,12 @@ mainButton.pack()
 # region כפתור מייל מעקב
 packButtonSaver = tk.Frame(root, bg="#236795", padx=20)  # כפתור עדכון כמות חבילות
 packButtonSaver.place(relx=0.43, rely=0.55, height=60)
-mailButton = ttk.Button(packButtonSaver,
-                        text="שלח התראות מעקב \n !ומכתב תודה ▶⦿◀",  # ◍ ✪ ⊛
-                        style="W.TButton",
-                        state=DISABLED,
-                        command=part_b_starter)
-mailButton.pack()
+sendSmsButton = ttk.Button(packButtonSaver,
+                           text="שלח התראות מעקב \n !ומכתב תודה ▶⦿◀",  # ◍ ✪ ⊛
+                           style="W.TButton",
+                           state=DISABLED,
+                           command=part_b_starter)
+sendSmsButton.pack()
 # mailButton.configure(state=DISABLED)
 # mailButton.config(state=DISABLED)
 # endregion כפתור מייל מעקב
@@ -158,8 +178,8 @@ mailButton.pack()
 # region שדה מס' הזמנה
 entry_link_Frame = tk.Frame(root, bg="#236795")  # שדה טקסט לקישור
 entry_link_Frame.place(relx=0.25, rely=0.32, height=30, width=184, )
-orderLinkField = ttk.Entry(entry_link_Frame, font=("rubik", 14), width=30, justify="center")
-orderLinkField.pack()
+orderNumField = ttk.Entry(entry_link_Frame, font=("rubik", 14), width=30, justify="center")
+orderNumField.pack()
 # endregion שדה מס' הזמנה
 # איסוף עצמי "27695"
 # "25560" # Eyal Biton הזמנה עבור
@@ -205,7 +225,7 @@ R3 = ttk.Radiobutton(RadioFrame, text="מהיר לי", variable=deliveryCompany_
                      command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
 R3.pack(anchor=W)
 
-R4 = ttk.Radiobutton(RadioFrame, text="בלדר שליחויות", variable=deliveryCompany_radioVar, value="22",
+R4 = ttk.Radiobutton(RadioFrame, text="CARGO", variable=deliveryCompany_radioVar, value="22",
                      command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
 R4.pack(anchor=W)
 # endregion

@@ -27,6 +27,7 @@ def woocomarce_api(numOrder):
 
     print(resp.status_code)
     order_details = resp.json()
+    # print('order_details')
     # print(order_details)
     # print(len(order_details))
 

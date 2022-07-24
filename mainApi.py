@@ -4,7 +4,7 @@ from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.multi_usage.locationChecker import location_checker
 from Scripts.A1_wooGetAPI import woocomarce_api
-from Scripts.A2_NEW_createStickerAPI import create_deliveryBaldar
+from Scripts.A2_Cargo_createStickerAPI import create_deliveryCargo
 from Scripts.A2_MahirLiButik_createStickerAPI import create_delivery_mahirLiButik
 from pynput.keyboard import Controller
 from time import sleep
@@ -14,8 +14,13 @@ keyboard = Controller()
 
 # global browser
 
+global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+
+
 ## main based wordpress woocomarce API
 def main_api(numOrder, numOfPacks, deliveryCompany):
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+
     print("delivery company from radio buttons:")
     print(deliveryCompany)
 
@@ -30,7 +35,8 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
 
     ## Get details from API (V2.0 Update)
     first_name, last_name, clean_address, buyer_street_number, buyer_street, buyer_city, \
-    buyer_email, buyer_phone, high_quantity, deliveryNeeded, buyer_notes = woocomarce_api(numOrder=numOrder)
+    buyer_email, buyer_phone, high_quantity, deliveryNeeded, buyer_notes\
+        = woocomarce_api(numOrder=numOrder)
 
     print("woocomarce_api Done")
 
@@ -66,9 +72,9 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
         print(value)
         if value: # default is False - לא ליצור משלוח
             print("Fast return - No delivery needed.")
-            return buyer_phone
+            return str(f'{buyer_phone}'),
             # return "pickup"
-            # return "browser", "finalOrderLink", "buyer_name", "butikTrackNumber", "butikBarCode", "buyer_phone"
+
         else:
             delivery_confirm = messagebox.askyesno("יצירת משלוח", "?ליצור משלוח בכל זאת")
             if not delivery_confirm:
@@ -98,16 +104,27 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
 
     if deliveryCompany == 24:
         messagebox.showinfo("חברת משלוחים", f"{buyer_city} - בוטיק 24")
+        resp = create_delivery_mahirLiButik(
+            delivery_company=deliveryCompany,
+            buyer_city=buyer_city, buyer_name=buyer_name,
+            clean_address=clean_address, buyer_phone=buyer_phone, buyer_email=buyer_email,
+            buyer_notes=buyer_notes, orderNum=numOrder, packNum=numOfPacks)
+
     if deliveryCompany == 23:
         messagebox.showinfo("חברת משלוחים", f"{buyer_city} - מהיר לי")
-    if deliveryCompany == 22:
-        messagebox.showinfo("חברת משלוחים", f"{buyer_city} - בלדר שליחויות")
+        resp = create_delivery_mahirLiButik(
+            delivery_company=deliveryCompany,
+            buyer_city=buyer_city, buyer_name=buyer_name,
+            clean_address=clean_address, buyer_phone=buyer_phone, buyer_email=buyer_email,
+            buyer_notes=buyer_notes, orderNum=numOrder, packNum=numOfPacks)
 
-    resp = create_delivery(
-                      delivery_company=deliveryCompany,
-                      buyer_city=buyer_city, buyer_name=buyer_name,
-                      clean_address=clean_address, buyer_phone=buyer_phone, buyer_email=buyer_email,
-                      buyer_notes=buyer_notes, orderNum=numOrder, packNum=numOfPacks)
+    if deliveryCompany == 22:
+        messagebox.showinfo("חברת משלוחים", f"{buyer_city} - CARGO שליחויות")
+        resp = create_deliveryCargo(
+            # delivery_company=deliveryCompany,
+            buyer_city=buyer_city, buyer_name=buyer_name,
+            clean_address=clean_address, buyer_phone=buyer_phone, buyer_email=buyer_email,
+            buyer_notes=buyer_notes, orderNum=numOrder, packNum=numOfPacks)
 
     # 2
     # {'barcode': '1689379:',
@@ -116,10 +133,6 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     #  'public_id': 'CCQQAMXR5E',
     #  'task_id': 1689379}
 
-    if deliveryCompany == 23 or deliveryCompany == 24:
-        butikTrackNumber = resp["task_id"]
-        butikBarCode = resp["barcode"]
-        webbrowser.open(resp["label"])
 
 
     winsound.Beep(2000, 150)
@@ -133,6 +146,19 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     # Press and release space
     # keyboard.press(Key.enter)
     # keyboard.release(Key.enter)
+
+    # if deliveryCompany == 22 : # Cargo
+    #     return resp
+
+    if deliveryCompany == 22:  # Cargo
+        butikTrackNumber = resp
+        butikBarCode = ''
+        webbrowser.open('https://www.cargo-ship.co.il/Baldar/Deliveries.aspx')
+
+    if deliveryCompany == 23 or deliveryCompany == 24:
+        butikTrackNumber = resp["task_id"]
+        butikBarCode = resp["barcode"]
+        webbrowser.open(resp["label"])
 
     browser = "PlaceHolder"
     return browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone

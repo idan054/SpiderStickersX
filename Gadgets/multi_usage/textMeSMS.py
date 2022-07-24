@@ -6,38 +6,48 @@ global locker_num, locker_code, final_msg
 def txtMe_sms(
         includeAppAd,
         message_type, # 4 = Local pickup SMS, 5 = Delivery SMS
-        localLockerNum,
-        localLockerPass,
         phone,
+        localLockerPass=None,
+        localLockerNum=None,
         butikTrackNumber=None): #butikTrackNumber no needed on pickup
     global locker_num, locker_code, final_msg
     print("message_type = ", message_type)
     print("includeAppAd = ", includeAppAd)
+    print("localLockerNum = ", localLockerNum)
 
     # if message_type == 2 : # locker
     #     locker_num = "הכחול 🔵"
     #     locker_code =  "2580"
 
-    if message_type == 4 : # phone pickup
+    if message_type == 'Pickup' : # phone pickup
         final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
 ניתן לאסוף כעת בכתובת חידקל 11, יבנה (בניין 15)
 החבילה זמינה 24/7 בלוקר מס' {localLockerNum}
 קוד:  {localLockerPass}
 בברכה, צוות ספיידר 3D"""
-    if message_type == 5 : # delivery
-        if includeAppAd == 0: # AKA True
+    if message_type == 'Delivery' : # delivery
+        # if includeAppAd: # AKA True
             # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
-            final_msg = f"""
-            משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
-             מס' מעקב {butikTrackNumber}
+        final_msg = f"""
+        משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+         מס' מעקב {butikTrackNumber}
 חדש! למעקב ומבצעים מיוחדים, מומלץ להצטרף לאפליקציה!
 https://rebrand.ly/Spider3D-App
-            """
-        else:
-            # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
-            final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
-            מס' מעקב {butikTrackNumber}
-            """
+        """
+        # else:
+        #     # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
+        #     final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+        #     מס' מעקב {butikTrackNumber}
+        #     """
+
+    if localLockerNum == 9 : # overSize - תיאום טלפוני
+        final_msg = """איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+        ניתן לאסוף כעת בכתובת חידקל 11, יבנה (בניין 15)
+        *עקב גודל החבילה יש לתאם טלפונית
+        0522509900
+        בברכה, צוות ספיידר 3D"""
+
+        #        ניתן להגיע עד השעה 17:00 (14:00 בשישי)
 
     url = "https://my.textme.co.il/api"
 
@@ -45,8 +55,8 @@ https://rebrand.ly/Spider3D-App
     <?xml version="1.0" encoding="UTF-8"?>
     <sms>
     <user>
-    <username>idanbit80@gmail.com</username>
-    <password>On4WP2F5</password>
+    <username>idanbit80+1@gmail.com</username>
+    <password>2gS"TEfU</password>
     </user>
     <source>Spider 3D</source>
     <destinations>
@@ -85,5 +95,14 @@ https://rebrand.ly/Spider3D-App
 # בברכה, צוות ספיידר 3D"""
 
 ## Example
-# txtMe_sms(message_type=2, phone="0584770076")
+# message_type 5 = משלוח
+# message_type 4 = א.ע
+
+# txtMe_sms(message_type=5,
+#           phone="0584770076",
+#           includeAppAd=True,
+#           localLockerPass='0542',
+#           localLockerNum='2',
+#           butikTrackNumber='45192'
+#           )
 
