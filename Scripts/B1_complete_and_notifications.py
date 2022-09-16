@@ -9,7 +9,7 @@ from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 
 def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
-                               buyer_phone, includeAppAd):
+                               buyer_phone, includeAppAd, deliveryCompany):
     winsound.Beep(2000, 110)
     winsound.Beep(1000, 100)
 
@@ -56,7 +56,7 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     # if sendSms:
     txtMe_sms(message_type='Delivery', phone=buyer_phone,
               butikTrackNumber=butikTrackNumber,
-              includeAppAd=includeAppAd)
+              includeAppAd=includeAppAd, deliveryCompany=deliveryCompany)
     messagebox.showinfo("המשימה הושלמה",
                         "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
 

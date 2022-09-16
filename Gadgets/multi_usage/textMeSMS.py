@@ -7,6 +7,7 @@ def txtMe_sms(
         includeAppAd,
         message_type, # 4 = Local pickup SMS, 5 = Delivery SMS
         phone,
+        deliveryCompany,
         localLockerPass=None,
         localLockerNum=None,
         butikTrackNumber=None): #butikTrackNumber no needed on pickup
@@ -14,6 +15,7 @@ def txtMe_sms(
     print("message_type = ", message_type)
     print("includeAppAd = ", includeAppAd)
     print("localLockerNum = ", localLockerNum)
+    print("deliveryCompany = ", deliveryCompany)
 
     # if message_type == 2 : # locker
     #     locker_num = "הכחול 🔵"
@@ -25,20 +27,38 @@ def txtMe_sms(
 החבילה זמינה 24/7 בלוקר מס' {localLockerNum}
 קוד:  {localLockerPass}
 בברכה, צוות ספיידר 3D"""
+
     if message_type == 'Delivery' : # delivery
-        # if includeAppAd: # AKA True
-            # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
-        final_msg = f"""
-        משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
-         מס' מעקב {butikTrackNumber}
-חדש! למעקב ומבצעים מיוחדים, מומלץ להצטרף לאפליקציה!
+        if deliveryCompany == 22:  # Cargo
+
+            #   מס' מעקב {butikTrackNumber}
+            final_msg = f"""
+ ההזמנה מספיידר 3D יצאה ותגיע תוך 3-4 ימי עסקים!
+
+חדש! למבצעים סודיים, מעקב הזמנות, חיפוש מודלים בעברית הורידו את אפליקציה החדשה 
 https://rebrand.ly/Spider3D-App
-        """
-        # else:
-        #     # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
-        #     final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
-        #     מס' מעקב {butikTrackNumber}
-        #     """
+
+מס' מעקב {butikTrackNumber}
+ למעקב המשלוח: https://rebrand.ly/Spider3D-Shipping
+                    """
+
+        if deliveryCompany == 23 : # Mahir Li
+
+            # if includeAppAd: # AKA True
+                # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
+
+            #   מס' מעקב {butikTrackNumber}
+            final_msg = f"""
+משלוח מהיר  מספיידר 3D יגיע אליך היום אחר הצהריים, השליח יתקשר לתאם לפני ההגעה
+
+חדש! למעקב ומבצעים מיוחדים, מומלץ להצטרף לאפליקציה!
+https://rebrand.ly/Spider3D-App 
+            """
+            # else:
+            #     # 60 Character Example ( Until 70 -> 0.078$ = 0.26₪ On callr)
+            #     final_msg = f"""משלוח מהיר עם ההזמנה שלך נאסף מספיידר 3D
+            #     מס' מעקב {butikTrackNumber}
+            #     """
 
     if localLockerNum == 9 : # overSize - תיאום טלפוני
         final_msg = """איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
@@ -50,6 +70,7 @@ https://rebrand.ly/Spider3D-App
         #        ניתן להגיע עד השעה 17:00 (14:00 בשישי)
 
     url = "https://my.textme.co.il/api"
+    print("final_msg = ", final_msg)
 
     payload = f"""
     <?xml version="1.0" encoding="UTF-8"?>

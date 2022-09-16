@@ -122,6 +122,7 @@ def part_b_starter():
     ## Send SMS confirmation & tracking link on SMS
     # print(butikTrackNumber)
     complete_and_notifications(
+        deliveryCompany = deliveryCompany_radioVar.get(),
         browser=browser,
         numOrder=orderNumField.get(),
         buyer_name=buyer_name,
