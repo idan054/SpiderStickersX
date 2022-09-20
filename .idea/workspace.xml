@@ -26,9 +26,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gadgets/multi_usage/textMeSMS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/B1_complete_and_notifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/Analysis-00.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/guiDesign.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/guiDesign.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/warn-guiDesign.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/guiDesign/xref-guiDesign.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/guiDesign.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/guiDesign.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiDesign.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popupDesign.py" beforeDir="false" afterPath="$PROJECT_DIR$/popupDesign.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -508,7 +517,13 @@
       <option name="presentableId" value="LOCAL‎00038" />
       <updated>1658694862483</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL‎00039" summary="V3.0 [EXE BUILD] Big update: Lockers work, &quot;Cargo Deliverys&quot; API Works, With Great QA Tests.&#10;&#10;V3.0 Big update: Lockers work, &quot;Cargo Deliverys&quot; API Works, With Great QA Tests.&#10;&#10;V2.9 09/06/22 LocalPickUp lockers &amp; new delivery company&#10;+ New lockers popupDesign.py, check it using #45026 Order&#10;[ ] Update textMeSMS.py Details&#10;[ ] Connect new delivery Company &quot;BALDAR&quot;&#10;&#10;V2.8.4 + (Exe Added.) Wordpress API- Butik 24 | Token Update&#10;(guiDesign.py as main.py)&#10;&#10;V2.8.4 - Token update (Should be in B1_complete_and_notifications.py &amp; A1_wooGetAPI.py&#10;&#10;V2.8.3 - Make sure to send SMS By disable mainButton (until click mailButton) &#10;V2.8.2- Token update only (fix the bug)&#10;&#10;V2.8.1&#10;- &quot;Completed&quot; after local_pickup_sticker.pdf&#10;- &quot;Send notifications&quot; button replaced in finisher popup&#10;⬜ Auto print by Accept chrome dialog&#10;&#10;V2.7&#10;- Added &quot;processing&quot; orders counter&#10;- Added local_pickup_sticker.pdf&#10;&#10;V2.6.8&#10;- SpiderSticker_log.txt Added to find Errors.&#10;&#10;V2.6.7&#10;- fixed local pickup&#10;- buyer notes on popup&#10;- error show up when bug comes&#10;&#10;V2.6.5&#10;- Chrome driver based field BETA&#10;- local pickup sticker pdf BETA&#10;&#10;V2.6.4&#10;- Local pickup bug fixes&#10;- Butik site update bug fix&#10;&#10;V2.6.3 Disable notification button when no needed&#10;&#10;V2.6.2 (minor fixes)&#10;- popupDesign.py Ready to use for איסוף עצמי&#10;✔ Locker code currently dynamic with config.txt&#10;⬜ Add order left to do (בטיפול)&#10;⬜ Not quit browser if failed&#10;- Title change when order is ready&#10;&#10;&#10;V2.5 Mid version when sms callr in used (Moved to israeli textMeSMS.py)&#10;&#10;V2.4 (Beta) when pickup needed, and &quot;No&quot; button is&#10;clicked on popup - open new popup of locker selection. (u can try it on order #27695)  &#10;little messy Version...&#10;&#10;V2.31 Selenium window Phone view to fix bugs, more waiting time before SMS confirmation status &#10;Beta on tests.py (Coming soon...):&#10;⬜ Selenium &amp; Woo API Start run at same time&#10;⬜ tkinter_tests.py to select locker on איסוף עצמי&#10;&#10;V2.23 Fixed complete status &amp; other bugs&#10;NEW! customers get Tracking SMS with Link!&#10;&#10;V2.1 Wordpress improved time to to Instant using Wordpress Api &#10;✔ Also upgraded 2nd button (send mail) to be based API&#10;&#10;V1.4 fix errors (That happen from Butik site changes)&#10;&#10;V1.3 Close order by changing to &quot;Complete&quot; when send_track_mail()&#10;&#10;V1.2 fix street field &amp; other improvements&#10;&#10;V1.1 &quot;Continue&quot; button just works. &#10;     &quot;Send tracking mail&quot; button just works.">
+      <created>1663358041570</created>
+      <option name="number" value="LOCAL‎00039" />
+      <option name="presentableId" value="LOCAL‎00039" />
+      <updated>1663358041570</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +545,39 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/B2.6.3" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/B2.6.3" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>

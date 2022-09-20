@@ -13,7 +13,7 @@ from requests.structures import CaseInsensitiveDict
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
 
 ## get updated config
-from Scripts.B1_complete_and_notifications import complete_and_notifications
+from Scripts.B1_complete_and_notifications import complete_and_notifications, wooApi_mail_complete
 
 
 def get_config():
@@ -276,11 +276,18 @@ def locker_popupDesign(root, buyer_phone, numOrder):
             print(f'selectedPassCode {selectedPassCode}')
             print(f'buyer_phone {buyer_phone}')
 
+            wooApi_mail_complete(isDelivery=False,
+                                 buyer_name=None,
+                                 butikTrackNumber=None,
+                                 numOrder=numOrder,
+                                 lockerNum=int(radioVar_selection),
+                                 lockerPass=selectedPassCode)
+
             txtMe_sms(message_type = 'Pickup', # LocalPickUp
                       localLockerNum= int(radioVar_selection),
                       localLockerPass= selectedPassCode,
                       phone = buyer_phone, includeAppAd=True) # AKA True BUT doesn't matter
-            messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס הגעה ל{title_text} נשלח ללקוח")
+            messagebox.showinfo("אישור סמס", f"(●'◡'●)  סמס ומייל הגעה ל{title_text} נשלח ללקוח")
             sleep(0.15)
 
             headers = CaseInsensitiveDict()
@@ -299,7 +306,7 @@ def locker_popupDesign(root, buyer_phone, numOrder):
     buttonSMSFrame.place(relx=0, rely=0.77, height=50, width=200)
     from functools import partial # To add args for the command
     ttk.Button(buttonSMSFrame,
-               text="שלח סמס מעקב",
+               text="שלח סמס ומייל מעקב",
                command= txtMe_sms_starter).pack(pady=11)
                # command= partial(txtMe_sms, message_type=int(radioVar_selection), phone="0584770076")).pack(pady=11)
 

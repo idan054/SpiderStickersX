@@ -7,7 +7,7 @@ def txtMe_sms(
         includeAppAd,
         message_type, # 4 = Local pickup SMS, 5 = Delivery SMS
         phone,
-        deliveryCompany,
+        deliveryCompany=None,
         localLockerPass=None,
         localLockerNum=None,
         butikTrackNumber=None): #butikTrackNumber no needed on pickup
@@ -17,16 +17,36 @@ def txtMe_sms(
     print("localLockerNum = ", localLockerNum)
     print("deliveryCompany = ", deliveryCompany)
 
+    # debug
+    # if str(phone) == '0584880076':
+    #     phone = str('0584770076')
+
     # if message_type == 2 : # locker
     #     locker_num = "הכחול 🔵"
     #     locker_code =  "2580"
 
     if message_type == 'Pickup' : # phone pickup
-        final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
-ניתן לאסוף כעת בכתובת חידקל 11, יבנה (בניין 15)
-החבילה זמינה 24/7 בלוקר מס' {localLockerNum}
-קוד:  {localLockerPass}
-בברכה, צוות ספיידר 3D"""
+
+        final_msg = str(f"""
+איזה כיף 😍 הזמנתך מוכנה וזמינה 24/7
+לאיסוף עצמי ביבנה, חידקל 11 (בניין מס' 15)
+{str(localLockerNum)}לוקר מס': 
+{str(localLockerPass)}קוד לפתיחת הלוקר: 
+
+*יש לאסוף תוך 48 שעות*
+קישור ל Waze
+Https://waze.com/ul/hsv8tqmxhf
+סרטון הסבר להגעה
+Https://bit.ly/3p7YVYQ
+
+תודה רבה לך שבחרת בנו ❤️ ספיידר תלת מימד
+            """)
+
+#         final_msg = f"""איזה כיף, ההזמנה שלך מוכנה לאיסוף :)
+# ניתן לאסוף כעת בכתובת חידקל 11, יבנה (בניין 15)
+# החבילה זמינה 24/7 בלוקר מס' {localLockerNum}
+# קוד:  {localLockerPass}
+# בברכה, צוות ספיידר 3D"""
 
     if message_type == 'Delivery' : # delivery
         if deliveryCompany == 22:  # Cargo

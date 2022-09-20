@@ -67,7 +67,7 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
         # openNewWindow(root)
         value = messagebox.askyesno(
             "איסוף עצמי", """"¯\_(ツ)_/¯  אין צורך ביצירת משלוח, הזמנה זו היא איסוף עצמי
-                                                  ?להודיע ללקוח לאסוף בסמס""",
+                                                  ?להודיע ללקוח לאסוף בסמס ובמייל""",
             default='yes')
         print(value)
         if value: # default is False - לא ליצור משלוח

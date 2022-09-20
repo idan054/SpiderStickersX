@@ -13,43 +13,13 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
     winsound.Beep(2000, 110)
     winsound.Beep(1000, 100)
 
-    def wooApi_mail_complete():
-        headers = CaseInsensitiveDict()
-        headers["Authorization"] = \
-            woo_token = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
-        notes_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}/notes"
-
-        # butikTrackNumber = str(butikTrackNumber)
-        # print(butikTrackNumber)
-        print("\nPlease Wait!")
-
-        mailValue = str("""
-            היי """ + str(buyer_name) + """, 
-        המשלוח שלך נאסף ממחסנינו ע"י חברת המשלוחים 
-        וצפוי להגיע אליך תוך 2-3 ימי עסקים. 
-        **במידה ובחרת במשלוח מהיר, המשלוח יגיע אליך תוך יום עסקים 1**
-        מס' המשלוח שלך הינו """ + str(butikTrackNumber) + """
-        במקרה הצורך ניתן ליצור קשר עם חברת המשלוחים ב- 03-5555833
-        תודה לך, צוות ספיידר תלת מימד
-            """)
-
-        ## 1 Post mail based POST Api
-        data = {
-            "note": mailValue,
-            "customer_note": True  # נשלח אל הלקוח
-        }
-        requests.post(url=notes_url, headers=headers, data=data).json()
-
-        ## 1 Put status complete mail based PUT Api
-        data = {
-            "status": "completed"
-        }
-        order_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
-        # print(requests.put(url=order_url, headers=headers, data=data).json())
-        requests.put(url=order_url, headers=headers, data=data).json()
-
     print('Start wooApi_mail_complete()')
-    wooApi_mail_complete()
+    wooApi_mail_complete(isDelivery=True,
+                         buyer_name=buyer_name,
+                         butikTrackNumber=butikTrackNumber,
+                         numOrder=numOrder,
+                         lockerNum=None,
+                         lockerPass=None)
 
     # message_type means delivery
     print('Start textMe_sms()')
@@ -80,3 +50,61 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
 #                     buyer_name="Example",
 #                     butikTrackNumber="000000"
 #                     )
+
+def wooApi_mail_complete(buyer_name, numOrder, butikTrackNumber, lockerNum, lockerPass, isDelivery):
+    headers = CaseInsensitiveDict()
+    headers["Authorization"] = \
+        woo_token = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
+    notes_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}/notes"
+
+    # butikTrackNumber = str(butikTrackNumber)
+    # print(butikTrackNumber)
+    print("\nPlease Wait!")
+
+
+    pickupMailValue = str(f"""
+איזה כיף 😍 הזמנתך מוכנה וזמינה 24/7
+לאיסוף עצמי ביבנה, חידקל 11 (בניין מס' 15)
+{str(lockerNum)}לוקר מס': 
+{str(lockerPass)}קוד לפתיחת הלוקר: 
+
+*יש לאסוף תוך 48 שעות*
+קישור ל Waze
+Https://waze.com/ul/hsv8tqmxhf
+סרטון הסבר להגעה
+Https://bit.ly/3p7YVYQ
+
+תודה רבה לך שבחרת בנו ❤️ ספיידר תלת מימד
+        """)
+
+    deliveryMailValue = str("""
+        היי """ + str(buyer_name) + """, 
+    המשלוח שלך נאסף ממחסנינו ע"י חברת המשלוחים 
+    וצפוי להגיע אליך תוך 2-3 ימי עסקים. 
+    **במידה ובחרת במשלוח מהיר, המשלוח יגיע אליך תוך יום עסקים 1**
+    מס' המשלוח שלך הינו """ + str(butikTrackNumber) + """
+    במקרה הצורך ניתן ליצור קשר עם חברת המשלוחים ב- 03-5555833
+    תודה לך, צוות ספיידר תלת מימד
+        """)
+
+    ## 1 Post mail based POST Api
+    if isDelivery:
+        data = {
+            "note": deliveryMailValue,
+            "customer_note": True  # נשלח אל הלקוח
+        }
+    else:
+        data = {
+            "note": pickupMailValue,
+            "customer_note": True  # נשלח אל הלקוח
+        }
+
+    requests.post(url=notes_url, headers=headers, data=data).json()
+
+    ## 1 Put status complete mail based PUT Api
+    data = {
+        "status": "completed"
+    }
+    order_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
+    # print(requests.put(url=order_url, headers=headers, data=data).json())
+    requests.put(url=order_url, headers=headers, data=data).json()
