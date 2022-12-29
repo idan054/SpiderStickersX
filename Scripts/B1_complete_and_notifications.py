@@ -77,15 +77,49 @@ Https://bit.ly/3p7YVYQ
 תודה רבה לך שבחרת בנו ❤️ ספיידר תלת מימד
         """)
 
-    deliveryMailValue = str("""
-        היי """ + str(buyer_name) + """, 
-    המשלוח שלך נאסף ממחסנינו ע"י חברת המשלוחים 
-    וצפוי להגיע אליך תוך 2-3 ימי עסקים. 
-    **במידה ובחרת במשלוח מהיר, המשלוח יגיע אליך תוך יום עסקים 1**
-    מס' המשלוח שלך הינו """ + str(butikTrackNumber) + """
-    במקרה הצורך ניתן ליצור קשר עם חברת המשלוחים ב- 03-5555833
-    תודה לך, צוות ספיידר תלת מימד
-        """)
+    phonePickup = str(
+        """
+איזה כיף 😍 הזמנתך מוכנה וזמינה 24/7
+לאיסוף עצמי ביבנה, חידקל 11 (בניין מס' 15)
+
+ *יש לתאם טלפונית לפני הגעה בין השעות 9:00 - 14:00
+0522509900
+
+קישור ל Waze
+Https://waze.com/ul/hsv8tqmxhf
+סרטון הסבר להגעה
+Https://bit.ly/3p7YVYQ
+
+תודה רבה לך שבחרת בנו ❤️ ספיידר תלת מימד
+    """
+)
+
+    deliveryMailValue = f"""
+היי איזה כיף לנו שבחרת בספיידר תלת מימד
+אנו עושים הכל שתהנה מהחוויה שלך 
+הזדרזנו והכנו את ההזמנה שלך לאיסוף השליח
+משלוח מהיר יגיע אליך היום אחר הצהריים, 
+לא ניתן לדעת שעה מדוייקת 
+אך אל דאגה
+השליח יתקשר להודיע ולתאם לפני ההגעתו
+בכדי שתוכל לעקוב אחר מבצעים, מוצרים חדשים, 
+קבצי STL להורדה ועוד אני מזמין אותך להוריד את האפליקציה
+המדהימה שלנו 
+https://rebrand.ly/Spider3D-App 
+תודה רבה לך 
+צוות ספיידר תלת מימד 
+וממני אייל ביטון :-)
+            """
+
+    # deliveryMailValue = str("""
+    #     היי """ + str(buyer_name) + """,
+    # המשלוח שלך נאסף ממחסנינו ע"י חברת המשלוחים
+    # וצפוי להגיע אליך תוך 2-3 ימי עסקים.
+    # **במידה ובחרת במשלוח מהיר, המשלוח יגיע אליך תוך יום עסקים 1**
+    # מס' המשלוח שלך הינו """ + str(butikTrackNumber) + """
+    # במקרה הצורך ניתן ליצור קשר עם חברת המשלוחים ב- 03-5555833
+    # תודה לך, צוות ספיידר תלת מימד
+    #     """)
 
     ## 1 Post mail based POST Api
     if isDelivery:
@@ -96,6 +130,12 @@ Https://bit.ly/3p7YVYQ
     else:
         data = {
             "note": pickupMailValue,
+            "customer_note": True  # נשלח אל הלקוח
+        }
+
+    if str(lockerNum) == '9':
+        data = {
+            "note": phonePickup,
             "customer_note": True  # נשלח אל הלקוח
         }
 

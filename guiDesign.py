@@ -54,9 +54,9 @@ def main_starter():
     winsound.Beep(1400, 150)
     winsound.Beep(1400, 150)
 
-    print("api_output is ")
+    print('api_output:')
+    print(api_output)
     print(type(api_output)) # <class 'tuple'> = Delivery || <class 'str'> PickUp
-    print(api_output) # on Fast return AKA Pickup: api_output = phone
     if type(api_output) == str:
         print('api_output:')
         print(api_output)
@@ -202,7 +202,7 @@ def change_deliveryCompany_selection():
     Label(root).config(text=selection)
     print(deliveryCompany_radioVar.get())
     deliveryCompany = deliveryCompany_radioVar.get()
-    print("deliveryCompany is " + str(deliveryCompany))
+    print("deliveryCompany is X " + str(deliveryCompany))
 
 
 # ----
@@ -229,6 +229,10 @@ R3.pack(anchor=W)
 R4 = ttk.Radiobutton(RadioFrame, text="CARGO", variable=deliveryCompany_radioVar, value="22",
                      command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
 R4.pack(anchor=W)
+
+R5 = ttk.Radiobutton(RadioFrame, text="SALE4U", variable=deliveryCompany_radioVar, value="40",
+                     command=change_deliveryCompany_selection, style="myStyle.TRadiobutton")
+R5.pack(anchor=W)
 # endregion
 
 # region כותרת "הכנס מס' הזמנה"

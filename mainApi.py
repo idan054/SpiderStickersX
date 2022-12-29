@@ -19,7 +19,7 @@ global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buye
 
 ## main based wordpress woocomarce API
 def main_api(numOrder, numOfPacks, deliveryCompany):
-    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
+    global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output, resp
 
     print("delivery company from radio buttons:")
     print(deliveryCompany)
@@ -120,11 +120,16 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
 
     if deliveryCompany == 22:
         messagebox.showinfo("חברת משלוחים", f"{buyer_city} - CARGO שליחויות")
+    if deliveryCompany == 40:
+        messagebox.showinfo("חברת משלוחים", f"{buyer_city} - SALES4U שליחויות")
+
+    if deliveryCompany == 22 or deliveryCompany == 40:
         resp = create_deliveryCargo(
-            # delivery_company=deliveryCompany,
+            delivery_company=deliveryCompany,
             buyer_city=buyer_city, buyer_name=buyer_name,
             clean_address=clean_address, buyer_phone=buyer_phone, buyer_email=buyer_email,
             buyer_notes=buyer_notes, orderNum=numOrder, packNum=numOfPacks)
+
 
     # 2
     # {'barcode': '1689379:',
@@ -150,10 +155,15 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
     # if deliveryCompany == 22 : # Cargo
     #     return resp
 
-    if deliveryCompany == 22:  # Cargo
+    if deliveryCompany == 22 or deliveryCompany == 40:
         butikTrackNumber = resp
         butikBarCode = ''
-        webbrowser.open('https://www.cargo-ship.co.il/Baldar/Deliveries.aspx')
+
+    if deliveryCompany == 22:
+       webbrowser.open('https://www.cargo-ship.co.il/Baldar/Deliveries.aspx')
+
+    if deliveryCompany == 40:
+       webbrowser.open('http://185.108.80.50:8050/baldar/Deliveries.aspx')
 
     if deliveryCompany == 23 or deliveryCompany == 24:
         butikTrackNumber = resp["task_id"]
