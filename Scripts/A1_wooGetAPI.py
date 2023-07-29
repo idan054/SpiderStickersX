@@ -3,7 +3,7 @@ from requests.structures import CaseInsensitiveDict
 
 
 ## A1 Get order details from Woo API
-
+woo_token = "Basic Y2tfOTgyYjYyODBiYjM2M2E3YTNlZTg2YjAwNTNkYjMyZGI1YjgxMjJhYzpjc180ZmZiYTIxMzdhZDk4YWU4ZGY5ODJjNTg5NDY5ODIzN2U0YjA5ZWQw"
 
 def woocomarce_api(numOrder):
 
@@ -16,8 +16,7 @@ def woocomarce_api(numOrder):
     headers = CaseInsensitiveDict()
     # To get headers["Authorization"] Token: insert Woo Api customer_key & secret_key
     # as user & pass in https://reqbin.com/ with the url above
-    headers[
-        "Authorization"] = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
+    headers["Authorization"] = woo_token
     # data = {
     #     "status": "completed",
     # }

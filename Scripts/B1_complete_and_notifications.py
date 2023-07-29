@@ -6,6 +6,7 @@ from requests.structures import CaseInsensitiveDict
 
 ## Send mail & change order to succeed
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
+from Scripts.A1_wooGetAPI import woo_token
 
 
 def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
@@ -53,8 +54,7 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
 
 def wooApi_mail_complete(buyer_name, numOrder, butikTrackNumber, lockerNum, lockerPass, isDelivery):
     headers = CaseInsensitiveDict()
-    headers["Authorization"] = \
-        woo_token = "Basic Y2tfNzkwYmQ2ZTQ4Zjc5ODYxZjNmYjA0ZTIxNjI5NTBiODc5N2YwNjFkOTpjc18xMmE3OGU1M2U2ZThiZDNhMjZlNjQ3NjFlMGVmNjAwMmI1NDEzMTI5"
+    headers["Authorization"] = woo_token
     notes_url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}/notes"
 
     # butikTrackNumber = str(butikTrackNumber)
@@ -98,10 +98,12 @@ Https://bit.ly/3p7YVYQ
 היי איזה כיף לנו שבחרת בספיידר תלת מימד
 אנו עושים הכל שתהנה מהחוויה שלך 
 הזדרזנו והכנו את ההזמנה שלך לאיסוף השליח
-משלוח מהיר יגיע אליך היום אחר הצהריים, 
+
+משלוח מהיר יגיע אליך אליך *בהתאם לסוג המשלוח שבחרת*, 
 לא ניתן לדעת שעה מדוייקת 
 אך אל דאגה
 השליח יתקשר להודיע ולתאם לפני ההגעתו
+
 בכדי שתוכל לעקוב אחר מבצעים, מוצרים חדשים, 
 קבצי STL להורדה ועוד אני מזמין אותך להוריד את האפליקציה
 המדהימה שלנו 

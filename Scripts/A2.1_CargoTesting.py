@@ -1,6 +1,7 @@
 import requests
 
-url = "http://185.241.7.143/Baldarp/service.asmx/SaveData"
+# url = "http://185.241.7.143/Baldarp/service.asmx/SaveData" // OLD
+url = "http://45.83.40.28/Baldarp/service.asmx/SaveData" # NEW
 
 # Working example:
 # payload='pParam=1;חרמון;9;לוד ;אישים ;99;תל אביב ;בדיקה ;לקוח מקבל ;Testing comme;1;1;1;1;1;0;m23946;2808;0;בלהבלה ;3;בדיקה ;0521234567;ab@gmail.com;2022-07-05;0'

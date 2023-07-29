@@ -20,7 +20,8 @@ def create_deliveryCargo(
     print('create_deliveryCargo() delivery_company:')
     print(delivery_company)
 
-    url = "http://185.241.7.143/Baldarp/service.asmx/SaveData" # CARGO
+    # url = "http://185.241.7.143/Baldarp/service.asmx/SaveData" # CARGO OLD
+    url = "http://45.83.40.28/Baldarp/service.asmx/SaveData" # CARGO NEW
     payload = f'pParam=' \
               f'1;חידקל;11;יבנה ;{buyer_street}' \
               f';{clean_address};{buyer_city} ;ספיידר 3D' \
