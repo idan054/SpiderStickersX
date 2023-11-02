@@ -1,14 +1,27 @@
 import requests
 from requests.structures import CaseInsensitiveDict
-
+from woocommerce import API
 
 ## A1 Get order details from Woo API
-woo_token = "Basic Y2tfOTgyYjYyODBiYjM2M2E3YTNlZTg2YjAwNTNkYjMyZGI1YjgxMjJhYzpjc180ZmZiYTIxMzdhZDk4YWU4ZGY5ODJjNTg5NDY5ODIzN2U0YjA5ZWQw"
+# To get headers["Authorization"] Token: insert Woo Api customer_key & secret_key
+# as user & pass in https://reqbin.com/ with the url above
+woo_token = "Basic Y2tfYjk2M2MwNTMzMTQwNTY2MmQzYmJlNzlkZDhiMjA1MTJiNTZkN2UxNTpjc19mYThkNTU0ZGYxNzZmN2I0NDllZjZhM2Q4Y2U0MDM4OTU4ZjJhZTQx"
 
 def woocomarce_api(numOrder):
 
+    # FUCK I JUST FOUND THERE WAS A PACAKGE! Well, What was I thinking?..
+    #     wcapi = API(
+    #         url="https://www.spider3d.co.il",
+    #         consumer_key="ck_b963c05331405662d3bbe79dd8b20512b56d7e15",
+    #         consumer_secret="cs_fa8d554df176f7b449ef6a3d8ce4038958f2ae41",
+    #         wp_api=True,
+    #         version="wc/v3",
+    #         query_string_auth=True
+    #     )
+
+
     # url = "https://spider3d.co.il/wp-json/wc/v3/orders" # כלל ההזמנות
-    url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
+    url = f"https://www.spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
     # numOrder = "27695" # איסוף עצמי
     # numOrder = "25560" # Eyal Biton הזמנה עבור
     # numOrder = "27692" # כולל הערות + כמות גבוהה
@@ -25,6 +38,7 @@ def woocomarce_api(numOrder):
     resp = requests.get(url, headers=headers)
 
     print(resp.status_code)
+    print(resp.text)
     order_details = resp.json()
     # print('order_details')
     # print(order_details)
