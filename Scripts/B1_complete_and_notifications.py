@@ -1,9 +1,10 @@
-import winsound
+# import winsound
 from tkinter import messagebox
 
 import requests
 from requests.structures import CaseInsensitiveDict
 
+from Gadgets.beeper import beep
 ## Send mail & change order to succeed
 from Gadgets.multi_usage.textMeSMS import txtMe_sms
 from Scripts.A1_wooGetAPI import woo_token
@@ -11,8 +12,8 @@ from Scripts.A1_wooGetAPI import woo_token
 
 def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
                                buyer_phone, includeAppAd, deliveryCompany):
-    winsound.Beep(2000, 110)
-    winsound.Beep(1000, 100)
+    beep(2000, 110)
+    beep(1000, 100)
 
     print('Start wooApi_mail_complete()')
     wooApi_mail_complete(isDelivery=True,
@@ -32,14 +33,14 @@ def complete_and_notifications(browser, numOrder, buyer_name, butikTrackNumber,
                         "(●'◡'●)  מייל וסמס נשלח בהצלחה ללקוח \n                 סטטוס ההזמנה שונה להושלם")
 
     # sleep(0.12)
-    winsound.Beep(2000, 150)
-    winsound.Beep(1500, 150)
+    beep(2000, 150)
+    beep(1500, 150)
     try:
         browser.quit()  # סוגר את הכרום
     except:
         print("Failed to browser.quit() - PASS")
-    winsound.Beep(1500, 150)
-    winsound.Beep(2000, 150)
+    beep(1500, 150)
+    beep(2000, 150)
 
 
 ## Example

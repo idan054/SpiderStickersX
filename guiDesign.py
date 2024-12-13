@@ -21,8 +21,8 @@ global hex_c, radioVar_selection
 # בדיקה איסוף עצמי - 45026
 def main_starter():
     global browser, finalOrderLink, buyer_name, butikTrackNumber, butikBarCode, buyer_phone, api_output
-    winsound.Beep(2000, 300)
-    winsound.Beep(1000, 100)
+    beep(2000, 300)
+    beep(1000, 100)
     sendSmsButton['state'] = DISABLED
     # mailButton['state'] = NORMAL
     # sys.stdout = open("SpiderLog.txt", "w")
@@ -43,16 +43,16 @@ def main_starter():
     # print("ValueError:")
     # print(f"{bcolors.Red}e:{bcolors.Normal}")
     # print(e)
-    winsound.Beep(2000, 150)
+    beep(2000, 150)
 
-    winsound.Beep(1500, 150)
+    beep(1500, 150)
     # browser.execute_script('window.print();')
     sleep(0.15)
-    winsound.Beep(800, 150)
-    winsound.Beep(800, 150)
+    beep(800, 150)
+    beep(800, 150)
     sleep(0.27)
-    winsound.Beep(1400, 150)
-    winsound.Beep(1400, 150)
+    beep(1400, 150)
+    beep(1400, 150)
 
     print('api_output:')
     print(api_output)

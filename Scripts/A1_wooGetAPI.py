@@ -5,7 +5,7 @@ from woocommerce import API
 ## A1 Get order details from Woo API
 # To get headers["Authorization"] Token: insert Woo Api customer_key & secret_key
 # as user & pass in https://reqbin.com/ with the url above
-woo_token = "Basic Y2tfYjk2M2MwNTMzMTQwNTY2MmQzYmJlNzlkZDhiMjA1MTJiNTZkN2UxNTpjc19mYThkNTU0ZGYxNzZmN2I0NDllZjZhM2Q4Y2U0MDM4OTU4ZjJhZTQx"
+woo_token = "Basic Y2tfMDVmNjA0NmM1MjEwODQ4NmViODY5YTM3Nzc4NGJhNTBkM2E2ZWJmNjpjc19mZjdhZjk0NzRiNTY5ZjY3ZmJkMjRlNDhjZjQyMjY3NTFjZDA1MTMz"
 
 def woocomarce_api(numOrder):
 
@@ -113,3 +113,27 @@ def woocomarce_api(numOrder):
 
 # woocomarce_api(numOrder=28020)
 # woocomarce_api(numOrder=45026)
+
+
+def woo_api_get_processing():
+
+    url = "https://spider3d.co.il/wp-json/wc/v3/orders/?status=processing&per_page=99" # כלל ההזמנות
+    # url = f"https://spider3d.co.il/wp-json/wc/v3/orders/{numOrder}"
+    # numOrder = "27695" # איסוף עצמי
+    # numOrder = "25560" # Eyal Biton הזמנה עבור
+    # numOrder = "27692" # כולל הערות + כמות גבוהה
+
+    headers = CaseInsensitiveDict()
+    headers["Authorization"] = \
+        "Basic Y2tfMzAyZWJkYmQ4OTNjNzU2YTFlOTlmZjhlZmNjMzZiYjYzNWZjNDRjNzpjc19lMTUyMTc0MWJlNDYzMWZjMzljMTQyNzUwZDg0YmU2YTJiYWVlMWIx"
+
+    # resp = requests.get(url, headers=headers, data=data)
+    resp = requests.get(url, headers=headers)
+
+    # print(resp.status_code)
+    order_details = resp.json()
+    processing_orders = len(order_details)
+    # print(order_details)
+    return processing_orders
+# x = woo_api_get_processing()
+# print(x)

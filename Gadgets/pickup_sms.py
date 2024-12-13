@@ -25,7 +25,7 @@ def pickup_sms(buyer_phone, message_type):
     callr_check_sms(sms_hash)
 
     # sleep(0.12)
-    winsound.Beep(2000, 150)
-    winsound.Beep(1500, 150)
-    winsound.Beep(1500, 150)
-    winsound.Beep(2000, 150)
+    beep(2000, 150)
+    beep(1500, 150)
+    beep(1500, 150)
+    beep(2000, 150)

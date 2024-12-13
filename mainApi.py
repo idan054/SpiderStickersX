@@ -1,5 +1,5 @@
 import webbrowser
-import winsound
+# import winsound
 from selenium import webdriver
 from Gadgets.multi_usage.bcolors import bcolors
 from Gadgets.multi_usage.locationChecker import location_checker
@@ -140,14 +140,14 @@ def main_api(numOrder, numOfPacks, deliveryCompany):
 
 
 
-    winsound.Beep(2000, 150)
-    winsound.Beep(1500, 150)
+    beep(2000, 150)
+    beep(1500, 150)
     sleep(0.15)
-    winsound.Beep(800, 150)
-    winsound.Beep(800, 150)
+    beep(800, 150)
+    beep(800, 150)
     sleep(0.27)
-    winsound.Beep(1400, 150)
-    winsound.Beep(1400, 150)
+    beep(1400, 150)
+    beep(1400, 150)
     # Press and release space
     # keyboard.press(Key.enter)
     # keyboard.release(Key.enter)
